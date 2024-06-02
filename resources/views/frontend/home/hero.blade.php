@@ -6,7 +6,7 @@
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-6">
                 <div class="hero-content">
-                  <span class="hero-subtitle">Le Bureau du Guide test </span>
+                  <span class="hero-subtitle">Le Bureau du Guides shoot </span>
                   <h1 class="hero-title">Profitez de votre voyage avec des guides expérimentés</h1>
                   <p class="hero-text">Découvrez la magie du Sénégal avec des guides locaux passionnés, prêts à vous faire vivre une expérience inoubliable.</p>
                   <a href="about.html" class="vs-btn style4">Voir Plus</a>
