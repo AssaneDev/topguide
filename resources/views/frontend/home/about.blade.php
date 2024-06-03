@@ -16,20 +16,21 @@
         <div class="col-xl-5">
           <div class="about-content">
             <div class="title-area">
-              <span class="sec-subtitle">Nous sommes les guides du sénégal</span>
-              <h2 class="sec-title h1">Des passionnée expért du sénégal </h2>
-              <p class="sec-text">Explorez le Sénégal comme jamais auparavant avec notre équipe de guides passionnés et expérimentés. Chez le Bureau du guide, nous croyons que chaque voyageur mérite une expérience authentique et inoubliable, c'est pourquoi nous mettons tout en œuvre pour vous offrir des guides expérimentés multilingue interprète spécialiste Ornithologie, Culture, Trek, Botanique….</p>
+              <span class="sec-subtitle">Guides Au sénégal</span>
+              <h2 class="sec-title h1">Des passionnés expert du sénégal </h2>
+              <p class="sec-text">Plongez dans une aventure sénégalaise inédite grâce à notre équipe de guides passionnés et chevronnés! Au sein de notre agence, nous pensons que chaque voyageur mérite une expérience unique et mémorable. C'est pourquoi nous nous donnons à fond pour vous fournir des guides polyglottes expérimentés.</p>
             </div>
             <ul class="about-list1">
-              <li>Guide Personnel .</li>
               <li>Guide interprète spécialist .</li>
               <li>Guide Ornithologie.</li>
               <li>Guide Culture.</li>
               <li>Guide Trek .</li>
               <li>Guide Botanique</li>
               <li>Guide Incentive , Time Building.</li>
+            
+              
             </ul>
-            <a href="about.html" class="vs-btn style4 ">Voir plus</a>
+            <a href="{{route('apropos')}}" class="vs-btn style4 ">Voir plus</a>
           </div>
         </div>
         <div class="col-xl-6">

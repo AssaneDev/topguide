@@ -42,7 +42,7 @@
             <div class="widget footer-widget">
               <div class="vs-widget-about">
                 <div class="footer-logo">
-                  <a href="index.html"><img src=" {{asset('frontend/assets/img/white-logo.svg')}} " alt="Travolo" class="logo" /></a>
+                  <a href="index.html"><img src=" {{asset('frontend/assets/img/logor.png')}} " alt="Travolo" class="logo" /></a>
                 </div>
                 <p class="footer-text">Nous croyons que chaque voyageur mérite une expérience authentique et inoubliable.</p>
                 <div class="social-style1">

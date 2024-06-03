@@ -10,34 +10,32 @@
         <div class="col-xxl-6 col-xl-7 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
           <div class="title-area">
             <span class="sec-subtitle">Hébergement & Location de Vehicule</span>
-            <h2 class="sec-title h1">Hebergement Moins Chers et Paradisique</h2>
+            <h2 class="sec-title h1">Hébergement abordable et paradisiaque</h2>
           </div>
         </div>
       </div>
       <div class="blog-style4">
         <div class="blog-image">
           <img src="{{asset('frontend/assets/img/blog/Hebergement.jpg')}}" alt="blog image">
-          <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Tips</a></div>
+          <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Hébergement</a></div>
         </div>
         <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
-          <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a>
-          <h3 class="blog-title"><a href="blog-details.html">A Time to Travel And Find Breathtaking Landscapes For Relax</a></h3>
-          <p class="blog-text">Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget
-            consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum...</p>
-          <a class="vs-btn style4" href="blog-details.html">Read More</a>
+          {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
+          <h3 class="blog-title"><a href="blog-details.html">Hébergement Typiquement Africaine</a></h3>
+          <p class="blog-text">Nous proposons aux voyageurs une voie autonome pour leur séjour, que ce soit un campement, une résidence privée, une maison d'hôtes, un hôtel, voire même un hébergement solidaire.</p>
+          <a class="vs-btn style4" href="blog-details.html">Voir Plus</a>
         </div>
       </div>
       <div class="blog-style4">
         <div class="blog-image">
           <img src="{{asset('frontend/assets/img/blog/Voiture.jpg')}}" alt="blog image">
-          <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Tips</a></div>
+          <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
         </div>
         <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
-          <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a>
-          <h3 class="blog-title"><a href="blog-details.html">A Time to Travel And Find Breathtaking Landscapes For Relax</a></h3>
-          <p class="blog-text">Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget
-            consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum...</p>
-          <a class="vs-btn style4" href="blog-details.html">Read More</a>
+          {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
+          <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
+          <p class="blog-text">Nous offrons une variété étendue de véhicules, tels que des bus, des minibus climatisés et des véhicules tout-terrain pour vos excursions , circuits, transfert et autres programmes ...</p>
+          <a class="vs-btn style4" href="blog-details.html">Voir Plus</a>
         </div>
       </div>
     </div>

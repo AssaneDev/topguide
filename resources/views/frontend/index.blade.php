@@ -32,7 +32,7 @@
      @include('frontend.home.destination')
         <!-- Features Area Start 
       ==============================-->
-      @include('frontend.home.guide')
+      {{-- @include('frontend.home.guide') --}}
       <!--==============================
         Features Area End 
       ==============================-->
