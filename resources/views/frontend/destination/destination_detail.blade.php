@@ -69,7 +69,7 @@
                 </div>
     
                 <!-- Comment Form -->
-                <div class="vs-comment-form">
+                {{-- <div class="vs-comment-form">
                   <div id="respond" class="comment-respond">
                     <h3 class="blog-inner-title">Leave a Comment</h3>
                     <div class="row">
@@ -95,7 +95,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
             <div class="col-lg-4">
@@ -121,7 +121,7 @@
                 </div>
      --}}
                 <div class="widget widget-newsletter">
-                  <h3 class="widget_title">Demander Package  {{$destination->name}}</h3>
+                  <h3 class="widget_title">Demander un programme {{$destination->name}}</h3>
                   <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
                     @csrf
                     <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />

@@ -42,7 +42,7 @@
 
 
                   <li>
-                    <a href="">Destination</a>
+                    <a href="{{route('destination')}}">Destination</a>
                     
                   </li>
                   <li>

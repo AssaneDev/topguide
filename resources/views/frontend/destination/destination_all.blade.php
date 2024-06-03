@@ -26,119 +26,29 @@
   <section class="space-top space-extra-bottom">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-1.jpg" alt="destination image" /></a>
-            <span class="destination-price">$299</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Thailand</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
+        @foreach ($destination as $desti)
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="destination-style1">
+                <a href="destination-details.html">
+                  <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
+                {{-- <span class="destination-price">$299</span> --}}
+                <div class="destination-info">
+                  <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name}}</a></h4>
+                  <p class="destination-text">Explorez</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-2.jpg" alt="destination image" /></a>
-            <span class="destination-price">$399</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Japan</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-3.jpg" alt="destination image" /></a>
-            <span class="destination-price">$299</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Spain</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-4.jpg" alt="destination image" /></a>
-            <span class="destination-price">$399</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Italy</a></h4>
-              <p class="destination-text">Explore View & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-5.jpg" alt="destination image" /></a>
-            <span class="destination-price">$299</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Netherlands</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-6.jpg" alt="destination image" /></a>
-            <span class="destination-price">$399</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">India</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-7.jpg" alt="destination image" /></a>
-            <span class="destination-price">$299</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Canada</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-8.jpg" alt="destination image" /></a>
-            <span class="destination-price">$399</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Mexico</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="destination-details.html">
-              <img src="assets/img/destinations/destinations-1-9.jpg" alt="destination image" /></a>
-            <span class="destination-price">$399</span>
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="#">Indonesia</a></h4>
-              <p class="destination-text">Explore Sea & Get Relax</p>
-            </div>
-          </div>
-        </div>
+        @endforeach
+      
+        
       </div>
-      <div class="vs-pagination pt-lg-2">
-        <ul>
-          <li>
-            <a href="destinations.html"><i class="fas fa-chevron-left"></i></a>
-          </li>
-          <li><a href="destinations.html">1</a></li>
-          <li><a href="destinations.html">2</a></li>
-          <li><a href="destinations.html">3</a></li>
-          <li>
-            <a href="destinations.html"><i class="fas fa-chevron-right"></i></a>
-          </li>
-        </ul>
-      </div>
+      {{-- <div class="vs-pagination pt-lg-2">
+           
+        {{$destination->links('vendor.pagination.custom')}}
+
+
+    
+  </div> --}}
     </div>
   </section>
   <!--==============================
@@ -148,7 +58,7 @@
   <!--==============================
      Tour Package Area Start 
   ==============================-->
-  <section class="space bg-light">
+  {{-- <section class="space bg-light">
     <div class="container ">
       <div class="row justify-content-center text-center">
         <div class="col-xl-6 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
@@ -324,7 +234,7 @@
         <a href="tours.html" class="vs-btn">View More</a>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!--==============================
      Tour Package Area End 
   ==============================-->

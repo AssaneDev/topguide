@@ -225,6 +225,12 @@ class DestinationController extends Controller
     
         return view('frontend.destination.destination_detail', compact('destination','imageGalerie','bcategory','lpost'));
     
-       }     
+       }  
+       
+       
+     public function destination(){
+        $destination = Destination::latest()->get();
+        return view('frontend.destination.destination_all',compact('destination'));
+     }  
     
 }
