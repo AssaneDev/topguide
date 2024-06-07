@@ -69,9 +69,9 @@
    <center><h1 class="badge rounded-pill bg-success" style="font-size: 80px" >Bienvenue Admin de Top Guide</h1>
    </center> 
    <center>
-    <button type="button" class="btn btn-outline-success px-5 radius-30">Liste Destination</button>
-    <button type="button" class="btn btn-outline-info px-5 radius-30">Liste Categorie Blog</button>
-    <button type="button" class="btn btn-outline-warning px-5 radius-30">Liste Article Blog</button>
+    <button type="button" class="btn btn-outline-success px-5 radius-30"> <a href="{{route('all.destinations')}}">Liste Destination</a></button>
+    <button type="button" class="btn btn-outline-info px-5 radius-30"> <a href="{{route('blog.category')}}">Liste Categorie Blog</a></button>
+    <button type="button" class="btn btn-outline-warning px-5 radius-30"> <a href="{{route('all.blog.post')}}">Liste Article Blog</a></button>
    </center>
    
 
