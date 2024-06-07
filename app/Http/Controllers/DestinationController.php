@@ -77,7 +77,7 @@ class DestinationController extends Controller
          } //End If
     
          $notification = array(
-            'message' =>'Bravo, Chambre modifier avec succés',
+            'message' =>'Bravo, destination ajouter avec succés',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
@@ -144,7 +144,7 @@ class DestinationController extends Controller
                 if(!empty($files)){
                 foreach ($files as $file) {
                     $imgName = date('YmdHi').$file->getClientOriginalName();
-                    $file->move('upload/roomimg/multi_img/',$imgName);
+                    $file->move('upload/destination/multi_img/',$imgName);
                     $subimage['multi_img'] = $imgName;
                     $subimage =new multi_image();
                     $subimage->id_destination= $destination->id;

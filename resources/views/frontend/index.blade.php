@@ -49,7 +49,7 @@
       <!--==============================
          Special Offer Area Start 
       ==============================-->
-  @include('frontend.home.offer')
+  {{-- @include('frontend.home.offer') --}}
       <!--==============================
          Special Offer Area End 
       ==============================-->

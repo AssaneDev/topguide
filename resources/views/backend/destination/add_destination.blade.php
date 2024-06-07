@@ -32,6 +32,7 @@
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-6">
+                                                <span class="badge bg-warning text-dark">ETAPE  1</span> </br>
                                                 <label for="input1" class="form-label">Nom</label>
                                                 <input type="text" name="name"  class="form-control" id="input1" >
                                             </div>
@@ -39,17 +40,23 @@
                                          
                                         </div>
                                         <div class="col-md-12 ">
+                                            <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
+
                                             <label for="input11" class="form-label">Courte Description</label>
                                             <textarea class="form-control" name="short_descp" id="input11" placeholder="" rows="3"></textarea>
                                         </div>
 
                                         <div class="col-md-12">
+                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
+
                                             <label for="input11" class="form-label">Description</label>
                                             <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3"></textarea>
                                         </div>
                                         
                                         <div class="row">
                                             <div class="col-md-6">
+                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
+
                                                 <label for="input11" class="form-label">Image Caption</label>
                                                 <input class="form-control" name="image_cap" type="file" id="image">
                                             </div>
@@ -61,15 +68,18 @@
                                         </div>
 
                                         <div class="col-md-12">
+                                            <span class="badge bg-warning text-dark">ETAPE  5</span> </br>
+
                                             <label for="input11" class="form-label">Image Baniere</label>
                                                
                                             <input class="form-control" name="image" type="file" id="image">
-                                            <img id="showImage" src=" {{  url('upload/no_image.jpg')}} " alt="Admin" class="rounded-circle" width="80" />
-
+                                            <img id="showImage" src="{{url('upload/no_image.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="80" />
                                         </div>
 
 
                                         <div class="col-md-6">
+                                            <span class="badge bg-warning text-dark">ETAPE  6</span> </br>
+
                                             <label for="input4" class="form-label">Images Galerie</label>
                                             <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple accept="image/jpeg,image/jpg,image/gif,image/png">
                                              

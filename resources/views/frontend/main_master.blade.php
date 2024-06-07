@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>SoluGuide l'agence de guide sénégalaise</title>
+  <title>TopGuide l'agence de guide sénégalaise</title>
   <meta name="author" content="vecuro">
   <meta name="description" content="Travolo -  Travel Agency & Tour Booking HTML Template">
   <meta name="keywords" content="Travolo -  Travel Agency & Tour Booking HTML Template">

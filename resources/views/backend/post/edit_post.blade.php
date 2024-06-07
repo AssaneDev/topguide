@@ -34,6 +34,7 @@
                                         <input type="hidden" name="id" value="{{$post->id}}">
                                         <div class="row">
                                             <div class="col-md-6">
+                                                <span class="badge bg-warning text-dark">ETAPE  1</span> </br>
                                                 <label for="input7" class="form-label">Categorie</label>
                                                 <select name="blogcat_id" id="input7" class="form-select">
                                                     <option selected></option>
@@ -45,6 +46,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
+                                                <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
                                                 <label for="input1" class="form-label">Titre Article</label>
                                                 <input type="text" name="post_title" value="{{$post->post_title}}"  class="form-control" id="input1" >
                                             </div>
@@ -52,18 +54,20 @@
                                          
                                         </div>
                                         <div class="col-md-12 ">
+                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
                                             <label for="input11" class="form-label">Courte Description</label>
                                             <textarea class="form-control" value="" name="short_descp" id="input11" placeholder="" rows="3">{{$post->short_descp}}</textarea>
                                         </div>
 
                                         <div class="col-md-12">
+                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
                                             <label for="input11" class="form-label">Description</label>
                                             <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3">{!!$post->long_descp!!}</textarea>
                                         </div>
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                               
+                                                <span class="badge bg-warning text-dark">ETAPE  5</span> </br>
                                                 <input class="form-control" name="post_image" type="file" id="image">
                                             </div>
                                            

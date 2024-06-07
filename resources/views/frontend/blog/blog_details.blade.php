@@ -63,7 +63,7 @@
                 </div>
               </div>
 
-              <div class="post-pagination">
+              {{-- <div class="post-pagination">
                 <div class="row justify-content-between align-items-center">
                   <div class="col">
                     <div class="post-pagi-box prev">
@@ -81,7 +81,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
 
              
             </div>
@@ -89,13 +89,13 @@
         </div>
         <div class="col-lg-4">
           <div class="sidebar-area">
-            <div class="widget widget_search">
+            {{-- <div class="widget widget_search">
               <div class="widget_title">Search</div>
               <form class="search-form">
                 <input type="text" placeholder="Search Tour">
                 <button type="submit"><i class="far fa-search"></i></button>
               </form>
-            </div>
+            </div> --}}
             <div class="widget">
               <h3 class="widget_title">Posts Récent</h3>
               <div class="recent-post-wrap">

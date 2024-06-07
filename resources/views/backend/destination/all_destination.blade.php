@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->short_descp}}</td>
+                            <td>{!! $item->short_descp !!}</td>
                             <td><img src="{{asset($item->image_cap)}}" alt="" style="width: 70px; height: 40px;"></td>
                            
                             <td>
