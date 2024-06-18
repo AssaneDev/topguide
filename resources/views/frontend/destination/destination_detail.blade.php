@@ -6,14 +6,8 @@
     <div class="breadcumb-wrapper" data-bg-src="{{asset($destination->image)}}"style="width:1880px;height:587px; background-size:cover;" >
         <div class="container z-index-common">
           <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Destination Details</h1>
-            <div class="breadcumb-menu-wrap">
-              <ul class="breadcumb-menu">
-                <li><a href="index.html">Home</a></li>
-                <li>Destination</li>
-                <li>Spain</li>
-              </ul>
-            </div>
+            <h1 class="breadcumb-title"> {{$destination->name}}</h1>
+            
           </div>
         </div>
       </div>
