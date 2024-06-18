@@ -3,14 +3,14 @@
       <!--==============================
 	  Hero area Start
 	==============================-->
-  <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
     <div class="container z-index-common">
       <div class="breadcumb-content">
-        <h1 class="breadcumb-title">Destinations</h1>
+        <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
         <div class="breadcumb-menu-wrap">
           <ul class="breadcumb-menu">
-            <li><a href="index.html">Home</a></li>
-            <li>Destinations</li>
+            <li><a href="index.html" style="display: none">Home</a></li>
+            <li style="display: none">Destinations</li>
           </ul>
         </div>
       </div>

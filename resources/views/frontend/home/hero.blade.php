@@ -1,14 +1,14 @@
 <section class="hero-layout1">
     <div>
       <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
-        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/hero2-bg.jpg')}} ">
+        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSN.png')}} ">
           <div class="container">
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-6">
                 <div class="hero-content">
                   {{-- <span class="hero-subtitle">Le Bureau du Guides shoot </span> --}}
                   <h1 class="hero-title">Immergez-vous dans l'aventure avec des guides expérimentés</h1>
-                  <p class="hero-text">Découvrez la magie du Sénégal avec des guides locaux passionnés, prêts à vous faire vivre une expérience inoubliable.</p>
+                  {{-- <p class="hero-text">Découvrez la magie du Sénégal avec des guides locaux passionnés, prêts à vous faire vivre une expérience inoubliable.</p> --}}
                   <a href="{{route('apropos')}}" class="vs-btn style4">Voir Plus</a>
                 </div>
               </div>
