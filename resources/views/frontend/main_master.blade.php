@@ -41,6 +41,8 @@
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/style.css')}} ">
 </head>
 
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="60239d0b-c958-4f1e-b562-6faf74f7b289";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 <body>
 
   <!--********************************

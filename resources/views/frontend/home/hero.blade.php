@@ -1,7 +1,7 @@
 <section class="hero-layout1">
     <div>
       <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
-        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSN.png')}} ">
+        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSNeCP.png')}} ">
           <div class="container">
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-6">

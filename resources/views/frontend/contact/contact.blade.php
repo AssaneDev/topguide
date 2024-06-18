@@ -1,7 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
 
-<div class="breadcumb-wrapper" data-bg-src="{{asset('frontend/assets/img/breadcumb/breadcumb-bg.jpg')}}assets/img/breadcumb/breadcumb-bg.jpg">
+{{-- <div class="breadcumb-wrapper" data-bg-src="{{asset('frontend/assets/img/breadcumb/breadcumb-bg.jpg')}}assets/img/breadcumb/breadcumb-bg.jpg">
   <div class="container z-index-common">
     <div class="breadcumb-content">
       <h1 class="breadcumb-title">Contact Us</h1>
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 <!--==============================
     Hero Area End
   ==============================-->

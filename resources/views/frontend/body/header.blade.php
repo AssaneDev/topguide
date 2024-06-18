@@ -53,7 +53,7 @@
                   <li>
                     <a href="{{route('contact')}}">Contact</a>
                   </li>
-                  <button class="searchBoxTggler">Devenir Partenaire</button>
+                  <button class="vs-btn style4">Devenir Partenaire</button>
                 </ul>
               </nav>
               <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>
