@@ -12,9 +12,9 @@
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-5">
           <div class="title-area">
-            <span class="sec-subtitle">Lieux Extraordinaire au Sénégal</span>
-            <h2 class="sec-title h1">Des endroits inoubliables</h2>
-            <p class="sec-text">En excursion ,circuit nous vous faisons découvrir le Sénégal.</p>
+            <span class="sec-subtitle">Des endroits Extraordinaire au Sénégal</span>
+            <h2 class="sec-title h1">Des lieux inoubliables</h2>
+            <p class="sec-text">Lors de nos excursions, mini-circuits ou circuits, nous vous ferons explorer le Sénégal.</p>
           </div>
         </div>
         <div class="col-auto">

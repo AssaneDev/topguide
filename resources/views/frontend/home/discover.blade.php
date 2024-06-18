@@ -12,7 +12,7 @@
           <div class="title-area">
             <span class="sec-subtitle">Allons Découvrir</span>
             <h2 class="sec-title h1">La Téranga Sénégalaise</h2>
-            <p class="sec-text"> Nous croyons en un tourisme responsable et nous nous efforçons de minimiser notre impact sur l'environnement et de maximiser les retombées positives pour les communautés locales..</p>
+            {{-- <p class="sec-text"> Nous croyons en un tourisme responsable et nous nous efforçons de minimiser notre impact sur l'environnement et de maximiser les retombées positives pour les communautés locales..</p> --}}
           </div>
         </div>
       </div>

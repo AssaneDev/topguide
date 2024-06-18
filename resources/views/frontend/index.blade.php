@@ -23,13 +23,15 @@
       @include('frontend.home.about')
       <!--==============================
         About Area End 
-      ==============================-->
-      @include('frontend.home.voihebe')
-          <!--==============================
-               <!--==============================
+        <!--==============================
          Destiniations Area Start 
       ==============================-->
      @include('frontend.home.destination')
+      {{-- ==============================--> --}}
+      @include('frontend.home.voihebe')
+          <!--==============================
+               <!--==============================
+         
         <!-- Features Area Start 
       ==============================-->
       {{-- @include('frontend.home.guide') --}}

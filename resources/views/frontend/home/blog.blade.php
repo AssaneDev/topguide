@@ -8,7 +8,7 @@
           <div class="title-area">
             <span class="sec-subtitle">Blog & Nouvelles Du Sénégal</span>
             <h2 class="sec-title h1">Nos Dernieres articles</h2>
-            <p class="sec-text">Ici, Soluguide partage  des conseils pratiques, des récits authentiques et des rencontres inoubliables avec une culture riche et chaleureuse.</p>
+            <p class="sec-text">Ici, TopGuide partage  des conseils pratiques, des récits authentiques et des rencontres inoubliables avec une culture sénégalaise riche et chaleureuse.</p>
           </div>
         </div>
       </div>

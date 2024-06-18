@@ -10,7 +10,7 @@
         <div class="col-xxl-6 col-xl-7 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
           <div class="title-area">
             <span class="sec-subtitle">Hébergement & Location de Vehicule</span>
-            <h2 class="sec-title h1">Hébergement abordable et paradisiaque</h2>
+            <h2 class="sec-title h1">Hébergement abordable et paradisiaque.</h2>
           </div>
         </div>
       </div>
@@ -21,8 +21,9 @@
         </div>
         <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
-          <h3 class="blog-title"><a href="blog-details.html">Hébergement Typiquement Africaine</a></h3>
-          <p class="blog-text">Nous proposons aux voyageurs une voie autonome pour leur séjour, que ce soit un campement, une résidence privée, une maison d'hôtes, un hôtel, voire même un hébergement solidaire.</p>
+          <h3 class="blog-title"><a href="blog-details.html">Hébergement typique.</a></h3>
+          <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
+            qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
           <a class="vs-btn style4" href="blog-details.html">Voir Plus</a>
         </div>
       </div>
@@ -34,7 +35,7 @@
         <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
           <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
-          <p class="blog-text">Nous offrons une variété étendue de véhicules, tels que des bus, des minibus climatisés et des véhicules tout-terrain pour vos excursions , circuits, transfert et autres programmes ...</p>
+          <p class="blog-text">Nous proposons une large gamme de véhicules incluant des bus, des minibus climatisés et des 4x4 pour vos excursions, circuits, transferts et autres événements...</p>
           <a class="vs-btn style4" href="blog-details.html">Voir Plus</a>
         </div>
       </div>
