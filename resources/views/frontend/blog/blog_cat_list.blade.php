@@ -1,7 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
   <!-- Hero Area Start -->
-  <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/baniereblog.jpg')}} ">
     <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title">Blog</h1>
@@ -28,15 +28,15 @@
               <div class="vs-blog blog-style2">
                 <div class="blog-img">
                   <a href="{{ url('blog/detail/'.$item->post_slug) }}"><img src="{{asset($item->post_image)}}" alt="blog image"></a>
-                  <div class="blog-inner-author">
+                  {{-- <div class="blog-inner-author">
                     <img src="{{asset('upload/admin_images/'.$item['author']['photo'])}}" alt="blog author image">
                     <a href="{{ url('blog/detail/'.$item->post_slug) }}" class="author-name">{{$item['author']['name']}}</a>
                     <span class="author-degi">{{$item['author']['role']}}</span>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="blog-content">
                   <h2 class="blog-title"><a href="{{ url('blog/detail/'.$item->post_slug) }}">{{$item->post_title}}</a></h2>
-                  <p>{{$item->short_descp}}</p>
+                  <p>{!!$item->short_descp!!}</p>
                   <div class="blog-bottom">
                     <a class="blog-date" href="{{ url('blog/detail/'.$item->post_slug) }}"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}}</a>
                     <a class="vs-btn has-arrow" href="{{ url('blog/detail/'.$item->post_slug) }}">Voir <i class="fal fa-arrow-right"></i></a>

@@ -11,8 +11,8 @@
           </div>
           <div class="col-auto">
             <div class="header-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="https://web.facebook.com/profile.php?id=61560799666028"><i class="fab fa-facebook-f"></i></a>
+              {{-- <a href="#"><i class="fab fa-instagram"></i></a> --}}
             </div>
           </div>
    

@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/hero2-bg3.jpg')}} ">
+        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/touriste.jpg')}} ">
           <div class="container">
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-6">

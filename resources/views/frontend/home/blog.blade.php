@@ -22,8 +22,8 @@
               <a href=""><img src="{{asset($item->post_image)}}" alt="blog image"></a>
             </div>
             <div class="blog-content">
-              <h2 class="blog-title"><a href="blog-details.html">{{$item->post_title}}</a></h2>
-              <p class="blog-text">{{$item->short_descp}}</p>
+              <h2 class="blog-title"><a href="{{ url('blog/detail/'.$item->post_slug) }}">{{$item->post_title}}</a></h2>
+              <p class="blog-text">{!!$item->short_descp!!}</p>
               <div class="blog-bottom">
                 <a class="blog-date" href="blog-details.html"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
                 <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Voir plus <i class="fal fa-arrow-right"></i></a>

@@ -233,4 +233,11 @@ class DestinationController extends Controller
         return view('frontend.destination.destination_all',compact('destination'));
      }  
     
+
+     //Voiture start
+     public function Vehicule(){
+        return view('frontend.vehicules.vehicule');
+     }
+
+     //Voiture Ended
 }

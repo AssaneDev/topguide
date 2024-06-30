@@ -25,9 +25,9 @@
             </div>
             <h3 class="testi-name">Sophie B.</h3>
             <span class="testi-degi">Aventure au cœur de la nature</span>
-            <div class="testi-avater">
+            {{-- <div class="testi-avater">
               <img src=" {{asset('frontend/assets/img/testimonial/testimonial-2-1.jpg')}} " alt="customer image">
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="col-xl-4">
@@ -44,9 +44,9 @@
             </div>
             <h3 class="testi-name">Marc D.</h3>
             <span class="testi-degi">Exploration culturelle authentique</span>
-            <div class="testi-avater">
+            {{-- <div class="testi-avater">
               <img src="{{asset('frontend/assets/img/testimonial/testimonial-2-2.jpg')}}" alt="customer image">
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="col-xl-4">
@@ -63,9 +63,9 @@
             </div>
             <h3 class="testi-name"> Emma R.</h3>
             <span class="testi-degi"> Randonnée éblouissante</span>
-            <div class="testi-avater">
+            {{-- <div class="testi-avater">
               <img src=" {{asset('frontend/assets/img/testimonial/testimonial-2-2.jpg')}} " alt="customer image">
-            </div>
+            </div> --}}
           </div>
         </div>
         <div class="col-xl-4">
@@ -82,9 +82,9 @@
             </div>
             <h3 class="testi-name">Thomas L.</h3>
             <span class="testi-degi"> Plaisirs balnéaires abordables</span>
-            <div class="testi-avater">
+            {{-- <div class="testi-avater">
               <img src=" {{asset('frontend/assets/img/testimonial/testimonial-2-2.jpg')}} " alt="customer image">
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>

@@ -3,14 +3,14 @@
  <!--==============================
 	  Hero area Start
 	==============================-->
-    <div class="breadcumb-wrapper" data-bg-src="{{asset($destination->image)}}"style="width:1880px;height:587px; background-size:cover;" >
+    {{-- <div class="breadcumb-wrapper" data-bg-src="{{asset($destination->image)}}"style="width:1880px;height:587px; background-size:cover;" >
         <div class="container z-index-common">
           <div class="breadcumb-content"  >
             <h1 class="breadcumb-title" > <span style="background-color: rgba(0, 0, 0, 0.402);">{{$destination->name}}</span> </h1>
             
           </div>
         </div>
-      </div>
+      </div> --}}
       <!--==============================
           Hero Area End
         ==============================-->
@@ -140,12 +140,12 @@
       
     
                 <div class="widget widget-social">
-                  <h3 class="widget_title">Never Miss News</h3>
+                  <h3 class="widget_title">Suivez-Nous</h3>
                   <div class="social-style widget_social_style">
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> --}}
+                    {{-- <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> --}}
+                    {{-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
                   </div>
                 </div>
               </div>

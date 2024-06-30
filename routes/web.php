@@ -109,6 +109,8 @@ Route::controller(BlogController::class)->group(function(){
 Route::controller(DestinationController::class)->group(function(){
     Route::get('destination/detail/{id}','DestinationDetail');  
     Route::get('destination/','Destination')->name('destination');
+    Route::get('vehicule/','Vehicule')->name('vehicule');
+
 
 
 });
@@ -117,10 +119,10 @@ Route::controller(FormController::class)->group(function(){
     Route::post('/envoie/form','Envoie')->name('envoie.form');
      Route::get('/Contact',  'Contact')->name('contact');
      Route::post('/sendmail',  'SendMail')->name('send.mail');
+}); 
 
 
 
-});
 
 
 

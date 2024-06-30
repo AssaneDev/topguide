@@ -46,10 +46,10 @@
                 </div>
                 <p class="footer-text">Nous croyons que chaque voyageur mérite une expérience authentique et inoubliable.</p>
                 <div class="social-style1">
-                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                   <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
                 </div>
               </div>
             </div>
@@ -59,10 +59,10 @@
               <h3 class="widget_title">Navigation</h3>
               <div class="menu-all-pages-container">
                 <ul class="menu">
-                  <li><a href="index.html"> Acceuil</a></li>
-                  <li><a href="destinations.html"> Destinations</a></li>
-                  <li><a href="tours.html">Blog</a></li>
-                  <li><a href="shop.html">Contact</a></li>
+                  <li><a href="{{url('/')}}"> Acceuil</a></li>
+                  <li><a href="{{route('destination')}}"> Destinations</a></li>
+                  <li><a href="{{route('blog.list')}}">Blog</a></li>
+                  <li><a href="{{route('contact')}}">Contact</a></li>
                  
                 </ul>
               </div>
@@ -108,7 +108,7 @@
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-auto">
             <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> <script>document.write(new Date().getFullYear())</script> <a href="index.html">Entragence</a>.
-              All Rights Reserved By <a href="https://themeforest.net/user/vecuro">topguide</a></p>
+              All Rights Reserved By <a href="">topguide</a></p>
           </div>
           <div class="col-auto d-none d-lg-block">
             <div class="copyright-menu">
