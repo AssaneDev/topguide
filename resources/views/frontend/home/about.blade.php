@@ -17,7 +17,7 @@
           <div class="about-content">
             <div class="title-area">
               <span class="sec-subtitle">Guides Au sénégal</span>
-              <h2 class="sec-title h1">Des passionnés expert du sénégal </h2>
+              <h2 class="sec-title h1">Des passionnés experts du sénégal </h2>
               <h4 class="sec-text" style="font-size: 16=8px; font-weight: 400">
 
 

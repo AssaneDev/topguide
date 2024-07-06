@@ -22,7 +22,7 @@
               <div class="col-lg-6">
                 <div class="hero-content">
                   {{-- <span class="hero-subtitle">Bureau Du Guide</span> --}}
-                  <h1 class="hero-title">Inter-echange culturel</h1>
+                  <h1 class="hero-title">Inter-échange culturel</h1>
                   <p class="hero-text">Plongez au cœur de la culture sénégalaise avec nos guides experts, pour des visites authentiques et enrichissantes.</p>
                   <a href="{{route('apropos')}}" class="vs-btn style4">Voir plus</a>
                 </div>

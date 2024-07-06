@@ -10,7 +10,7 @@
         <div class="col-xxl-6 col-xl-7 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
           <div class="title-area">
             <span class="sec-subtitle">Hébergement & Location de Vehicule</span>
-            <h2 class="sec-title h1">Hébergement abordable et paradisiaque.</h2>
+            <h2 class="sec-title h1">Hébergements abordables et paradisiaques.</h2>
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@
             </div>
             <h3 class="contact-box__title h5">Address</h3>
             <p class="contact-box__text">
-                Soluguide <br>
+                Topguideguide <br>
                 R1 Mbour
                 Thies, Sénégal
             </p>
