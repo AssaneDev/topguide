@@ -19,7 +19,7 @@
           <div class="about-content">
             <div class="title-area">
               <span class="sec-subtitle">Nous Sommes Topguide</span>
-              <h2 class="sec-title h1">Meilleurs agence de guide  </h2>
+              <h2 class="sec-title h1">Meilleurs agence de guides  </h2>
               <h2 class="sec-text">TopGuide est une agence de guide  touristique Sénégalaise cumulant plus de 20 ans d’expérience dans le domaine du tourisme. Notre renommée repose sur nos pratiques innovantes dans le secteur du voyage, en particulier notre système offrant aux établissements la possibilité de bénéficier des services d’un guide touristique professionnel agréé par le Ministère du Tourisme. Notre approche repose sur la conviction que le progrès ne peut être atteint qu’avec l’implication des parties prenantes. Ainsi, nous accordons une importance cruciale à l’identification de vos besoins et à la mise en œuvre de solutions efficaces pour garantir la réussite de vos voyage.</h2>
             </div>
             <ul class="about-list1">
