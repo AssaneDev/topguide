@@ -49,10 +49,6 @@
                             <td>{{$key+1}}</td>
                             <td>{{$item->name}}</td>
                              <td>{!! Str::limit( $item->short_descp ,50) !!}</td> 
-
-                             
-                            
-                            
                             <td><img src="{{asset($item->image_cap)}}" alt="" style="width: 70px; height: 40px;"></td>
                            
                             <td>
