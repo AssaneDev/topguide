@@ -16,23 +16,21 @@
         <div class="col-xl-5">
           <div class="about-content">
             <div class="title-area">
-              <span class="sec-subtitle">Guides Au sénégal</span>
+              <span class="sec-subtitle">Vacance au Sénégal</span>
               <h2 class="sec-title h1">Des passionnés experts du sénégal </h2>
-              <h4 class="sec-text" style="font-size: 16=8px; font-weight: 400">
+              <h4 class="sec-text" style="font-size:22px; font-weight: 400">
 
 
-Top Guide vous invite à vivre des excursions indépendantes et personnalisées, vous permettant de choisir librement vos centres d'intérêt.<br><br> Que vous optiez pour l'exploration de destinations uniques, la visite de sites touristiques emblématiques, l'exploration de musées fascinants ou la découverte d'autres lieux d'exception, notre service est conçu pour répondre à vos préférences. <br><br>
+                Plus de 40 voyages de groupes et de famille organisés en 2023, nos guides multilingues et spécialistes vous accompagneront pour une expérience unique. Nous avons aidé plus de 100 voyageurs à planifier leur voyage parfait au Sénégal. Partez à l'aventure avec nos services personnalisés et profitez des connaissances approfondies de nos experts pour une immersion totale dans la culture sénégalaise!  <br><br>
 
-Nos guides expérimentés partagent avec vous leur expertise et leur passion pour vous mener vers des endroits magnifiques qui incarnent l'authenticité et le charme caractéristique du pays. À leurs côtés, vous aurez l'occasion de dénicher des trésors cachés et d'explorer des lieux emblématiques, chacun soigneusement sélectionné pour vous offrir une expérience immersive et enrichissante
               </h4>
             </div>
-            <ul class="about-list1" style="font-size: 16px; font-weight: 400">
+            <ul class="about-list1" style="font-size: 20px; font-weight: 400">
               <li>Guide interprète spécialist .</li>
               <li>Guide Ornithologie.</li>
               <li>Guide Culture.</li>
               <li>Guide Trek .</li>
-              <li>Guide Botanique</li>
-              <li>Guide Incentive , Time Building.</li>
+             
             
               
             </ul>

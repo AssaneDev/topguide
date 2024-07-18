@@ -14,7 +14,7 @@
           <div class="title-area">
             <span class="sec-subtitle">Des endroits Extraordinaires au Sénégal</span>
             <h2 class="sec-title h1">Des sites mémorables</h2>
-            <p class="sec-text">Lors de nos excursions, mini-circuits ou circuits, nous vous ferons explorer le Sénégal.</p>
+            <p class="sec-text">Lors de vos excursions, mini-circuits ou circuits, nous vous ferons explorer le Sénégal.</p>
           </div>
         </div>
         <div class="col-auto">

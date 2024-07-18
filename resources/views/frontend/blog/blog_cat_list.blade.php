@@ -60,15 +60,15 @@
         </div>
         <div class="col-lg-4">
           <div class="sidebar-area">
-            <div class="widget widget_search">
+            {{-- <div class="widget widget_search">
               <div class="widget_title">Search</div>
               <form class="search-form">
                 <input type="text" placeholder="Search Tour">
                 <button type="submit"><i class="far fa-search"></i></button>
               </form>
-            </div>
+            </div> --}}
             <div class="widget">
-              <h3 class="widget_title">Recent Posts</h3>
+              <h3 class="widget_title">Articles Récents</h3>
               <div class="recent-post-wrap">
                 
 
@@ -110,13 +110,13 @@
               </ul>
             </div>
 
-            <div class="widget widget-newsletter">
+            {{-- <div class="widget widget-newsletter">
               <h3 class="widget_title">Newsletter</h3>
               <form class="newsletter-form">
                 <input class="form-control" type="email" placeholder="Enter Your Email" />
                 <button type="submit" class="vs-btn style4">Recevoir articles</button>
               </form>
-            </div>
+            </div> --}}
 
 
             <div class="widget widget-social">
@@ -124,8 +124,7 @@
               <div class="social-style widget_social_style">
                 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+              
               </div>
             </div>
           </div>

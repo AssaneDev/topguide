@@ -4,7 +4,7 @@
         <div class="row justify-content-between align-items-center">
           <div class="col d-none d-lg-block">
             <ul class="header-contact">
-              <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">reservez@topguide.com</a>
+              <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">reservez@vacanceausenegal.com</a>
               </li>
               <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">33 999 41 57</a></li>
             </ul>
@@ -53,7 +53,7 @@
                   <li>
                     <a href="{{route('contact')}}">Contact</a>
                   </li>
-                  <button class="vs-btn style4">Devenir Partenaire</button>
+                  {{-- <button class="vs-btn style4">Devenir Partenaire</button> --}}
                 </ul>
               </nav>
               <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>

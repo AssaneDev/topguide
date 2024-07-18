@@ -75,7 +75,7 @@
                 <ul class="menu">
                   <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mbour, Saly
                       .</a></li>
-                  <li><a href="#"><i class="fas fa-envelope"></i> info@topguide.com</a></li>
+                  <li><a href="#"><i class="fas fa-envelope"></i> info@vacanceausenegal.com</a></li>
                   <li><a href="#"><i class="fas fa-phone-alt"></i> (+221)77 646 66 70 </a></li>
                 </ul>
               </div>
@@ -108,7 +108,7 @@
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-auto">
             <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> <script>document.write(new Date().getFullYear())</script> <a href="index.html">Entragence</a>.
-              All Rights Reserved By <a href="">topguide</a></p>
+              All Rights Reserved By <a href="">vacanceausenegal</a></p>
           </div>
           <div class="col-auto d-none d-lg-block">
             <div class="copyright-menu">

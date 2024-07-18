@@ -32,7 +32,7 @@
             </div>
             <h3 class="contact-box__title h5">Address</h3>
             <p class="contact-box__text">
-                Topguideguide <br>
+                vacance au senegal <br>
                 R1 Mbour
                 Thies, Sénégal
             </p>
@@ -57,8 +57,8 @@
             </div>
             <h3 class="contact-box__title h5">Bureau</h3>
             <ul class="contact-box_list">
-              <li>Lundi - Samedi: 8:00 - 22:00</li>
-              <li>Dimance: 9:30 - 12h00</li>
+              <li>Lundi - Samedi: 8h:00 - 22h:00</li>
+              <li>Dimanche: 9h:30 - 12h00</li>
             </ul>
           </div>
         </div>

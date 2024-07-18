@@ -9,7 +9,7 @@
         <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
         <div class="breadcumb-menu-wrap">
           <ul class="breadcumb-menu">
-            <li><a href="index.html" style="display: none">Home</a></li>
+            <li><a href="index.html" style="display: none">Accceuils</a></li>
             <li style="display: none">Destinations</li>
           </ul>
         </div>
@@ -29,7 +29,7 @@
         @foreach ($destination as $desti)
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
               <div class="destination-style1">
-                <a href="destination-details.html">
+                <a href="{{ url('destination/detail/'.$desti->id) }}">
                   <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
                 {{-- <span class="destination-price">$299</span> --}}
                 <div class="destination-info">

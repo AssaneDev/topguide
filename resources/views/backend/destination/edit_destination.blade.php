@@ -41,7 +41,8 @@
                                         </div>
                                         <div class="col-md-12 ">
                                             <label for="input11" class="form-label">Courte Description</label>
-                                            <textarea class="form-control" name="short_descp" id="input11" placeholder="" rows="3">{{$dataDesti->short_descp}}</textarea>
+                                            
+                                            <textarea class="form-control" name="short_descp"" cols="30" rows="10">{{$dataDesti->short_descp}}</textarea>
                                         </div>
 
                                         <div class="col-md-12">

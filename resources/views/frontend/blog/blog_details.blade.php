@@ -97,7 +97,7 @@
               </form>
             </div> --}}
             <div class="widget">
-              <h3 class="widget_title">Posts Récent</h3>
+              <h3 class="widget_title">Article Récents</h3>
               <div class="recent-post-wrap">
  
                 @foreach ($lpost as $post)
@@ -138,23 +138,22 @@
               </ul>
             </div>
 
-            <div class="widget widget-newsletter">
+            {{-- <div class="widget widget-newsletter">
               <h3 class="widget_title">Newsletter</h3>
               <form class="newsletter-form">
                 <input class="form-control" type="email" placeholder="Enter Your Email" />
                 <button type="submit" class="vs-btn style4">Submit</button>
               </form>
-            </div>
+            </div> --}}
 
          
 
             <div class="widget widget-social">
-              <h3 class="widget_title">Nous</h3>
+              <h3 class="widget_title">Nous Suivres</h3>
               <div class="social-style widget_social_style">
                 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+               
               </div>
             </div>
           </div>

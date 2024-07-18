@@ -41,7 +41,7 @@
                   </div>
                 </div> --}}
           
-                <h2 class="ds-title">Image {{$destination->name}}</h2>
+                <h2 class="ds-title">Gallery d'images </h2>
                 <p class="ds-text">.</p>
                 <div class="mt-4">
                   <div class="row">
@@ -129,10 +129,10 @@
 
                     
 
-                    <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
+                    {{-- <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
                     <label class="form-check-label" for="flexCheckCheckedSuccess">
                       Voiture
-                    </label> 
+                    </label>  --}}
                     <button type="submit" class="vs-btn style4">Envoyez</button>
                   </form>
                 </div>
