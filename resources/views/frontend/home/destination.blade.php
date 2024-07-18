@@ -31,7 +31,7 @@
          @foreach ($destination as $item)
             <div class="col-xl-4">
               <div class="destination-style1">
-                <a href="destination-details.html"> <img src=" {{asset($item->image_cap)}} " alt="destination image"></a>
+                <a href="{{ url('destination/detail/'.$item->id) }}"> <img src=" {{asset($item->image_cap)}} " alt="destination image"></a>
                 {{-- <span class="destination-price">$369</span> --}}
                 <div class="destination-info">
                   <h4 class="destination-name"><a href="{{ url('destination/detail/'.$item->id) }}"> {{$item->name}} </a></h4>

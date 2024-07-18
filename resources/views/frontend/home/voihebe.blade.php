@@ -46,7 +46,7 @@
       </div>
       <div class="blog-style4">
         <div class="blog-image">
-          <img src="{{asset('frontend/assets/img/blog/Voiture.jpg')}}" alt="blog image">
+          <img src="{{asset('frontend/assets/img/about/loc.jpg')}} " style="width: 1049px; height: 803px;" alt="blog image">
           <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
         </div>
         <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">

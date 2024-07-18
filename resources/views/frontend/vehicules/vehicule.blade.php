@@ -61,7 +61,7 @@
             <div class="title-area">
               {{-- <span class="sec-subtitle">We are Travolo</span> --}}
               <h2 class="sec-title h1">Location De Voitures </h2>
-              <h4 class="sec-text" style="font-size: 18px; font-weight: 600">Pour vos besoins de location de véhicules, Top Guides vous offre diverses options : avec ou sans chauffeur, ou encore une formule complète incluant véhicule, chauffeur, et guide.<br><br>
+              <h4 class="sec-text" style="font-size: 18px; font-weight: 600">Pour vos besoins de location de véhicules, Nous vous offrons diverses options : avec ou sans chauffeur, ou encore une formule complète incluant véhicule, chauffeur, et guide.<br><br>
               
                 Nos tarifs varient en fonction du choix de véhicule, de la distance et du type de voyage (privatif ou collectif, avec ou sans guide).<br><br>
                 PERSONNEL ACCOMPAGNATEUR<br>

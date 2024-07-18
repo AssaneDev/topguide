@@ -1,6 +1,7 @@
 @extends('frontend.main_master')
 @section('main')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 {{-- <div class="breadcumb-wrapper" data-bg-src="{{asset('frontend/assets/img/breadcumb/breadcumb-bg.jpg')}}assets/img/breadcumb/breadcumb-bg.jpg">
   <div class="container z-index-common">
     <div class="breadcumb-content">
@@ -115,5 +116,33 @@
 <!--==============================
     Contact Form Area End
   ==============================-->
-
+<!--notification js -->
+<script src="{{asset('backend/assets/plugins/notifications/js/lobibox.min.js')}}"></script>
+<script src="{{asset('backend/assets/plugins/notifications/js/notifications.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/index3.js')}}"></script>
+   ==============================-->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+   <!-- Toaster-->
+ <script>
+  @if(Session::has('message'))
+  var type = "{{ Session::get('alert-type','info') }}"
+  switch(type){
+   case 'info':
+   toastr.info(" {{ Session::get('message') }} ");
+   break;
+ 
+   case 'success':
+   toastr.success(" {{ Session::get('message') }} ");
+   break;
+ 
+   case 'warning':
+   toastr.warning(" {{ Session::get('message') }} ");
+   break;
+ 
+   case 'error':
+   toastr.error(" {{ Session::get('message') }} ");
+   break; 
+  }
+  @endif 
+ </script>
 @endsection
