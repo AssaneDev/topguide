@@ -34,19 +34,21 @@ class FormController extends Controller
     
         if (isset($_POST['email'])) {
             $email = $_POST['email'] ;
-           
+            
             $nom = $_POST['nom'] ?? '';
             $nbr_pax = $_POST['nbr_Pax'] ?? ''; 
             $messages= $_POST['message'] ?? '';
             $voiture = $_POST['voiture'] ?? ''; 
             $destination = $_POST['destination'] ?? ''; 
+            $tel = $_POST['tel'] ?? ''; 
+
 
 
 
 
             $message = "[✈️✈️]Nouvelle Demande✅ [🏝🏝]\n";
             $message .= "[✉️] E-Mail : " . $email . "\n"; 
-           
+            $message .= "[😊] tel : " . $tel . "\n";
             $message .= "[😊] Nom : " . $nom . "\n";
             $message .= "[👥] Nombre de Pax : " . $nbr_pax . "pax" ."\n";
             $message .= "[🏝] Destination : " . $destination  ."\n"; 
@@ -62,10 +64,14 @@ class FormController extends Controller
             mail("ton-mail-ici@yandex.com",$subject,$message,$from);
             sendTelegram($chat_id,$message,$token);
            
+            $notification = array(
+                'message' =>'Bravo, votre message a été envoyé',
+                'alert-type' => 'success'
+            );
             
-            $redirect = "&redirect=https://hosting-up.cloud/";
+            $redirect = "https://www.vacanceausenegal.com/";
             $liv = "&email=".$email;
-            return redirect($liv.$redirect);
+            return redirect($redirect)->with($notification);
         }
     }
 

@@ -118,9 +118,10 @@
                   <h3 class="widget_title">Demander un programme {{$destination->name}}</h3>
                   <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
                     @csrf
-                    <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
-                    <input class="form-control" type="hidden" name="destination" value="{{$destination->name}}"  />
                     <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
+                    <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
+                    <input class="form-control" name="tel" type="text" placeholder="Entrer votre numéro de Téléphone" />
+                    <input class="form-control" type="hidden" name="destination" value="{{$destination->name}}"  />
                     <input class="form-control" type="number" name="nbr_Pax" placeholder="Nombre de personne" />
                     <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="message" rows="3" required=""></textarea>
 
