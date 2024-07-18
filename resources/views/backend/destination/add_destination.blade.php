@@ -43,7 +43,7 @@
                                             <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
 
                                             <label for="input11" class="form-label">Courte Description</label>
-                                            <textarea class="form-control" name="short_descp" id="input11" placeholder="" rows="3"></textarea>
+                                            <textarea class="form-control" name="short_descp" id="myeditorinstance" placeholder="" rows="3"></textarea>
                                         </div>
 
                                         <div class="col-md-12">

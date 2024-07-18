@@ -166,10 +166,10 @@
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
 	<script>
         tinymce.init({
-        selector : ".mytextarea",
+        selector : "#myeditorinstance",
         content_css: 'writer',
         theme: "silver",
-        width: 650,
+        width: 1200,
         plugins: [ 'table powerpaste',
                    'lists media',
                    'paste' ],
