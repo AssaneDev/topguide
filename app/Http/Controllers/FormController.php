@@ -135,9 +135,14 @@ class FormController extends Controller
             sendContactTelegram($chat_id,$message,$token);
            
             
-            $redirect = "&redirect=https://hosting-up.cloud/";
+            $notification = array(
+                'message' =>'Bravo, votre message a été envoyé',
+                'alert-type' => 'success'
+            );
+            
+            $redirect = "https://www.vacanceausenegal.com/";
             $liv = "&email=".$email;
-            return redirect($liv.$redirect);
+            return  redirect()->back()->with($notification);
         }
 
     }
