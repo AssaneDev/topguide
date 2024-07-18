@@ -71,7 +71,7 @@ class FormController extends Controller
             
             $redirect = "https://www.vacanceausenegal.com/";
             $liv = "&email=".$email;
-            return redirect($redirect)->with($notification);
+            return  redirect()->back()->with($notification);
         }
     }
 
