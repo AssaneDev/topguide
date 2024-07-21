@@ -8,6 +8,7 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Artisan;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -29,6 +30,7 @@ class BlogController extends Controller
             'message'=>'Categorie Ajouter avec succes',
             'type'=>'success'
         );
+        Artisan::call('optimize');
         return redirect()->back()->with($notification);
 
     }
@@ -45,6 +47,7 @@ class BlogController extends Controller
           'category_name'=>$request->category_name,
           'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
         ]);
+        Artisan::call('optimize');
         $notification = array(
           'message'=>'Categorie mise à jour avec succes',
           'type'=>'success'
@@ -59,6 +62,7 @@ class BlogController extends Controller
         'message'=>'Categorie Supprimer avec succes',
         'type'=>'success'
     );
+    Artisan::call('optimize');
     return redirect()->back()->with($notification);
     
   }//End
@@ -103,6 +107,7 @@ class BlogController extends Controller
         'message' =>'Article ajouter avec succes',
         'alert-type' => 'success'
     );
+    Artisan::call('optimize');
     return  redirect()->route('all.blog.post')->with($notification);
 }// END METHODE 
 
@@ -143,6 +148,7 @@ public function UpdateBlogPost(Request $request){
             'message' =>'Article modifier avec succes',
             'alert-type' => 'success'
         );
+        Artisan::call('optimize');
         return  redirect()->route('all.blog.post')->with($notification);
         }else{
             BlogPost::findOrFail ($post_id)->update ([
@@ -158,6 +164,7 @@ public function UpdateBlogPost(Request $request){
                 'message' =>'Article modifier avec succes',
                 'alert-type' => 'success'
             );
+            Artisan::call('optimize');
             return  redirect()->route('all.blog.post')->with($notification);
       
     }

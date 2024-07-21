@@ -9,6 +9,7 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Artisan;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -80,6 +81,7 @@ class DestinationController extends Controller
             'message' =>'Bravo, destination ajouter avec succés',
             'alert-type' => 'success'
         );
+        Artisan::call('optimize');
         return redirect()->back()->with($notification);
       
          } //End Methode
@@ -158,6 +160,7 @@ class DestinationController extends Controller
                 'message' =>'Bravo, Destination modifier avec succés',
                 'alert-type' => 'success'
             );
+            Artisan::call('optimize');
 
             return redirect()->back()->with($notification);
          }
@@ -182,6 +185,7 @@ class DestinationController extends Controller
                'message' =>'Image supprimer avec avec succés',
                'alert-type' => 'success'
            );
+            Artisan::call('optimize');
             return Redirect()->back()->with($notification);
        }
 
@@ -210,6 +214,7 @@ class DestinationController extends Controller
             'message' =>'Destination Supprimer avec succes',
             'alert-type' => 'success'
         );
+        Artisan::call('optimize');
         return  redirect()->back()->with($notification);
     } 
 

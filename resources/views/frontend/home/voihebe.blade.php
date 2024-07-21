@@ -36,10 +36,7 @@
          
           @foreach ($bcategory as $cat)
           @if ($cat->category_slug == 'hébergement')
-          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Plus</a>
-          
-
-
+          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Pluss</a>
         @endif
      @endforeach
         </div>
