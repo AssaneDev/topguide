@@ -34,11 +34,9 @@
           <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
             qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
          
-          @foreach ($bcategory as $cat)
-             @if ($cat->category_slug == 'hébergement')
-          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Pluss</a>
-             @endif
-            @endforeach
+         
+          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Plus</a>
+            
         </div>
       </div>
       <div class="blog-style4">
