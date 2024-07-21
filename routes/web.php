@@ -10,6 +10,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FormController;
 use App\Models\Destination;
+use App\Http\Controllers\OptimizationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -80,7 +81,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
 
 
-        
+        Route::get('/optimize', [OptimizationController::class, 'optimize']);
    
     });
 

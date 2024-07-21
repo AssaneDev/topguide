@@ -81,7 +81,7 @@ class DestinationController extends Controller
             'message' =>'Bravo, destination ajouter avec succés',
             'alert-type' => 'success'
         );
-        Artisan::call('optimize');
+     
         return redirect()->back()->with($notification);
       
          } //End Methode
@@ -160,7 +160,7 @@ class DestinationController extends Controller
                 'message' =>'Bravo, Destination modifier avec succés',
                 'alert-type' => 'success'
             );
-            Artisan::call('optimize');
+           
 
             return redirect()->back()->with($notification);
          }
@@ -185,7 +185,7 @@ class DestinationController extends Controller
                'message' =>'Image supprimer avec avec succés',
                'alert-type' => 'success'
            );
-            Artisan::call('optimize');
+            
             return Redirect()->back()->with($notification);
        }
 
@@ -214,7 +214,7 @@ class DestinationController extends Controller
             'message' =>'Destination Supprimer avec succes',
             'alert-type' => 'success'
         );
-        Artisan::call('optimize');
+        
         return  redirect()->back()->with($notification);
     } 
 

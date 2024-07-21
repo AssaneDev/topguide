@@ -46,6 +46,9 @@
                 </li>
                 <li> <a href="{{route('all.blog.post')}}"><i class='bx bx-radio-circle'></i>Tous Les Articles</a>
                 </li>
+
+                <li> <a href="{{url('/optimize')}}"><i class='bx bx-radio-circle'></i>Clear Cache</a>
+                </li>
                
             </ul>
        
