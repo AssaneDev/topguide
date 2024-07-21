@@ -30,7 +30,7 @@ class BlogController extends Controller
             'message'=>'Categorie Ajouter avec succes',
             'type'=>'success'
         );
-        Artisan::call('optimize');
+        
         return redirect()->back()->with($notification);
 
     }
@@ -62,7 +62,7 @@ class BlogController extends Controller
         'message'=>'Categorie Supprimer avec succes',
         'type'=>'success'
     );
-    Artisan::call('optimize');
+    
     return redirect()->back()->with($notification);
     
   }//End
@@ -107,7 +107,7 @@ class BlogController extends Controller
         'message' =>'Article ajouter avec succes',
         'alert-type' => 'success'
     );
-    Artisan::call('optimize');
+    
     return  redirect()->route('all.blog.post')->with($notification);
 }// END METHODE 
 
@@ -148,7 +148,7 @@ public function UpdateBlogPost(Request $request){
             'message' =>'Article modifier avec succes',
             'alert-type' => 'success'
         );
-        Artisan::call('optimize');
+        
         return  redirect()->route('all.blog.post')->with($notification);
         }else{
             BlogPost::findOrFail ($post_id)->update ([
@@ -164,7 +164,7 @@ public function UpdateBlogPost(Request $request){
                 'message' =>'Article modifier avec succes',
                 'alert-type' => 'success'
             );
-            Artisan::call('optimize');
+            
             return  redirect()->route('all.blog.post')->with($notification);
       
     }
