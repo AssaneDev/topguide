@@ -35,10 +35,10 @@
             qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
          
           @foreach ($bcategory as $cat)
-          @if ($cat->category_slug == 'hébergement')
+             @if ($cat->category_slug == 'hébergement')
           <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Pluss</a>
-        @endif
-     @endforeach
+             @endif
+            @endforeach
         </div>
       </div>
       <div class="blog-style4">
