@@ -27,7 +27,7 @@
               <div class="destination-details">
                 <h2 class="ds-title">{{$destination->name}}</h2>
                 <div class="ds-img1">
-                  <img src="{{asset($destination->image)}}" alt="image" style="width:1162px; height: 600px; ">
+                  <img src="{{asset($destination->image)}}" alt="image" >
                 </div>
                 <p class="ds-text">{!!$destination->long_descp!!}</p>
                 {{-- <div class="row gy-4">
@@ -51,7 +51,7 @@
                    @foreach ($imageGalerie as $item)
                    <div class="col-lg-4 col-md-6 col-sm-6 col-auto">
                     <div class="gallery-img5">
-                      <img src="{{asset('upload/destination/multi_img/'.$item->image)}}" style="width: 325px;height:275px" alt="images">
+                      <img src="{{asset('upload/destination/multi_img/'.$item->image)}}"  alt="images">
                       <div class="gallery-content">
                         <a href="{{asset('upload/destination/multi_img/'.$item->image)}}" class="popup-image"><i
                             class="fas fa-plus"></i></a>
