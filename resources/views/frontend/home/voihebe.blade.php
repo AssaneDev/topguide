@@ -30,7 +30,7 @@
         </div>
         <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
-          <h3 class="blog-title"><a href="blog-details.html">Hébergement typique.</a></h3>
+          <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Hébergement typique.</a></h3>
           <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
             qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
          
