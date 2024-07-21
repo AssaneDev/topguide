@@ -139,7 +139,7 @@ class DestinationController extends Controller
                 $files = $request->multi_img;
                 if(!empty($files)){
                     $subimage = multi_image::where('id_destination',$id)->get()->toArray();
-                    multi_image::where('id_destination',$id)->delete();
+                    // multi_image::where('id_destination',$id)->delete();
                 }
                 if(!empty($files)){
                 foreach ($files as $file) {

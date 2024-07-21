@@ -128,7 +128,7 @@ public function UpdateBlogPost(Request $request){
             $save_url = 'upload/article/'.$name_gen;
              
 
-        BlogPost::findOrFail ($post_id)->update ([
+        BlogPost::findOrFail ($post_id)->update([
             'blogcat_id'=>$request->blogcat_id,
             'user_id'=>Auth::user()->id,
             'post_title'=>$request->post_title,

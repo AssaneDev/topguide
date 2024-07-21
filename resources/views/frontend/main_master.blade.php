@@ -60,22 +60,27 @@
       </div>
       <div class="vs-mobile-menu">
         <ul>
-          <li class="menu-item-has-children">
-            <a href="index.html">Acceuil</a>
-        
-          </li>
-          <li class="menu-item-has-children">
-            <a href="#">A Propos</a>
-           
-          </li>
-        
-          <li class="menu-item-has-children">
-            <a href="#">Nos Guides</a>
+          <li>
+            <a href="{{url('/')}}">Acceuil</a>
             
           </li>
-       
           <li>
-            <a href="contact.html">Contact</a>
+            <a href="{{route('apropos')}}">A Propos</a>
+           
+          </li>
+
+
+          <li>
+            <a href="{{route('destination')}}">Destination</a>
+            
+          </li>
+          <li>
+            <a href="{{route('blog.list')}}">Blog</a>
+            
+          </li>
+        
+          <li>
+            <a href="{{route('contact')}}">Contact</a>
           </li>
         </ul>
       </div>
