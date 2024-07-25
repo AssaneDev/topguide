@@ -6,8 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Vacance au Sénégal</title>
   <meta name="author" content="vecuro">
-  <meta name="description" content="Travolo -  Travel Agency & Tour Booking HTML Template">
-  <meta name="keywords" content="Travolo -  Travel Agency & Tour Booking HTML Template">
+  <meta name="description" content="Vacance au Sénégal -  Agence Local Sénégalaise & Guides Circuits Et Excursions">
+  <meta name="keywords" content="Vacance au Sénégal -  Agence Local Sénégalaise & Guides Circuits Et Excursions">
   <meta name="robots" content="INDEX,FOLLOW">
 
   <!-- Mobile Specific Metas -->
@@ -39,6 +39,16 @@
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/slick.min.css')}} ">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/style.css')}} ">
+  {{-- Google Analityque --}}
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N7J417T7SV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N7J417T7SV');
+</script>
 </head>
 
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="60239d0b-c958-4f1e-b562-6faf74f7b289";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
@@ -56,7 +66,7 @@
     <div class="vs-menu-area text-center">
       <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
       <div class="mobile-logo">
-        <a href="index.html"><img src="assets/img/logo.svg" alt="Travolo"></a>
+        <a href="{{url('/')}}"><img src="assets/img/logo.svg" alt="Vacance au Sénégal"></a>
       </div>
       <div class="vs-mobile-menu">
         <ul>

@@ -4,7 +4,7 @@
         <div class="row justify-content-between align-items-center">
           <div class="col d-none d-lg-block">
             <ul class="header-contact">
-              <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">reservez@vacanceausenegal.com</a>
+              <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">contact@vacancesenegal.com</a>
               </li>
               <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">33 999 41 57</a></li>
               <li><img src="{{asset('frontend/assets/img/whatsapp.png')}}" style="width: 40px; height: 40px;" alt=""> <a href="https://web.whatsapp.com/">Nous Joindres sur whatsapp</a> </li>

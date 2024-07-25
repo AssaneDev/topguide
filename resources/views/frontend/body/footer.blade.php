@@ -14,7 +14,7 @@
                 <img src=" {{asset('frontend/assets/img/shape/call.png')}} " alt="image">
               </div>
               <h3 class="newsletter-text">Contactez-nous 24/7</h3>
-              <a href="tel:+8801234567890">(+221) 77 646 66 70</a>
+              <a href="tel:+8801234567890"> +221 75 752 9148 </a>
             </div>
           </div>
           {{-- <div class="col-lg-4 col-md-6 col-sm-6">
@@ -75,8 +75,8 @@
                 <ul class="menu">
                   <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mbour, Saly
                       .</a></li>
-                  <li><a href="#"><i class="fas fa-envelope"></i> info@vacanceausenegal.com</a></li>
-                  <li><a href="#"><i class="fas fa-phone-alt"></i> (+221)77 646 66 70 </a></li>
+                  <li><a href="#"><i class="fas fa-envelope"></i> contact@vacancesenegal.com</a></li>
+                  <li><a href="#"><i class="fas fa-phone-alt"></i> +221 75 752 9148 </a></li>
                 </ul>
               </div>
             </div>
@@ -107,7 +107,7 @@
       <div class="copyright-wrap">
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-auto">
-            <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> <script>document.write(new Date().getFullYear())</script> <a href="index.html">Entragence</a>.
+            <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> <script>document.write(new Date().getFullYear())</script> <a href="#">Entragence</a>.
               All Rights Reserved By <a href="">vacanceausenegal</a></p>
           </div>
           <div class="col-auto d-none d-lg-block">
