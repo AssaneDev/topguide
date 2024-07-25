@@ -49,12 +49,25 @@
 
   gtag('config', 'G-N7J417T7SV');
 </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8G6KK4K');</script>
+  <!-- End Google Tag Manager -->
+
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="60239d0b-c958-4f1e-b562-6faf74f7b289";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 </head>
 
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="60239d0b-c958-4f1e-b562-6faf74f7b289";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8G6KK4K"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!--********************************
   Code Start From Here 
 	******************************** -->
