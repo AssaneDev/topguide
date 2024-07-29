@@ -17,11 +17,11 @@
           <div class="about-content">
             <div class="title-area">
               <span class="sec-subtitle">Vacance au Sénégal</span>
-              <h2 class="sec-title h1">Des passionnés experts du sénégal </h2>
+              <h2 class="sec-title h1">Des Guides experts du Sénégal </h2>
               <h4 class="sec-text" style="font-size:22px; font-weight: 400">
 
 
-                Plus de 40 voyages de groupes et de famille organisés en 2023, nos guides multilingues et spécialistes vous accompagneront pour une expérience unique. Nous avons aidé plus de 100 voyageurs à planifier leur voyage parfait au Sénégal. Partez à l'aventure avec nos services personnalisés et profitez des connaissances approfondies de nos experts pour une immersion totale dans la culture sénégalaise!  <br><br>
+                Plus de 40 voyages de groupes et de famille organisés en 2023, nos guides multilingues et spécialistes vous accompagneront pour une expérience unique. Nous avons aidé plus de 100 voyageurs à planifier leur voyage parfait au Sénégal. Partez à l'aventure  et profitez des connaissances approfondies de nos experts pour une immersion totale dans la culture sénégalaise!  <br><br>
 
               </h4>
             </div>
