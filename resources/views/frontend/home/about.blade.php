@@ -17,7 +17,7 @@
           <div class="about-content">
             <div class="title-area">
               <span class="sec-subtitle">Vacance au Sénégal</span>
-              <h2 class="sec-title h1">Des Guides experts du Sénégal </h2>
+              <h2 class="sec-title h1">Guides experts du Sénégal </h2>
               <h4 class="sec-text" style="font-size:22px; font-weight: 400">
 
 
