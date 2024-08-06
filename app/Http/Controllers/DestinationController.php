@@ -56,6 +56,15 @@ class DestinationController extends Controller
             'long_descp'=>$request->long_descp,
             'image_cap'=>$save_url_cap,
             'image'=>$save_url_image,
+            //Anglais
+            'name_en'=>$request->name_en,
+            'short_descp_en'=>$request->short_descp_en,
+            'long_descp_es'=>$request->long_descp_en,
+
+            //Espagnol
+            'name_es'=>$request->name_es,
+            'short_descp_es'=>$request->short_descp_es,
+            'long_descp_es'=>$request->long_descp_es,
         ]);
          
         if( $id_destination){
@@ -103,7 +112,15 @@ class DestinationController extends Controller
             $destination->name = $request->name;
             $destination->short_descp = $request->short_descp;
             $destination->long_descp = $request->long_descp;
-          
+             //Anglais
+            $destination->name_en = $request->name_en;
+            $destination->short_descp_en = $request->short_descp_en;
+            $destination->long_descp_en = $request->long_descp_en;
+ 
+             //Espagnol
+             $destination->name_es = $request->name_es;
+             $destination->short_descp_es = $request->short_descp_es;
+             $destination->long_descp_es = $request->long_descp_es;
     
            
     

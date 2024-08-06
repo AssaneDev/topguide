@@ -35,6 +35,10 @@
                                             <div class="col-md-6">
                                                 <label for="input1" class="form-label">Nom</label>
                                                 <input type="text" name="name"  class="form-control" id="input1" value="{{$dataDesti->name}}" >
+                                                <label for="input1" class="form-label ">Nom ANGLAIS</label>
+                                                <input type="text" name="name_en"  class="form-control mb-10" id="input1" value="{{$dataDesti->name_en}}">
+                                                <label for="input1" class="form-label">Nom ESPAGNOL</label>
+                                                <input type="text" name="name_es"  class="form-control  mb-10" id="input1" value="{{$dataDesti->name_en}}">
                                             </div>
                                         
                                          
@@ -43,11 +47,23 @@
                                             <label for="input11" class="form-label">Courte Description</label>
                                             
                                             <textarea class="form-control" name="short_descp"" cols="30" rows="10">{{$dataDesti->short_descp}}</textarea>
+
+                                            <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3">{{$dataDesti->short_descp_en}}</textarea>
+
+                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3">{{$dataDesti->short_descp_es}}</textarea>
                                         </div>
 
                                         <div class="col-md-12">
                                             <label for="input11" class="form-label">Description</label>
                                             <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3">{{$dataDesti->long_descp}}</textarea>
+
+                                            <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            <textarea class="form-control" name="long_descp_en"  id="myeditorinstance" name="description" value rows="3">{{$dataDesti->long_descp_en}}</textarea>
+
+                                            <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control" name="long_descp_es"  id="myeditorinstance" name="description" value rows="3">{{$dataDesti->long_descp_es}}</textarea>
                                         </div>
                                         
                                         <div class="row">

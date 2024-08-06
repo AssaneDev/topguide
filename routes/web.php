@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\LocalController;
 use App\Models\Destination;
 use App\Http\Controllers\OptimizationController;
 
@@ -123,7 +124,16 @@ Route::controller(FormController::class)->group(function(){
 }); 
 
 
+//Langue
 
+
+
+Route::controller(LocalController::class)->group(function(){
+    Route::get('/en','Ang')->name('ang');
+    Route::get('/fr','Fr')->name('fr');
+
+     
+}); 
 
 
 

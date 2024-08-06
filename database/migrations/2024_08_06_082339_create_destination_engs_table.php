@@ -11,21 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('destinations', function (Blueprint $table) {
+        Schema::create('destination_engs', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->longText('short_descp')->nullable();
-            $table->string('image_cap')->nullable();
-            $table->string('image')->nullable();
             $table->string('prix')->nullable();
             $table->longText('long_descp')->nullable();
-            $table->string('name_en')->nullable();
-            $table->string('short_descp_en')->nullable();
-            $table->string('long_descp_en')->nullable();
-            $table->string('name_es')->nullable();
-            $table->string('short_descp_es')->nullable();
-            $table->string('long_descp_es')->nullable();
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('destinations');
+        Schema::dropIfExists('destination_engs');
     }
 };

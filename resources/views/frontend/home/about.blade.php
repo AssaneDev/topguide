@@ -1,4 +1,68 @@
-<section class="space shape-mockup-wrap">
+@php
+  use Illuminate\Support\Facades\App;
+  use Illuminate\Support\Facades\Session;
+       $locale = Session::get('local') ?? 'fr';
+        Session::put('local',$locale);
+        App::setLocale($locale);
+
+@endphp
+
+
+  @if ($locale == 'en')
+  <section class="space shape-mockup-wrap">
+    <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="5%">
+      <img src="{{asset('frontend/assets/img/shape/Ballon.png')}}" alt="svg">
+    </div>
+    <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="10%" data-right="10%">
+      <img src="{{asset('frontend/assets/img/shape/up-arrow.png')}}" alt="svg">
+    </div>
+    <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="0%" data-left="0%">
+      <img class="plane2" src="{{asset('frontend/assets/img/shape/plane2.png')}}" alt="svg">
+    </div>
+    <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="15%" data-right="5%">
+      <img src="{{asset('frontend/assets/img/shape/Lines.png')}}" alt="svg">
+    </div>
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-xl-5">
+          <div class="about-content">
+            <div class="title-area">
+              <span class="sec-subtitle">Experience Your Holiday in Senegal </span>
+              <h2 class="sec-title h1">Guides & Practical Advice for Senegal </h2>
+              <h4 class="sec-text" style="font-size:22px; font-weight: 400">
+
+                Guides & Practical Advice for Senegal.  
+                Our reputation is built on our innovative practices in the travel sector, particularly our system that allows establishments to benefit from the services of a local professional tour guide accredited by the Ministry of Tourism. Our approach is based on the belief that progress can only be achieved with the involvement of stakeholders. Therefore, we place crucial importance on identifying your needs and implementing effective solutions to ensure the success of your travels. 
+
+              </h4>
+            </div>
+            <ul class="about-list1" style="font-size: 20px; font-weight: 400">
+              <li>Personal Guide .</li>
+              <li>Interpreter Specialist Guide.</li>
+              <li>Ornithology Guide.</li>
+              <li>Trek Guide.</li>
+             
+            
+              
+            </ul>
+            <a href="{{route('apropos')}}" class="vs-btn style4 ">Read More</a>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="img-box3">
+            <img class="img1" src=" {{asset('frontend/assets/img/about/about-1-1.jpg')}} " alt="about image">
+            <div class="bottom-img">
+              <img class="img2" src="{{asset('frontend/assets/img/about/deux.jpg')}}" alt="about image">
+              <img class="img3" src="{{asset('frontend/assets/img/about/about-1-3.jpg')}}" alt="about image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  @else
+
+  <section class="space shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="5%">
       <img src="{{asset('frontend/assets/img/shape/Ballon.png')}}" alt="svg">
     </div>
@@ -49,3 +113,5 @@
       </div>
     </div>
   </section>
+
+  @endif;

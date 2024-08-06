@@ -23,22 +23,55 @@
   <!--==============================
      Destiniations Area Start 
   ==============================-->
+  @php
+   
+    use Illuminate\Support\Facades\App;
+    use Illuminate\Support\Facades\Session;
+       $locale = Session::get('local') ?? 'fr';
+        Session::put('local',$locale);
+        App::setLocale($locale);
+
+@endphp
   <section class="space-top space-extra-bottom">
     <div class="container">
       <div class="row justify-content-center">
-        @foreach ($destination as $desti)
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-              <div class="destination-style1">
-                <a href="{{ url('destination/detail/'.$desti->id) }}">
-                  <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
-                {{-- <span class="destination-price">$299</span> --}}
-                <div class="destination-info">
-                  <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name}}</a></h4>
-                  <p class="destination-text">Explorez</p>
+      
+
+        @if ($locale == 'fr')
+
+              @foreach ($destination as $desti)
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="destination-style1">
+                  <a href="{{ url('destination/detail/'.$desti->id) }}">
+                    <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
+                  {{-- <span class="destination-price">$299</span> --}}
+                  <div class="destination-info">
+                    <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name}}</a></h4>
+                    <p class="destination-text">Explorez</p>
+                  </div>
                 </div>
               </div>
+          @endforeach
+            
+        @endif
+
+        @if ($locale == 'en')
+
+        @foreach ($destination as $desti)
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+          <div class="destination-style1">
+            <a href="{{ url('destination/detail/'.$desti->id) }}">
+              <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
+            {{-- <span class="destination-price">$299</span> --}}
+            <div class="destination-info">
+              <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name_en}}</a></h4>
+              <p class="destination-text">Explorez</p>
             </div>
-        @endforeach
+          </div>
+        </div>
+    @endforeach
+      
+  @endif
       
         
       </div>

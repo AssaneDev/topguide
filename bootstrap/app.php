@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'guide' => \App\Http\Middleware\GuideRole::class,
 
         ]);   
+
+        $middleware->web(append:[
+            App\Http\Middleware\LocalizationMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

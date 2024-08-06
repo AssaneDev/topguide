@@ -20,16 +20,45 @@
       <!--==============================
           Destination Details Area Start
         ==============================-->
+        @php
+              use Illuminate\Support\Facades\App;
+              use Illuminate\Support\Facades\Session;
+              $locale = Session::get('local') ?? 'fr';
+                Session::put('local',$locale);
+                App::setLocale($locale);
+
+        @endphp
       <section class="space">
         <div class="container">
           <div class="row">
             <div class="col-lg-8">
+              @if ($locale == 'fr')
               <div class="destination-details">
                 <h2 class="ds-title">{{$destination->name}}</h2>
                 <div class="ds-img1">
                   <img src="{{asset($destination->image)}}" alt="image" >
                 </div>
                 <p class="ds-text">{!!$destination->long_descp!!}</p>
+                @endif
+                @if ($locale == 'en')
+                <div class="destination-details">
+                  <h2 class="ds-title">{{$destination->name_en}}</h2>
+                  <div class="ds-img1">
+                    <img src="{{asset($destination->image)}}" alt="image" >
+                  </div>
+                  <p class="ds-text">{!!$destination->long_descp_en!!}</p>
+                  @endif
+                @if ($locale == 'es')
+                  <div class="destination-details">
+                    <h2 class="ds-title">{{$destination->name_es}}</h2>
+                    <div class="ds-img1">
+                      <img src="{{asset($destination->image)}}" alt="image" >
+                    </div>
+                    <p class="ds-text">{!!$destination->long_descp_es!!}</p>
+                    @endif
+              
+                    
+              
                 {{-- <div class="row gy-4">
                   <div class="col-md-6">
                     <div class="img-2">
@@ -42,8 +71,18 @@
                     </div>
                   </div>
                 </div> --}}
+
+                   @if ($locale == 'fr')
+                   <h2 class="ds-title">Gallery d'images </h2>
+                  @endif
+                  @if ($locale == 'en')
+                  <h2 class="ds-title">Image gallery </h2>
+                   @endif
+                  @if ($locale == 'es')
+                  <h2 class="ds-title">Galería de imágenes </h2>
+                  @endif
           
-                <h2 class="ds-title">Gallery d'images </h2>
+              
                 <p class="ds-text">.</p>
                 <div class="mt-4">
                   <div class="row">
