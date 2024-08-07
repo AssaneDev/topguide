@@ -1,5 +1,10 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<style>
+    .mb-10{
+        margin-bottom: 12px;
+    }
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <div class="page-content">
     <!--breadcrumb-->
@@ -46,7 +51,13 @@
                                             <div class="col-md-6">
                                                 <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
                                                 <label for="input1" class="form-label">Titre Article</label>
-                                                <input type="text" name="post_title"  class="form-control" id="input1" >
+                                                <input type="text" name="post_title"  class="form-control mb-10" id="input1" >
+
+                                                <label for="input1" class="form-label">Titre Article  <span class="badge rounded-pill text-bg-primary">ENGLAIS</span> </label>
+                                                <input type="text" name="post_title_en"  class="form-control mb-10" id="input1" >
+
+                                                <label for="input1" class="form-label">Titre Article <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                                <input type="text" name="post_title_es"  class="form-control mb-10" id="input1" >
                                             </div>
                                            
                                          
@@ -54,13 +65,25 @@
                                         <div class="col-md-12 ">
                                             <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
                                             <label for="input11" class="form-label">Courte Description</label>
-                                            <textarea class="form-control" name="short_descp" id="input11" placeholder="" rows="3"></textarea>
+                                            <textarea class="form-control mb-10" name="short_descp" id="input11" placeholder="" rows="3"></textarea>
+
+                                            <label for="input11" class="form-label">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span> </label>
+                                            <textarea class="form-control mb-10" name="short_descp_en" id="input11" placeholder="" rows="3"></textarea>
+
+                                            <label for="input11" class="form-label">Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control mb-10" name="short_descp_es" id="input11" placeholder="" rows="3"></textarea>
                                         </div>
 
                                         <div class="col-md-12">
                                             <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
                                             <label for="input11" class="form-label">Description </label>
-                                            <textarea class="form-control" name="long_descp"  id="myeditorinstance"  name="description" value rows="3"></textarea>
+                                            <textarea class="form-control mb-10" name="long_descp"  id="myeditorinstance"  name="description" value rows="3"></textarea>
+
+                                            <label for="input11" class="form-label">Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span> </label>
+                                            <textarea class="form-control mb-10" name="long_descp_en"  id="myeditorinstance"  name="description" value rows="3"></textarea>
+
+                                            <label for="input11" class="form-label">Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span> </label>
+                                            <textarea class="form-control mb-10" name="long_descp_es"  id="myeditorinstance"  name="description" value rows="3"></textarea>
                                         </div>
                                         
                                         <div class="row">

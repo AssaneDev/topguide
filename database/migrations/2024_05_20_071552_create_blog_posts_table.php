@@ -21,6 +21,17 @@ return new class extends Migration
             $table->string('post_baniere')->nullable();
             $table->text('short_descp');
             $table->longText('long_descp');
+
+            $table->string('post_title_en');
+            $table->string('post_slug_en');
+            $table->text('short_descp_en');
+            $table->longText('long_descp_en');
+
+            $table->string('post_title_es');
+            $table->string('post_slug_es');
+            $table->text('short_descp_es');
+            $table->longText('long_descp_es');
+
             $table->timestamps();
             
         });

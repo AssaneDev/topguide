@@ -1,5 +1,10 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<style>
+    .mb-10{
+        margin-bottom: 12px;
+    }
+</style>
 <div class="page-content">
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -81,7 +86,15 @@
                         @csrf
                     <div class="form-group mb-3">
                         <label for="" class="form-label">Nom Categorie</label>
-                        <input type="text" name="category_name" id="" class="form-control">
+                        <input type="text" name="category_name" id="" class="form-control mb-10">
+
+                        <label for="" class="form-label">
+                            Nom Categorie  <span class="badge rounded-pill text-bg-primary"> Anglais </span> 
+                        </label>
+                        <input type="text" name="category_name_en" id="" class="form-control mb-10">
+
+                        <label for="" class="form-label">Nom Categorie <span class="badge rounded-pill text-bg-primary"> Espagnol </span></label>
+                        <input type="text" name="category_name_es" id="" class="form-control mb-10">
                     </div>
                
 
@@ -110,8 +123,16 @@
                         <input type="hidden" name="cat_id" id="cat_id">
                     <div class="form-group mb-3">
                         <label for="" class="form-label">Nom Categorie</label>
-                        <input type="text" name="category_name"  class="form-control" id="cat">
+                        <input type="text" name="category_name"  class="form-control mb-10" id="cat">
                     </div>
+
+                    <label for="" class="form-label">
+                        Nom Categorie  <span class="badge rounded-pill text-bg-primary"> Anglais </span> 
+                    </label>
+                    <input type="text" name="category_name_en" id="caten" class="form-control mb-10">
+
+                    <label for="" class="form-label">Nom Categorie <span class="badge rounded-pill text-bg-primary"> Espagnol </span></label>
+                    <input type="text" name="category_name_es" id="cates" class="form-control mb-10">
                
 
             </div>
@@ -132,6 +153,9 @@
             success:function(data){
                 // console.log(data)
                 $('#cat').val(data.category_name);
+                $('#caten').val(data.category_name_en);
+                $('#cates').val(data.category_name_es);
+
                 $('#cat_id').val(data.id)
             }
         })

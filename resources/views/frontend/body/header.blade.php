@@ -37,6 +37,9 @@
                 
                 <a href="{{route('ang')}}">Englais</a>
                 <a href="{{route('fr')}}">Français</a>
+                <a href="{{route('es')}}">Espagnol</a>
+
+                
                 
                
               </li>
@@ -112,6 +115,33 @@
                         </li>
                        
                     @endif
+
+
+                    @if ($locale == 'es')
+                    <li>
+                      <a href="{{url('/')}}">Casa</a>
+                      
+                    </li>
+                    <li>
+                      <a href="{{route('apropos')}}">Quiénes somos</a>
+                    
+                    </li>
+
+
+                    <li>
+                      <a href="{{route('destination')}}">Destinos</a>
+                      
+                    </li>
+                    <li>
+                      <a href="{{route('blog.list')}}">Blog</a>
+                      
+                    </li>
+                  
+                    <li>
+                      <a href="{{route('contact')}}">Contacto</a>
+                    </li>
+                   
+                @endif
 
                   {{-- <button class="vs-btn style4">Devenir Partenaire</button> --}}
 

@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('category_name');
             $table->string('category_slug');
+            $table->string('category_name_en');
+            $table->string('category_slug_en');
+            $table->string('category_name_es');
+            $table->string('category_slug_es');
             $table->timestamps();
         });
     }

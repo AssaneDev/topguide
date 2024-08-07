@@ -155,41 +155,118 @@
                   </ul>
                 </div>
      --}}
-                <div class="widget widget-newsletter">
-                  <h3 class="widget_title">Demander un programme {{$destination->name}}</h3>
-                  <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
-                    @csrf
-                    <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
-                    <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
-                    <input class="form-control" name="tel" type="text" placeholder="Entrer votre numéro de Téléphone" />
-                    <input class="form-control" type="hidden" name="destination" value="{{$destination->name}}"  />
-                    <input class="form-control" type="number" name="nbr_Pax" placeholder="Nombre de personne" />
-                    <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="message" rows="3" required=""></textarea>
 
-                    
+     @if ($locale == 'fr')
+     <div class="widget widget-newsletter">
+      <h3 class="widget_title">Demander un programme {{$destination->name}}</h3>
+      <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
+        @csrf
+        <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
+        <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
+        <input class="form-control" name="tel" type="text" placeholder="Entrer votre numéro de Téléphone" />
+        <input class="form-control" type="hidden" name="destination" value="{{$destination->name}}"  />
+        <input class="form-control" type="number" name="nbr_Pax" placeholder="Nombre de personne" />
+        <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="message" rows="3" required=""></textarea>
+
+        
 
 
-                    
+        
 
-                    {{-- <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
-                    <label class="form-check-label" for="flexCheckCheckedSuccess">
-                      Voiture
-                    </label>  --}}
-                    <button type="submit" class="vs-btn style4">Envoyez</button>
-                  </form>
-                </div>
+        {{-- <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
+        <label class="form-check-label" for="flexCheckCheckedSuccess">
+          Voiture
+        </label>  --}}
+        <button type="submit" class="vs-btn style4">Envoyez</button>
+      </form>
+    </div>
+    <div class="widget widget-social">
+      <h3 class="widget_title">Suivre sur</h3>
+      <div class="social-style widget_social_style">
+        <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
+      </div>
+    </div>
+     @endif
+
+     @if ($locale == 'en')
+     <div class="widget widget-newsletter">
+      <h3 class="widget_title">Ask for a programme {{$destination->name}}</h3>
+      <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
+        @csrf
+        <input class="form-control" type="text" name="nom" placeholder="Your name" />
+        <input class="form-control" name="email" type="email" placeholder="Your Email" />
+        <input class="form-control" name="tel" type="text" placeholder="your phone number" />
+        <input class="form-control" type="hidden" name="destination" value="{{$destination->name_en}}"  />
+        <input class="form-control" type="number" name="nbr_Pax" placeholder="Number of persons" />
+        <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="message" rows="3" required=""></textarea>
+
+        
+
+
+        
+
+        {{-- <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
+        <label class="form-check-label" for="flexCheckCheckedSuccess">
+          Voiture
+        </label>  --}}
+        <button type="submit" class="vs-btn style4">Send</button>
+      </form>
+    </div>
+
+    <div class="widget widget-social">
+      <h3 class="widget_title">Follow us on</h3>
+      <div class="social-style widget_social_style">
+        <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
+      </div>
+    </div>
+     @endif
+
+     @if ($locale == 'es')
+     <div class="widget widget-newsletter">
+      <h3 class="widget_title">Solicitar un programa {{$destination->name_es}}</h3>
+      <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
+        @csrf
+        <input class="form-control" type="text" name="nom" placeholder="Escribe tu nombre" />
+        <input class="form-control" name="email" type="email" placeholder="Escriba su dirección de correo electrónico" />
+        <input class="form-control" name="tel" type="text" placeholder="Escriba su número de teléfono" />
+        <input class="form-control" type="hidden" name="destination" value="{{$destination->name_es}}"  />
+        <input class="form-control" type="number" name="nbr_Pax" placeholder="Número de personas" />
+        <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="mensaje" rows="3" required=""></textarea>
+
+        
+
+
+        
+
+        {{-- <input class="form-check-input" type="checkbox" name="voiture" value="" id="flexCheckCheckedSuccess" checked="">
+        <label class="form-check-label" for="flexCheckCheckedSuccess">
+          Voiture
+        </label>  --}}
+        <button type="submit" class="vs-btn style4">Enviar</button>
+      </form>
+    </div>
+
+    <div class="widget widget-social">
+      <h3 class="widget_title">Síguenos en</h3>
+      <div class="social-style widget_social_style">
+        <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> --}}
+        {{-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
+      </div>
+    </div>
+     @endif
+                
     
       
     
-                <div class="widget widget-social">
-                  <h3 class="widget_title">Suivez-Nous</h3>
-                  <div class="social-style widget_social_style">
-                    <a href="https://web.facebook.com/profile.php?id=61560799666028" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    {{-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> --}}
-                    {{-- <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a> --}}
-                    {{-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> --}}
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>

@@ -24,7 +24,12 @@ class BlogController extends Controller
     public function StoreBlogCategory(Request $request){
           BlogCategory::insert([
             'category_name'=>$request->category_name,
+            'category_name_en'=>$request->category_name,
+            'category_name_es'=>$request->category_name,
             'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
+            'category_slug_en'=>strtolower(str_replace(' ','-',$request->category_name_en)),
+            'category_slug_es'=>strtolower(str_replace(' ','-',$request->category_name_es)),
+
           ]);
           $notification = array(
             'message'=>'Categorie Ajouter avec succes',
@@ -45,7 +50,11 @@ class BlogController extends Controller
         $cat_id = $request->cat_id;
         BlogCategory::find($cat_id)->update([
           'category_name'=>$request->category_name,
+          'category_name_en'=>$request->category_name_en,
+          'category_name_es'=>$request->category_name_es,
           'category_slug'=>strtolower(str_replace(' ','-',$request->category_name)),
+          'category_slug_en'=>strtolower(str_replace(' ','-',$request->category_name_en)),
+          'category_slug_es'=>strtolower(str_replace(' ','-',$request->category_name_es)),
         ]);
         Artisan::call('optimize');
         $notification = array(
@@ -96,9 +105,17 @@ class BlogController extends Controller
         'user_id'=>Auth::user()->id,
         'post_title'=>$request->post_title,
         'post_slug'=>strtolower(str_replace(' ','-',$request->post_title)),
+        'post_title_en'=>$request->post_title_en,
+        'post_slug_en'=>strtolower(str_replace(' ','-',$request->post_title_en)),
+        'post_title_es'=>$request->post_title_es,
+        'post_slug_es'=>strtolower(str_replace(' ','-',$request->post_title_es)),
         'post_image'=>$save_url,
         'short_descp'=>$request->short_descp,
         'long_descp'=>$request->long_descp,
+        'short_descp_en'=>$request->short_descp_en,
+        'long_descp_en'=>$request->long_descp_en,
+        'short_descp_es'=>$request->short_descp_es,
+        'long_descp_es'=>$request->long_descp_es,
 
         'created_at'=>Carbon::now(),
 
@@ -138,9 +155,17 @@ public function UpdateBlogPost(Request $request){
             'user_id'=>Auth::user()->id,
             'post_title'=>$request->post_title,
             'post_slug'=>strtolower(str_replace(' ','-',$request->post_title)),
+            'post_title_en'=>$request->post_title_en,
+            'post_slug_en'=>strtolower(str_replace(' ','-',$request->post_title_en)),
+            'post_title_es'=>$request->post_title_es,
+            'post_slug_es'=>strtolower(str_replace(' ','-',$request->post_title_es)),
             'post_image'=>$save_url,
             'short_descp'=>$request->short_descp,
             'long_descp'=>$request->long_descp,
+            'short_descp_en'=>$request->short_descp_en,
+            'long_descp_en'=>$request->long_descp_en,
+            'short_descp_es'=>$request->short_descp_es,
+            'long_descp_es'=>$request->long_descp_es,
             'created_at'=>Carbon::now(),
 
         ]);
@@ -156,8 +181,16 @@ public function UpdateBlogPost(Request $request){
                 'user_id'=>Auth::user()->id,
                 'post_title'=>$request->post_title,
                 'post_slug'=>strtolower(str_replace(' ','-',$request->post_title)),
+                'post_title_en'=>$request->post_title_en,
+                'post_slug_en'=>strtolower(str_replace(' ','-',$request->post_title_en)),
+                'post_title_es'=>$request->post_title_es,
+                'post_slug_es'=>strtolower(str_replace(' ','-',$request->post_title_es)),
                 'short_descp'=>$request->short_descp,
                 'long_descp'=>$request->long_descp,
+                'short_descp_en'=>$request->short_descp_en,
+                'long_descp_en'=>$request->long_descp_en,
+                'short_descp_es'=>$request->short_descp_es,
+                'long_descp_es'=>$request->long_descp_es,
                 'created_at'=>Carbon::now(),
             ]);
             $notification = array(

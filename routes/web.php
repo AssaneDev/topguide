@@ -131,6 +131,8 @@ Route::controller(FormController::class)->group(function(){
 Route::controller(LocalController::class)->group(function(){
     Route::get('/en','Ang')->name('ang');
     Route::get('/fr','Fr')->name('fr');
+    Route::get('/es','Es')->name('es');
+
 
      
 }); 

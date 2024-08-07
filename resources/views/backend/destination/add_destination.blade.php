@@ -40,9 +40,9 @@
                                                 <span class="badge bg-warning text-dark">ETAPE  1</span> </br>
                                                 <label for="input1"  class="form-label">Nom</label>
                                                 <input  type="text" name="name"  class="form-control mb-10" id="input1" >
-                                                <label for="input1" class="form-label ">Nom ANGLAIS</label>
+                                                <label for="input1" class="form-label "><span class="badge rounded-pill text-bg-primary">Nom ANGLAIS</span></label>
                                                 <input type="text" name="name_en"  class="form-control mb-10" id="input1" >
-                                                <label for="input1" class="form-label">Nom ESPAGNOL</label>
+                                                <label for="input1" class="form-label"> <span class="badge rounded-pill text-bg-primary"> Nom ESPAGNOL </span></label>
                                                 <input type="text" name="name_es"  class="form-control  mb-10" id="input1" >
 
                                             </div>

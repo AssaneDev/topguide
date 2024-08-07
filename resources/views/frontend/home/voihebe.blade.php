@@ -30,26 +30,85 @@
         </div>
         <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
-          <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Hébergement typique.</a></h3>
-          <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
-            qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
-         
-         
-          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Plus</a>
+
+          @php
+   
+          use Illuminate\Support\Facades\App;
+          use Illuminate\Support\Facades\Session;
+             $locale = Session::get('local') ?? 'fr';
+              Session::put('local',$locale);
+              App::setLocale($locale);
+      
+           @endphp
+           @if ($locale == 'fr')
+           <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Hébergement typique.</a></h3>
+           <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
+             qu'il s'agisse d'un campement, d'une résidence privée, d'une maison d'hôtes, d'un hôtel, voire même d'un hébergement solidaire.</p>
+           <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Voir Plus</a>
+           @endif
+
+          @if ($locale == 'en')
+          <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Typical accommodation.</a></h3>
+          <p class="blog-text">We offer travelers an autonomous approach to their stay,  whether it's a camp, a private residence, a guest house, a hotel, or even a shared accommodation.</p>
+          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">View More</a>
+          @endif
+
+          @if ($locale == 'es')
+          <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Alojamiento típico.</a></h3>
+          <p class="blog-text">Ofrecemos a los viajeros un enfoque autónomo de su estancia,  ya sea un campamento, una residencia privada, una pensión, un hotel o incluso un alojamiento compartido..</p>
+          <a class="vs-btn style4" href="{{url('blog/cat/list',$cat->id)}}">Ver más</a>
+          @endif
+
+        
             
         </div>
       </div>
-      <div class="blog-style4">
-        <div class="blog-image">
-          <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
-          <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
-        </div>
-        <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
-          {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
-          <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
-          <p class="blog-text">Nous proposons une large gamme de véhicules incluant des bus, des minibus climatisés et des 4x4 pour vos excursions, circuits, transferts et autres événements...</p>
-          <a class="vs-btn style4" href="{{route('vehicule')}}">Voir Plus</a>
-        </div>
-      </div>
+
+        @if ($locale == 'fr')
+            <div class="blog-style4">
+              <div class="blog-image">
+                <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
+                <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
+              </div>
+              <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
+                {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
+                <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
+                <p class="blog-text">Nous proposons une large gamme de véhicules incluant des bus, des minibus climatisés et des 4x4 pour vos excursions, circuits, transferts et autres événements...</p>
+                <a class="vs-btn style4" href="{{route('vehicule')}}">Voir Plus</a>
+              </div>
+            </div>
+        @endif
+
+        @if ($locale == 'en')
+            <div class="blog-style4">
+              <div class="blog-image">
+                <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
+                <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Cars</a></div>
+              </div>
+              <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
+                {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
+                <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
+                <p class="blog-text">We offer a wide range of vehicles including buses, air-conditioned minibuses and 4x4s for your excursions, tours, transfers and other events.</p>
+                <a class="vs-btn style4" href="{{route('vehicule')}}">View More</a>
+              </div>
+            </div>
+        @endif
+
+        @if ($locale == 'es')
+            <div class="blog-style4">
+              <div class="blog-image">
+                <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
+                <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
+              </div>
+              <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
+                {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
+                <h3 class="blog-title"><a href="blog-details.html">Alquiler de vehículos </a></h3>
+                <p class="blog-text">Le ofrecemos una amplia gama de vehículos que incluye autobuses, minibuses con aire acondicionado y 4x4 para sus excursiones, visitas, traslados y otros eventos...</p>
+                <a class="vs-btn style4" href="{{route('vehicule')}}">Ver más</a>
+              </div>
+            </div>
+        @endif
+
+      
     </div>
   </div>

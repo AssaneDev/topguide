@@ -1,3 +1,13 @@
+
+@php
+   
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+   $locale = Session::get('local') ?? 'fr';
+    Session::put('local',$locale);
+    App::setLocale($locale);
+
+@endphp
 <section class="space bg-light gallery2 shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-left="0%">
       <img src=" {{asset('frontend/assets/img/shape/visit-left.png')}} " alt="svg">
@@ -10,8 +20,21 @@
       <div class="row justify-content-center text-center">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
           <div class="title-area">
+            @if ($locale == 'fr')
             <span class="sec-subtitle">Allons Découvrir</span>
             <h2 class="sec-title h1">10 choses impressionnantes à savoir sur le SÉNÉGAL </h2>
+            @endif
+
+            @if ($locale == 'en')
+            <span class="sec-subtitle">Let's discover</span>
+            <h2 class="sec-title h1">10 impressive things to know about SENEGAL </h2>
+            @endif
+
+            @if ($locale == 'es')
+            <span class="sec-subtitle">Descubramos</span>
+            <h2 class="sec-title h1">10 cosas impresionantes que hay que saber sobre SENEGAL </h2>
+            @endif
+          
             {{-- <p class="sec-text"> Nous croyons en un tourisme responsable et nous nous efforçons de minimiser notre impact sur l'environnement et de maximiser les retombées positives pour les communautés locales..</p> --}}
           </div>
         </div>

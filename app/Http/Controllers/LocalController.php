@@ -27,4 +27,10 @@ class LocalController extends Controller
         Session::put('local','fr');
        return redirect()->back();
     }
+
+    public function Es(){
+        App::setLocale('es');
+        Session::put('local','es');
+       return redirect()->back();
+    }
 }

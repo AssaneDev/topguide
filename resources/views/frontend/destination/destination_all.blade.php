@@ -1,21 +1,66 @@
 @extends('frontend.main_master')
 @section('main')
+@php
+   
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+   $locale = Session::get('local') ?? 'fr';
+    Session::put('local',$locale);
+    App::setLocale($locale);
+
+@endphp
       <!--==============================
 	  Hero area Start
 	==============================-->
+  
+
+  @if ($locale =='fr')
   <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
     <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
         <div class="breadcumb-menu-wrap">
           <ul class="breadcumb-menu">
-            <li><a href="index.html" style="display: none">Accceuils</a></li>
+            <li><a href="index.html" style="display: none">Acceuil</a></li>
             <li style="display: none">Destinations</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  @endif
+
+  @if ($locale =='en')
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
+    <div class="container z-index-common">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
+        <div class="breadcumb-menu-wrap">
+          <ul class="breadcumb-menu">
+            <li><a href="index.html" style="display: none">Home</a></li>
+            <li style="display: none">Destinations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endif
+
+  @if ($locale =='es')
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
+    <div class="container z-index-common">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title" style="display: none" >Destinos</h1>
+        <div class="breadcumb-menu-wrap">
+          <ul class="breadcumb-menu">
+            <li><a href="index.html" style="display: none">Casa</a></li>
+            <li style="display: none">Destinos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endif
   <!--==============================
 	  Hero Area End
 	==============================-->
@@ -23,15 +68,7 @@
   <!--==============================
      Destiniations Area Start 
   ==============================-->
-  @php
-   
-    use Illuminate\Support\Facades\App;
-    use Illuminate\Support\Facades\Session;
-       $locale = Session::get('local') ?? 'fr';
-        Session::put('local',$locale);
-        App::setLocale($locale);
 
-@endphp
   <section class="space-top space-extra-bottom">
     <div class="container">
       <div class="row justify-content-center">
@@ -57,21 +94,39 @@
 
         @if ($locale == 'en')
 
-        @foreach ($destination as $desti)
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-          <div class="destination-style1">
-            <a href="{{ url('destination/detail/'.$desti->id) }}">
-              <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
-            {{-- <span class="destination-price">$299</span> --}}
-            <div class="destination-info">
-              <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name_en}}</a></h4>
-              <p class="destination-text">Explorez</p>
-            </div>
-          </div>
-        </div>
-    @endforeach
+              @foreach ($destination as $desti)
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="destination-style1">
+                  <a href="{{ url('destination/detail/'.$desti->id) }}">
+                    <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
+                  {{-- <span class="destination-price">$299</span> --}}
+                  <div class="destination-info">
+                    <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name_en}}</a></h4>
+                    <p class="destination-text">Explore</p>
+                  </div>
+                </div>
+              </div>
+           @endforeach
       
-  @endif
+    @endif
+
+    @if ($locale == 'es')
+
+    @foreach ($destination as $desti)
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+      <div class="destination-style1">
+        <a href="{{ url('destination/detail/'.$desti->id) }}">
+          <img src="{{asset($desti->image_cap)}}" alt="destination image" /></a>
+        {{-- <span class="destination-price">$299</span> --}}
+        <div class="destination-info">
+          <h4 class="destination-name"><a href="{{ url('destination/detail/'.$desti->id) }}">{{$desti->name_es}}</a></h4>
+          <p class="destination-text">Visite</p>
+        </div>
+      </div>
+    </div>
+ @endforeach
+
+@endif
       
         
       </div>
