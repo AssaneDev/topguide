@@ -55,7 +55,7 @@
                <h2 class="blog-title"><a href="{{ url('blog/detail/'.$item->post_slug) }}">{{$item->post_title}}</a></h2>
                <p class="blog-text">{!!$item->short_descp!!}</p>
                <div class="blog-bottom">
-                 <a class="blog-date" href="blog-details.html"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
+                 <a class="blog-date" href="{{ url('blog/detail/'.$item->post_slug) }}"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
                  <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Voir plus <i class="fal fa-arrow-right"></i></a>
                </div>
              </div>
@@ -81,8 +81,8 @@
                <h2 class="blog-title"><a href="{{ url('blog/detail/'.$item->post_slug_en) }}">{{$item->post_title_en}}</a></h2>
                <p class="blog-text">{!!$item->short_descp_en!!}</p>
                <div class="blog-bottom">
-                 <a class="blog-date" href="blog-details.html"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
-                 <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Voir plus <i class="fal fa-arrow-right"></i></a>
+                 <a class="blog-date" href="{{ url('blog/detail/'.$item->post_slug) }}"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
+                 <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Read more <i class="fal fa-arrow-right"></i></a>
                </div>
              </div>
            </div>
@@ -107,8 +107,8 @@
                <h2 class="blog-title"><a href="{{ url('blog/detail/'.$item->post_slug_es) }}">{{$item->post_title_es}}</a></h2>
                <p class="blog-text">{!!$item->short_descp_es!!}</p>
                <div class="blog-bottom">
-                 <a class="blog-date" href="blog-details.html"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
-                 <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Voir plus <i class="fal fa-arrow-right"></i></a>
+                 <a class="blog-date" href="{{ url('blog/detail/'.$item->post_slug) }}"><i class="fas fa-calendar-alt"></i> {{$item->created_at->format('d M Y')}} </a>
+                 <a class="vs-btn style4" href="{{ url('blog/detail/'.$item->post_slug) }}">Ver más <i class="fal fa-arrow-right"></i></a>
                </div>
              </div>
            </div>

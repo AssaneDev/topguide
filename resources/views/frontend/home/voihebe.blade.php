@@ -1,3 +1,12 @@
+@php
+$bcategory = App\Models\BlogCategory::latest()->get();
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+$locale = Session::get('local') ?? 'fr';
+Session::put('local',$locale);
+App::setLocale($locale);
+@endphp
+
 <div class="space-top space-extra-bottom blog-wrapper1 shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-top="-5%" data-left="-5%">
       <img src="{{asset('frontend/assets/img/shape/circle1.png')}}" alt="circle">
@@ -8,38 +17,68 @@
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-xxl-6 col-xl-7 col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
-          <div class="title-area">
-            <span class="sec-subtitle">Hébergement & Location de Vehicule</span>
-            <h2 class="sec-title h1">Hébergements abordables et paradisiaques.</h2>
-          </div>
+
+            @if ($locale == 'fr')
+                <div class="title-area">
+                  <span class="sec-subtitle">Hébergement & Location de Vehicule</span>
+                  <h2 class="sec-title h1">Hébergements abordables et paradisiaques.</h2>
+                </div>
+            @endif
+
+            @if ($locale == 'en')
+              <div class="title-area">
+                <span class="sec-subtitle">Accommodation and car hire</span>
+                <h2 class="sec-title h1">Heavenly accommodation at an affordable price.</h2>
+              </div>
+            @endif
+
+            @if ($locale == 'es')
+              <div class="title-area">
+                <span class="sec-subtitle">Alojamiento y alquiler de coches</span>
+                <h2 class="sec-title h1">Alojamiento asequible en el paraíso.</h2>
+              </div>
+            @endif
+
+         
         </div>
       </div>
       <div class="blog-style4">
         <div class="blog-image">
           <img src="{{asset('frontend/assets/img/blog/Hebergement.jpg')}}" alt="blog image">
-         @php
-              $bcategory = App\Models\BlogCategory::latest()->get();
-         @endphp
+     
           
-           @foreach ($bcategory as $cat)
-               @if ($cat->category_slug == 'hébergement')
-          <div class="category-tag"><a href="{{url('blog/cat/list',$cat->id)}}"><i class="fas fa-tag"></i> Hébergement</a></div>
+          @if ($locale == 'fr')
+                @foreach ($bcategory as $cat)
+                @if ($cat->category_slug == 'hébergement')
+                  <div class="category-tag"><a href="{{url('blog/cat/list',$cat->id)}}"><i class="fas fa-tag"></i> Hébergement</a></div>
 
-             @endif
-          @endforeach
+                @endif
+                @endforeach
+          @endif
+
+          @if ($locale == 'en')
+              @foreach ($bcategory as $cat)
+              @if ($cat->category_slug == 'hébergement')
+                <div class="category-tag"><a href="{{url('blog/cat/list',$cat->id)}}"><i class="fas fa-tag"></i> accommodation</a></div>
+
+              @endif
+              @endforeach
+          @endif
+
+          @if ($locale == 'es')
+              @foreach ($bcategory as $cat)
+              @if ($cat->category_slug == 'hébergement')
+                <div class="category-tag"><a href="{{url('blog/cat/list',$cat->id)}}"><i class="fas fa-tag"></i> Alojamiento </a></div>
+
+              @endif
+              @endforeach
+          @endif
+          
         </div>
         <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
 
-          @php
-   
-          use Illuminate\Support\Facades\App;
-          use Illuminate\Support\Facades\Session;
-             $locale = Session::get('local') ?? 'fr';
-              Session::put('local',$locale);
-              App::setLocale($locale);
-      
-           @endphp
+          
            @if ($locale == 'fr')
            <h3 class="blog-title"><a href="{{url('blog/cat/list',$cat->id)}}">Hébergement typique.</a></h3>
            <p class="blog-text">Nous offrons aux voyageurs une approche autonome pour leur séjour, 
@@ -98,7 +137,7 @@
             <div class="blog-style4">
               <div class="blog-image">
                 <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
-                <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
+                <div class="category-tag"><a href="#"><i class="fas fa-tag"></i>Vehículos</a></div>
               </div>
               <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
                 {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}

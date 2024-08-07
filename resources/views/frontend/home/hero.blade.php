@@ -66,7 +66,10 @@
     </div>
   </div>
 </section>
-@else 
+@endif;
+
+
+@if ($locale == 'fr')
 <section class="hero-layout1">
   <div>
     <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
@@ -122,5 +125,63 @@
     </div>
   </div>
 </section>
+@endif;
 
+
+@if ($locale == 'es')
+<section class="hero-layout1">
+  <div>
+    <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSNeCP.png')}} ">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                {{-- <span class="hero-subtitle">Le Bureau du Guides shoot </span> --}}
+                <h1 class="hero-title">Viajes a medida a Senegal con guías expertos</h1>
+                {{-- <p class="hero-text">Découvrez la magie du Sénégal avec des guides locaux passionnés, prêts à vous faire vivre une expérience inoubliable.</p> --}}
+                <a href="{{route('apropos')}}" class="vs-btn style4">Ver más</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/hero2-bg2.jpg')}} ">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                {{-- <span class="hero-subtitle">Bureau Du Guide</span> --}}
+                <h1 class="hero-title">Intercambio cultural</h1>
+                <p class="hero-text">Sumérjase en el corazón de la cultura senegalesa con nuestros guías expertos, para realizar visitas auténticas y enriquecedoras..</p>
+                <a href="{{route('apropos')}}" class="vs-btn style4">Ver más</a>
+              </div>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/touriste.jpg')}} ">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                {{-- <span class="hero-subtitle">Bureau Du Guide</span> --}}
+                <h1 class="hero-title">Explorar Senegal </h1>
+                <p class="hero-text">Disfrute de una aventura a medida en Senegal con nuestros atentos guías, y déjese sorprender por la riqueza de nuestras tradiciones e historia.</p>
+                <a href="{{route('apropos')}}" class="vs-btn style4">Ver más</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="icon-btn prev-btn" data-slick-prev=".hero-slider2"><i class="fas fa-chevron-left"></i></button>
+      <button class="icon-btn next-btn" data-slick-next=".hero-slider2"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
 @endif;

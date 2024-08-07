@@ -45,7 +45,7 @@
               </li>
             </ul>
           </div>
-          <a class="user-btn" href="sign-up.html"><i class="far fa-user-circle"></i></a>
+         
         </div>
       </div>
     </div>
