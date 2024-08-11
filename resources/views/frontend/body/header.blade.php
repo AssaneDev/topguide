@@ -14,30 +14,34 @@
       <div class="row justify-content-between align-items-center">
         <div class="col d-none d-lg-block">
           <ul class="header-contact">
-            <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">info@travolo.com</a>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">info@vacancesenegal.com</a>
             </li>
-            <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">020 7388 5619</a></li>
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">+221 75 752 9148</a></li>
           </ul>
         </div>
         <div class="col-auto">
-          <div class="header-social">
+          {{-- <div class="header-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-pinterest-p"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
+          </div> --}}
         </div>
         <div class="col-auto d-flex ">
+
+         
           <div class="header-dropdown">
+            <img src="{{asset('frontend/assets/img/belgium.png')}}" style="width: 40px; height: 40px;" alt="">
             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown"
-              aria-expanded="false">Englais</a>
+              aria-expanded="false">Langues</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
               <li>
                
                 
-                <a href="{{route('ang')}}">Englais</a>
-                <a href="{{route('fr')}}">Français</a>
+                <a href="{{route('ang')}}">English</a>
                 <a href="{{route('es')}}">Espagnol</a>
+                <a href="{{route('fr')}}">Français</a>
+                
 
                 
                 
