@@ -126,7 +126,7 @@ App::setLocale($locale);
               </div>
               <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">
                 {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
-                <h3 class="blog-title"><a href="blog-details.html">Location de Véhicules </a></h3>
+                <h3 class="blog-title"><a href="blog-details.html">Rent a Car</a></h3>
                 <p class="blog-text">We offer a wide range of vehicles including buses, air-conditioned minibuses and 4x4s for your excursions, tours, transfers and other events.</p>
                 <a class="vs-btn style4" href="{{route('vehicule')}}">View More</a>
               </div>

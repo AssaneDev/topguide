@@ -35,8 +35,8 @@
         <div class="row gx-30">
           <div class="col-lg-8">
             <div class="vs-blog blog-single">
-              <div class="blog-img">
-                <img src="{{asset($blog->post_image )}}" alt="blog image" style="width:1242px;height:540px">
+              <div class="ds-img1">
+                <img src="{{asset($blog->post_image )}}" alt="blog image">
                
   
               </div>
@@ -50,7 +50,7 @@
                 <div class="clearfix share-links">
                   <div class="row justify-content-between gy-30">
                     
-                    <div class="col-xl-auto col-md-auto">
+                    {{-- <div class="col-xl-auto col-md-auto">
                       <span class="share-links-title">Partager:</span>
                       <ul class="social-links">
                         <li>
@@ -67,7 +67,7 @@
                         </li>
                       </ul>
                       <!-- End Social Share -->
-                    </div>
+                    </div> --}}
                     <!-- Share Links Area end -->
                   </div>
                 </div>
@@ -178,8 +178,8 @@
         <div class="row gx-30">
           <div class="col-lg-8">
             <div class="vs-blog blog-single">
-              <div class="blog-img">
-                <img src="{{asset(($blog->post_image))}}" alt="blog image" style="width:1242px;height:540px">
+              <div class="ds-img1">
+                <img src="{{asset(($blog->post_image))}}" alt="blog image">
                
   
               </div>
@@ -193,7 +193,7 @@
                 <div class="clearfix share-links">
                   <div class="row justify-content-between gy-30">
                     
-                    <div class="col-xl-auto col-md-auto">
+                    {{-- <div class="col-xl-auto col-md-auto">
                       <span class="share-links-title">Partager:</span>
                       <ul class="social-links">
                         <li>
@@ -210,7 +210,7 @@
                         </li>
                       </ul>
                       <!-- End Social Share -->
-                    </div>
+                    </div> --}}
                     <!-- Share Links Area end -->
                   </div>
                 </div>
@@ -321,8 +321,8 @@
         <div class="row gx-30">
           <div class="col-lg-8">
             <div class="vs-blog blog-single">
-              <div class="blog-img">
-                <img src="{{asset(($blog->post_image))}}" alt="blog image" style="width:1242px;height:540px">
+              <div class="ds-img1">
+                <img src="{{asset(($blog->post_image))}}" alt="blog image" >
                
   
               </div>
@@ -336,7 +336,7 @@
                 <div class="clearfix share-links">
                   <div class="row justify-content-between gy-30">
                     
-                    <div class="col-xl-auto col-md-auto">
+                    {{-- <div class="col-xl-auto col-md-auto">
                       <span class="share-links-title">Comparta:</span>
                       <ul class="social-links">
                         <li>
@@ -351,7 +351,7 @@
                         </li>
                       </ul>
                       <!-- End Social Share -->
-                    </div>
+                    </div> --}}
                     <!-- Share Links Area end -->
                   </div>
                 </div>
