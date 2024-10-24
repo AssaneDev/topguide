@@ -81,9 +81,9 @@
               </div>
               <ul class="about-list1" style="font-size: 20px; font-weight: 400">
                 <li>Guide interprète spécialist .</li>
-                <li>Guide Ornithologie.</li>
-                <li>Guide Culture.</li>
-                <li>Guide Trek .</li>
+                <li>Excursion.</li>
+                <li>Circuit.</li>
+                <li>Hebergement .</li>
               
               
                 

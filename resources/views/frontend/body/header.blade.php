@@ -14,7 +14,7 @@
       <div class="row justify-content-between align-items-center">
         <div class="col d-none d-lg-block">
           <ul class="header-contact">
-            <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">info@vacancesenegal.com</a>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">vacancesenegal221@gmail.com</a>
             </li>
             <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">+221 75 752 9148</a></li>
           </ul>

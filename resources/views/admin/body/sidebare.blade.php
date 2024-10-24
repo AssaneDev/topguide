@@ -51,7 +51,25 @@
                 </li>
                
             </ul>
+        </li>
+
+        <li class="menu-label">Guides</li>
        
+        <li>
+            <a href="javascript:;" class="has-arrow">
+               
+                <div class="menu-title">Gestion Guides</div>
+            </a>
+            <ul>
+                <li> <a href="{{route('blog.category')}}"><i class='bx bx-radio-circle'></i>Ajouter Un Guide</a>
+                </li>
+                <li> <a href="{{route('all.blog.post')}}"><i class='bx bx-radio-circle'></i>Liste Guides</a>
+                </li>
+
+                
+               
+            </ul>
+        </li>
     </ul>
     <!--end navigation-->
 </div>
