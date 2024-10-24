@@ -17,6 +17,9 @@
             <li><i class="fas fa-envelope"></i> <a href="mailto:info@travolo.com">vacancesenegal221@gmail.com</a>
             </li>
             <li><i class="fas fa-phone-alt"></i> <a href="tel:02073885619">+221 75 752 9148</a></li>
+            <li> <a href="https://api.whatsapp.com/send/?phone=776466670&text&type=phone_number&app_absent=0"> 
+              <img style="width: 40px" src="{{asset('frontend/assets/img/whatsapp.png')}}" alt=""> Discuter sur whatsapp
+            </a></li>
           </ul>
         </div>
         <div class="col-auto">

@@ -27,6 +27,10 @@
               </div>
               <h3 class="newsletter-text">Contactez-nous 24/7</h3>
               <a href="tel:+221757529148"> +221 75 752 9148 </a>
+              <a href="https://api.whatsapp.com/send/?phone=776466670&text&type=phone_number&app_absent=0"> 
+                <img width="40px" src="{{asset('frontend/assets/img/whatsapp.png')}}" alt=""> whatsapp
+              </a>
+
             </div>
           </div>
           {{-- <div class="col-lg-4 col-md-6 col-sm-6">
