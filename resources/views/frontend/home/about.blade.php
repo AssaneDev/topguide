@@ -1,12 +1,197 @@
 @php
-  use Illuminate\Support\Facades\App;
-  use Illuminate\Support\Facades\Session;
+  // use Illuminate\Support\Facades\App;
+  // use Illuminate\Support\Facades\Session;
+  //      $locale = Session::get('local') ?? 'fr';
+  //       Session::put('local',$locale);
+  //       App::setLocale($locale);
+
+       
+    $destination = App\Models\Destination::latest()->get();
+    use Illuminate\Support\Facades\App;
+    use Illuminate\Support\Facades\Session;
        $locale = Session::get('local') ?? 'fr';
         Session::put('local',$locale);
         App::setLocale($locale);
 
+
+
+
 @endphp
 
+  <!--==============================
+    Tour Package Area Start 
+  ==============================-->
+  <section class="space package-layout1">
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="package-top">
+            <div class="title-area">
+              <span class="sec-subtitle">Festered Tours</span>
+              <h2 class="sec-title h1">Most Favorite Tour Place</h2>
+            </div>
+            <div class="title-btn">
+              <a class="vs-btn style4" href="tour-booking.html">View all place</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="package-style2">
+        <div class="row gx-5 align-items-center">
+          <div class="col-lg-4">
+            <div class="package-img">
+              <a href="tour-booking.html">
+                <img src=" {{asset('frontend/assets/img/tours/tour-5-1.jpg')}} " alt="Package Image">
+              </a>
+              <div class="price-box">
+                <p class="price-text">Form</p>
+                <span class="package-price">$100.00</span>
+              </div>
+              <div class="package-icon">
+                <a href="tour-booking.html">
+                  <i class="far fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-content">
+              <div class="package-review">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>5 (3)</span>
+              </div>
+              <h3 class="package-title"><a href="tour-booking.html">Over Turkish Waves</a></h3>
+              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-meta">
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+      <div class="package-style2">
+        <div class="row gx-5 align-items-center">
+          <div class="col-lg-4">
+            <div class="package-img">
+              <a href="tour-booking.html">
+                <img src=" {{asset('frontend/assets/img/tours/tour-5-2.jpg')}} " alt="Package Image">
+              </a>
+              <div class="price-box">
+                <p class="price-text">Form</p>
+                <span class="package-price">$105.00</span>
+              </div>
+              <div class="package-icon">
+                <a href="tour-booking.html">
+                  <i class="far fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-content">
+              <div class="package-review">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>5 (4)</span>
+              </div>
+              <h3 class="package-title"><a href="tour-booking.html">Beach Bliss Exploration</a></h3>
+              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-meta">
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="package-style2 pb-0">
+        <div class="row gx-5 align-items-center">
+          <div class="col-lg-4">
+            <div class="package-img">
+              <a href="tour-booking.html">
+                <img src=" {{asset('frontend/assets/img/tours/tour-5-3.jpg')}} " alt="Package Image">
+              </a>
+              <div class="price-box">
+                <p class="price-text">Form</p>
+                <span class="package-price">$90.00</span>
+              </div>
+              <div class="package-icon">
+                <a href="tour-booking.html">
+                  <i class="far fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-content">
+              <div class="package-review">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>5 (4)</span>
+              </div>
+              <h3 class="package-title"><a href="tour-booking.html">US Skyline Adventure</a></h3>
+              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="package-meta">
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+    Tour Package Area End 
+  ==============================-->
 
   
   <section class="space shape-mockup-wrap">

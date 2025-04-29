@@ -36,7 +36,7 @@ class DestinationController extends Controller
          $manager_cap = new ImageManager(new Driver());
          $name_gen_cap = hexdec(uniqid()).'.'.$image_cap->getClientOriginalExtension();
           $img_cap = $manager_cap->read($image_cap);
-          $img_cap = $img_cap->resize(581,660);
+          $img_cap = $img_cap->resize(370,150);
           $img_cap->toJpeg(80)->save(base_path('public/upload/dest_cap/'.$name_gen_cap));
           
            $save_url_cap = 'upload/dest_cap/'.$name_gen_cap;
@@ -56,6 +56,9 @@ class DestinationController extends Controller
             'long_descp'=>$request->long_descp,
             'image_cap'=>$save_url_cap,
             'image'=>$save_url_image,
+            'age_min'=>$request->age_min,
+            'type_circuit'=>$request->type_circuit,
+            'lieux'=>$request->lieux,
             //Anglais
             'name_en'=>$request->name_en,
             'short_descp_en'=>$request->short_descp_en,
@@ -112,6 +115,10 @@ class DestinationController extends Controller
             $destination->name = $request->name;
             $destination->short_descp = $request->short_descp;
             $destination->long_descp = $request->long_descp;
+            $destination->prix = $request->prix;
+            $destination->age_min = $request->prix;
+
+
              //Anglais
             $destination->name_en = $request->name_en;
             $destination->short_descp_en = $request->short_descp_en;

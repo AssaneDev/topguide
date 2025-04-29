@@ -61,7 +61,7 @@
       color: $white-color;
     }
   }
-  
+
   &.style3 {
     background-color: $theme-color2;
     color: $white-color;
@@ -70,7 +70,7 @@
       background-color: $theme-color;
     }
   }
-  
+
   &.style4 {
     background-color: $theme-color;
     &::before,
@@ -78,7 +78,42 @@
       background-color: $theme-color2;
     }
   }
-  
+
+  &.style5,
+  &.style6,
+  &.style7 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 15px;
+    padding: 22px 50px;
+    background: var(--theme-color);
+    min-height: 60px;
+    &::before,
+    &::after {
+      background: var(--theme-color2);
+    }
+    & > i {
+      min-width: 20px;
+      min-height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--theme-color2);
+      border-radius: 50%;
+      transition: all ease 0.4s;
+    }
+  }
+  &.style6 {
+    background: var(--title-color);
+  }
+  &.style7 {
+    padding: 22px 30px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
   &.has-arrow {
     i {
       margin-left: 6px;
@@ -135,7 +170,7 @@
     z-index: 1;
     transition: all ease 0.5s;
   }
-  
+
   &:after,
   &:before {
     content: "";
@@ -150,20 +185,26 @@
     border-radius: 50%;
     transition: all ease 0.5s;
   }
-  
+
   &:after {
     animation-delay: 2s;
   }
-  
+
   &:hover {
-    >i {
-      background-color: rgba(#37D4D9, $alpha: 0.8);
+    > i {
+      background-color: rgba(#37d4d9, $alpha: 0.8);
     }
     &:after,
-    &::before
-    {
-      background-color: rgba(#37D4D9, 0.8);
+    &::before {
+      background-color: rgba(#37d4d9, 0.8);
       color: $white-color;
+    }
+  }
+  &.style2 {
+    & > i {
+      &:hover {
+        background-color: var(--theme-color);
+      }
     }
   }
 }

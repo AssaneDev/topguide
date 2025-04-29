@@ -112,6 +112,31 @@
 
                                             <div class="row" id="preview_img"></div>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            
+
+                                            
+
+                                            <span class="badge bg-danger text-dark" style="font-size: 20px">Détails Circuits</span> </br>
+
+                                            <label for="input11" class="form-label">Prix Circuit</label>
+                                            <input type="text" class="form-control mb-10"  name="prix" id="">
+
+                                            <label for="input11" class="form-label">Age Minimal</label>
+                                            <input type="number" class="form-control mb-10"  name="age-min" id="">
+
+                                            <label for="input11" class="form-label">Types de Circuit</label>
+                                            <input type="text" class="form-control mb-10"  name="type-circuit" id="">
+
+                                            <label for="input11" class="form-label">Ville Concernée</label>
+                                            <input type="text" class="form-control mb-10"  name="lieux" id="">
+                                        </div>
+                                           
+    
+                                           
+                                        </div>
                                      
                                         
                                         <div class="col-md-12 mt-10">

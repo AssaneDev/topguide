@@ -195,7 +195,7 @@
 
   .vs-btn {
     &.style3 {
-      --theme-color: #FF681A;
+      --theme-color: #ff681a;
     }
   }
 }
@@ -218,18 +218,18 @@
     justify-content: center;
     transform: rotateY(90deg);
     transform-origin: left top;
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
     i {
       font-size: 24px;
       color: $body-color;
-      transition: .5s ease-in-out;
+      transition: 0.5s ease-in-out;
       &:hover {
         color: $theme-color;
       }
     }
   }
   img {
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
   &:hover {
     img {
@@ -239,7 +239,6 @@
       transform: rotateY(0deg);
     }
   }
-
 }
 
 .gallery-mesonary {

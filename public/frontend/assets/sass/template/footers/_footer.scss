@@ -1,6 +1,4 @@
-
-
-.footer-menu>ul {
+.footer-menu > ul {
   li {
     padding-left: 25px;
     position: relative;
@@ -21,7 +19,9 @@
   background-color: $title-color;
 }
 
-.footer-layout1 {
+.footer-layout1,
+.footer-layout4,
+.footer-layout5 {
   --body-color: #ffffff;
   .social-style {
     margin-top: 24px;
@@ -34,7 +34,7 @@
     justify-content: space-between;
     border: 1px solid $theme-color;
     border-radius: 10px;
-  
+
     .form-control {
       border: none;
       margin: 5px;
@@ -42,18 +42,16 @@
       padding-right: 15px;
       background-color: transparent;
     }
-  
+
     .vs-btn {
       margin: 5px;
       overflow: unset;
       display: inline-block;
     }
-  
   }
   .footer-widget.widget_nav_menu {
     margin-bottom: 0px;
   }
-
 }
 
 .footer-insta-image {
@@ -64,7 +62,7 @@
 
 .social-style {
   a {
-    width: 45px; 
+    width: 45px;
     height: 45px;
     margin-right: 10px;
     border-radius: 50%;
@@ -85,9 +83,8 @@
   }
 }
 
-
 .copyright-wrap {
-  text-align: center;  
+  text-align: center;
   padding: 20px 0;
   position: relative;
   z-index: 2;
@@ -159,7 +156,6 @@
   }
 }
 
-
 .footer-top {
   position: relative;
   .shadow-color {
@@ -204,13 +200,7 @@
   }
 }
 
-
-
-
-
-
-@include lg{
-  
+@include lg {
   .footer-widget {
     margin-bottom: 60px;
 
@@ -222,22 +212,20 @@
       .widget_title {
         margin-bottom: 25px;
       }
-      
+
       a {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   }
 }
 
-
 @include md {
-
   .widget-area {
     padding: {
       top: 50px;
       bottom: 50px;
-    };
+    }
   }
 
   .footer-widget {
@@ -260,7 +248,6 @@
     padding: 30px;
     text-align: center;
   }
-
 }
 
 @include sm {
@@ -270,11 +257,11 @@
     }
   }
   .cta-style1 {
-    padding:  30px 15px;
+    padding: 30px 15px;
   }
   .newsletter-style2 {
     padding-left: 85px;
-    .newsletter-img  {
+    .newsletter-img {
       img {
         width: 60px;
       }
@@ -287,4 +274,3 @@
     }
   }
 }
-

@@ -292,7 +292,7 @@ Header Customization
       margin-right: 5px;
       border-radius: 50%;
       color: $theme-color;
-      transition: all ease .5s;
+      transition: all ease 0.5s;
       background-color: $white-color;
       display: inline-flex;
       align-items: center;
@@ -370,8 +370,6 @@ Header Customization
       margin-right: 0;
     }
   }
-
-
 }
 
 .button-badge {
@@ -426,7 +424,7 @@ Header Customization
     padding: 17px 22px;
     color: $white-color;
     background-color: $theme-color2;
-    transition: .5s ease all;
+    transition: 0.5s ease all;
     &:hover {
       background-color: $theme-color;
     }
@@ -454,7 +452,7 @@ Header Customization
     background-color: $theme-color;
     background-position: right 15px center;
     font-size: $body-font-size;
-    transition: all ease .5s;
+    transition: all ease 0.5s;
     padding: 0 25px;
     margin-left: 15px;
     position: relative;
@@ -510,7 +508,7 @@ Header Customization
       i {
         background-color: $white-color;
         color: $theme-color;
-        transition: .5s ease-in-out;
+        transition: 0.5s ease-in-out;
       }
       &:hover {
         i {
@@ -614,7 +612,7 @@ Header Customization
       padding: {
         left: 10px;
         right: 32px;
-      };
+      }
     }
   }
 
@@ -624,7 +622,7 @@ Header Customization
       padding: {
         left: 10px;
         right: 10px;
-      };
+      }
     }
   }
 }

@@ -2,12 +2,13 @@
 <html class="no-js" lang="zxx">
 
 <head>
+ 
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Vacance au Sénégal</title>
+  <title>Vacance au Sénégal - Agence local Sénégalaise d'organisation d'Exursions-Circuits-Voyages d'entreprise</title>
   <meta name="author" content="vecuro">
-  <meta name="description" content="Vacance au Sénégal -  Agence Local Sénégalaise & Guides Circuits Et Excursions">
-  <meta name="keywords" content="Vacance au Sénégal -  Agence Local Sénégalaise & Guides Circuits Et Excursions">
+  <meta name="description" content="Vacance au senegal -  Agence local d'exursions et de circuits">
+  <meta name="keywords" content="Vacance au senegal-   Agence local d'exursions et de circuits">
   <meta name="robots" content="INDEX,FOLLOW">
 
   <!-- Mobile Specific Metas -->
@@ -19,15 +20,15 @@
   <meta name="theme-color" content="#ffffff">
 
   <!--==============================
-	  Google Fonts
-	============================== -->
+      Google Fonts
+  ============================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!--==============================
-	    All CSS File
-	============================== -->
+        All CSS File
+    ============================== -->
   <!-- Bootstrap -->
   <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/bootstrap.min.css')}} ">
@@ -39,8 +40,9 @@
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/slick.min.css')}} ">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href=" {{asset('frontend/assets/css/style.css')}} ">
-  {{-- Google Analityque --}}
-  <!-- Google tag (gtag.js) -->
+
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7J417T7SV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -72,44 +74,44 @@
   Code Start From Here 
 	******************************** -->
 
-  <!--==============================
-    Mobile Menu
-  ============================== -->
-  <div class="vs-menu-wrapper">
-    <div class="vs-menu-area text-center">
-      <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
-      <div class="mobile-logo">
-        <a href="{{url('/')}}"><img src="assets/img/logo.svg" alt="Vacance au Sénégal"></a>
-      </div>
-      <div class="vs-mobile-menu">
-        <ul>
-          <li>
-            <a href="{{url('/')}}">Acceuil</a>
-            
-          </li>
-          <li>
-            <a href="{{route('apropos')}}">A Propos</a>
-           
-          </li>
-
-
-          <li>
-            <a href="{{route('destination')}}">Destination</a>
-            
-          </li>
-          <li>
-            <a href="{{route('blog.list')}}">Blog</a>
-            
-          </li>
-        
-          <li>
-            <a href="{{route('contact')}}">Contact</a>
-          </li>
-        </ul>
+ 
+<!--==============================
+      Mobile Menu
+    ============================== -->
+    <div class="vs-menu-wrapper">
+      <div class="vs-menu-area text-center">
+        <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+        <div class="mobile-logo">
+          <a href="index.html"><img src="assets/img/logo.svg" alt="Travolo"></a>
+        </div>
+        <div class="vs-mobile-menu">
+          <ul>
+            <li>
+              <a href="{{url('/')}}">Acceuil</a>
+              
+            </li>
+            <li>
+              <a href="{{route('apropos')}}">A Propos</a>
+             
+            </li>
+  
+  
+            <li>
+              <a href="{{route('destination')}}">Destination</a>
+              
+            </li>
+            <li>
+              <a href="{{route('blog.list')}}">Blog</a>
+              
+            </li>
+          
+            <li>
+              <a href="{{route('contact')}}">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-
   <!--==============================
     Sidemenu
   ============================== -->

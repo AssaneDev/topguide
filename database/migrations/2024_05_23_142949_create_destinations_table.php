@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('name_es')->nullable();
             $table->string('short_descp_es')->nullable();
             $table->string('long_descp_es')->nullable();
+            $table->int('age_min')->nullable();
+            $table->string('type_circuit')->nullable();
+            $table->string('lieux')->nullable();
              $table->timestamps();
         });
     }
