@@ -6,7 +6,9 @@
   //       App::setLocale($locale);
 
        
-    $destination = App\Models\Destination::latest()->get();
+  $destination = App\Models\Destination::latest()->limit(3)->get();
+
+
     use Illuminate\Support\Facades\App;
     use Illuminate\Support\Facades\Session;
        $locale = Session::get('local') ?? 'fr';
@@ -27,166 +29,75 @@
         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
           <div class="package-top">
             <div class="title-area">
-              <span class="sec-subtitle">Festered Tours</span>
-              <h2 class="sec-title h1">Most Favorite Tour Place</h2>
+              <span class="sec-subtitle">Circuits Typiques</span>
+              <h2 class="sec-title h1">Ils plaisent aux voyageurs</h2>
             </div>
             <div class="title-btn">
-              <a class="vs-btn style4" href="tour-booking.html">View all place</a>
+              <a class="vs-btn style4" href="tour-booking.html">Tous Les Circuits</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="package-style2">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-4">
-            <div class="package-img">
-              <a href="tour-booking.html">
-                <img src=" {{asset('frontend/assets/img/tours/tour-5-1.jpg')}} " alt="Package Image">
-              </a>
-              <div class="price-box">
-                <p class="price-text">Form</p>
-                <span class="package-price">$100.00</span>
+      @foreach ($destination as $item)
+          <div class="package-style2">
+            <div class="row gx-5 align-items-center">
+              <div class="col-lg-4">
+                <div class="package-img">
+                  <a href="tour-booking.html">
+                
+                    <a href="{{ url('destination/detail/'.$item->id) }}">  <img src=" {{asset($item->image_cap)}} " alt="destination image"> </a> 
+                    
+                  </a>
+                  <div class="price-box">
+                    <p class="price-text">A Partir</p>
+                    <span class="package-price"> {{$item->prix}}€ </span>
+                  </div>
+                  <div class="package-icon">
+                    <a href="{{ url('destination/detail/'.$item->id) }}">
+                      <i class="far fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="package-icon">
-                <a href="tour-booking.html">
-                  <i class="far fa-arrow-right"></i>
-                </a>
+              <div class="col-lg-4">
+                <div class="package-content">
+                  <div class="package-review">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>5 (3)</span>
+                  </div>
+                  <h3 class="package-title"><a href="{{ url('destination/detail/'.$item->id) }}">{{$item->name}}</a></h3>
+                  <p class="package-text">{!!$item->short_descp!!}</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="package-meta">
+                  <ul>
+                    <li>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
+                    </li>
+                    <li>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fab fa-telegram-plane"></i><strong> Type Circuit:</strong>{{$item->type_circuit}}</a>
+                    </li>
+                    <li>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-map-marker-alt"></i><strong>Lieux:</strong>{{$item->lieux}}</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="package-content">
-              <div class="package-review">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>5 (3)</span>
-              </div>
-              <h3 class="package-title"><a href="tour-booking.html">Over Turkish Waves</a></h3>
-              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="package-meta">
-              <ul>
-                <li>
-                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
+
+      
 
 
       
-      <div class="package-style2">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-4">
-            <div class="package-img">
-              <a href="tour-booking.html">
-                <img src=" {{asset('frontend/assets/img/tours/tour-5-2.jpg')}} " alt="Package Image">
-              </a>
-              <div class="price-box">
-                <p class="price-text">Form</p>
-                <span class="package-price">$105.00</span>
-              </div>
-              <div class="package-icon">
-                <a href="tour-booking.html">
-                  <i class="far fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="package-content">
-              <div class="package-review">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>5 (4)</span>
-              </div>
-              <h3 class="package-title"><a href="tour-booking.html">Beach Bliss Exploration</a></h3>
-              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="package-meta">
-              <ul>
-                <li>
-                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="package-style2 pb-0">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-4">
-            <div class="package-img">
-              <a href="tour-booking.html">
-                <img src=" {{asset('frontend/assets/img/tours/tour-5-3.jpg')}} " alt="Package Image">
-              </a>
-              <div class="price-box">
-                <p class="price-text">Form</p>
-                <span class="package-price">$90.00</span>
-              </div>
-              <div class="package-icon">
-                <a href="tour-booking.html">
-                  <i class="far fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="package-content">
-              <div class="package-review">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>5 (4)</span>
-              </div>
-              <h3 class="package-title"><a href="tour-booking.html">US Skyline Adventure</a></h3>
-              <p class="package-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffere</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="package-meta">
-              <ul>
-                <li>
-                  <a href="#"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fab fa-telegram-plane"></i><strong>Tour Type:</strong>Adventure. Fun</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong>Broadway, NY Morris Street.</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+     
     </div>
   </section>
   <!--==============================
@@ -250,7 +161,74 @@
     @endif
 
     @if ($locale == 'fr')
-      <div class="container">
+      <!--==============================
+    About Area Start 
+  ==============================-->
+  <section class="space-top about-layout1 bg-smoke">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="about-content">
+            <div class="title-area">
+              <span class="sec-subtitle">Vacance Sénégal</span>
+              <h2 class="sec-title h1"> Votre Guide à la journée </h2>
+              <p class="sec-text">Nos guides multilingues et spécialistes vous accompagneront pour une expérience unique.Notre renommée repose sur nos pratiques innovantes dans le secteur du voyage, en particulier notre système offrant aux voyageurs la possibilité de bénéficier des services d’un guide touristique local professionnel agréé par le Ministère du Tourisme. </p>
+            </div>
+            <ul class="about-list3">
+              {{-- <li class="list-item">
+                <div class="about-icon">
+                  <img src=" {{asset('frontend/assets/img/icons/about-icon1.png')}} " alt="about-icon">
+                </div>
+                 <div class="icon-content">
+                  <h3 class="title">Safety first always</h3>
+                  <p class="text">There are many variations of passages Nulla vestibulum tincidunt.</p>
+                </div> 
+              </li> --}}
+              <li class="list-item">
+                <div class="about-icon">
+                  <img src=" {{asset('frontend/assets/img/icons/about-icon2.png')}} " alt="about-icon">
+                </div>
+                <div class="icon-content">
+                  <h3 class="title">Prix Accessible Aux Voyageurs</h3>
+                  <p class="text">There are many variations of passages Nulla vestibulum tincidunt.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="about-bottom">
+              <a href="about.html" class="vs-btn style5">Réservez votre guide</a>
+              <div class="item2">
+                <div class="item2__icon">
+                  <img src=" {{asset('frontend/assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">
+                </div>
+                <div class="item2__text">
+                  <span>Téléphone:</span>
+                  <a href="tel:+221771117420">(+221)77111 74 20</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="img-box3">
+            <div class="box1">
+              <div class="media-box1">
+                <p class="media-text"> Année D'Experience</p>
+                <span class="media-info">25</span>
+              </div>
+            </div>
+            <img class="img1" src=" {{asset('frontend/assets/img/about/img-3-1.jpg')}} " alt="about image">
+            <div class="bottom-img">
+              <img class="img3" src=" {{asset('frontend/assets/img/about/img-3-2.jpg')}} " alt="about image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==============================
+    About Area End 
+  ==============================-->
+      {{-- <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-xl-5">
             <div class="about-content">
@@ -286,7 +264,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     @endif
 
     @if ($locale == 'es')

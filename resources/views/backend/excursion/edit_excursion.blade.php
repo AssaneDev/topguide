@@ -4,13 +4,13 @@
 <div class="page-content">
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Modifier Destinations</div>
+        <div class="breadcrumb-title pe-3">Modifier Excursion</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Modifier destinations</li>
+                    <li class="breadcrumb-item active" aria-current="page">Modifier Exursion</li>
                 </ol>
             </nav>
         </div>
@@ -28,19 +28,19 @@
                             <div class="card">
                                 <div class="card-body p-4">
                               
-                        <form class="row g-3"  action="{{route('update.destination')}}" method="post" enctype="multipart/form-data">
+                        <form class="row g-3"  action="{{route('update.excursion')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$dataDesti->id}}" id="">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="input1" class="form-label">Nom</label>
+                                                <label for="input1" class="form-label">Nom Excursion</label>
                                                 <input type="text" name="name"  class="form-control" id="input1" value="{{$dataDesti->name}}" >
                                                 <label for="input1"  class="form-label">Prix</label>
                                                 <input  type="number" name="prix"  class="form-control mb-10" id="input1" value="{{$dataDesti->prix}}" >
                                                 <label for="input1"  class="form-label">Prix Guide</label>
                                                 <input  type="number" name="prix_guide"  class="form-control mb-10" id="input1" value="{{$dataDesti->prix_guide}}"  >
-                                                <label for="input1"  class="form-label">Types Circuit</label>
-                                                <input  type="text" name="type_circuit"  class="form-control mb-10" id="input1" value="{{$dataDesti->type_circuit}}" >
+                                                <label for="input1"  class="form-label">Types Excursion</label>
+                                                <input  type="text" name="type_excursion"  class="form-control mb-10" id="input1" value="{{$dataDesti->type_excursion}}" >
                                                 <label for="input1"  class="form-label">Lieux</label>
                                                 <input  type="text" name="lieux"  class="form-control mb-10" id="input1"value="{{$dataDesti->lieux}}" >
                                                 <label for="input1"  class="form-label">Durée Séjours</label>
@@ -128,7 +128,7 @@
                                             <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple accept="image/jpeg,image/jpg,image/gif,image/png">
                                              
                                              @foreach ($multiimgs as $item)
-                                            <img src=" {{ (!empty($item->image)) ? url('/upload/destination/multi_img/'.$item->image)  : url('upload/no_image.jpg') }} " alt="Admin" class="bg-primary" width="70px" />
+                                            <img src=" {{ (!empty($item->image)) ? url('/upload/excursion/multi_img/'.$item->image)  : url('upload/no_image.jpg') }} " alt="Admin" class="bg-primary" width="70px" />
                                             <a href="{{route('multi.image.delete',$item->id)}}"> <i class="lni lni-close"></i> </a>
                                             @endforeach 
 

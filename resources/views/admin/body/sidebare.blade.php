@@ -20,19 +20,28 @@
         </li>
        
 
+        
+        <li class="menu-label">Programmes</li>
+       
         <li>
-            {{-- <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
-                <div class="menu-title">Destination</div>
-            </a> --}}
+                <div class="menu-title">Circuits et Excursion</div>
+            </a>
             <ul>
-                <li> <a href="{{route('all.destinations')}}"><i class='bx bx-radio-circle'></i>Destination</a>
+                <li> <a href="{{route('all.destinations')}}"><i class='bx bx-radio-circle'></i>Circuits</a>
                 </li>
-                
+                <li> <a href="{{route('all.excursion')}}"><i class='bx bx-radio-circle'></i>Excursions</a>
+                </li>
+
+                <li> <a href="{{route('all.destinations')}}"><i class='bx bx-radio-circle'></i>Voyage de Groupes</a>
+                </li>
                
             </ul>
         </li>
+
+
         <li class="menu-label">Blog</li>
        
         <li>

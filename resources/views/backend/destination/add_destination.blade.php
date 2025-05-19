@@ -40,10 +40,20 @@
                                                 <span class="badge bg-warning text-dark">ETAPE  1</span> </br>
                                                 <label for="input1"  class="form-label">Nom</label>
                                                 <input  type="text" name="name"  class="form-control mb-10" id="input1" >
-                                                <label for="input1" class="form-label "><span class="badge rounded-pill text-bg-primary">Nom ANGLAIS</span></label>
+                                                <label for="input1"  class="form-label">Prix Circuit</label>
+                                                <input  type="number" name="prix"  class="form-control mb-10" id="input1" >
+                                                <label for="input1"  class="form-label">Prix Guide</label>
+                                                <input  type="number" name="prix_guide"  class="form-control mb-10" id="input1" >
+                                                <label for="input1"  class="form-label">Types Circuit</label>
+                                                <input  type="text" name="type_circuit"  class="form-control mb-10" id="input1" >
+                                                <label for="input1"  class="form-label">Lieux</label>
+                                                <input  type="text" name="lieux"  class="form-control mb-10" id="input1" >
+                                                <label for="input1"  class="form-label">Durée Séjours</label>
+                                                <input  type="number" name="dure_circuit"  class="form-control mb-10" id="input1" >
+                                                {{-- <label for="input1" class="form-label "><span class="badge rounded-pill text-bg-primary">Nom ANGLAIS</span></label>
                                                 <input type="text" name="name_en"  class="form-control mb-10" id="input1" >
                                                 <label for="input1" class="form-label"> <span class="badge rounded-pill text-bg-primary"> Nom ESPAGNOL </span></label>
-                                                <input type="text" name="name_es"  class="form-control  mb-10" id="input1" >
+                                                <input type="text" name="name_es"  class="form-control  mb-10" id="input1" > --}}
 
                                             </div>
                                         
@@ -52,32 +62,56 @@
                                         <div class="col-md-12 ">
                                             <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
 
-                                            <label for="input11" class="form-label">Courte Description</label>
-                                            <textarea class="form-control" name="short_descp" id="myeditorinstance" placeholder="" rows="3"></textarea>
+                                            <label for="input11" class="form-label">Offre Tout Compris</label>
+                                            <textarea class="form-control" name="information" id="myeditorinstance" placeholder="" rows="3"></textarea>
 
-                                            <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
                                             <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
 
                                             <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea>
+                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
+                                        </div>
+                                        <div class="col-md-12 ">
+                                         
+
+                                            <label for="input11" class="form-label">Offre Guide Unique</label>
+                                            <textarea class="form-control" name="offre_guide" id="myeditorinstance" placeholder="" rows="3"></textarea>
+
+                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
+
+                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
+                                        </div>
+                                        <div class="col-md-12 ">
+                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
+
+                                            <label for="input11" class="form-label">Courte Description</label>
+                                            <textarea class="form-control" name="short_descp" id="myeditorinstance" placeholder="" rows="3"></textarea>
+
+                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
+
+                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
                                         </div>
 
                                         <div class="col-md-12">
-                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
+                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
 
                                             <label for="input11" class="form-label">Description </label>
                                             <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3"></textarea>
 
-                                            <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            {{-- <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
                                             <textarea class="form-control" name="long_descp_en"  id="myeditorinstance" name="description" value rows="3"></textarea>
 
                                             <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="long_descp_es"  id="myeditorinstance" name="description" value rows="3"></textarea>
+                                            <textarea class="form-control" name="long_descp_es"  id="myeditorinstance" name="description" value rows="3"></textarea> --}}
                                         </div>
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
+                                            <span class="badge bg-warning text-dark">ETAPE  5</span> </br>
 
                                                 <label for="input11" class="form-label">Image Caption</label>
                                                 <input class="form-control" name="image_cap" type="file" id="image">
@@ -90,7 +124,7 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <span class="badge bg-warning text-dark">ETAPE  5</span> </br>
+                                            <span class="badge bg-warning text-dark">ETAPE  6</span> </br>
 
                                             <label for="input11" class="form-label">Image Baniere</label>
                                                
@@ -100,7 +134,7 @@
 
 
                                         <div class="col-md-6">
-                                            <span class="badge bg-warning text-dark">ETAPE  6</span> </br>
+                                            <span class="badge bg-warning text-dark">ETAPE  7</span> </br>
 
                                             <label for="input4" class="form-label">Images Galerie</label>
                                             <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple accept="image/jpeg,image/jpg,image/gif,image/png">
@@ -113,26 +147,7 @@
                                             <div class="row" id="preview_img"></div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                            
-
-                                            
-
-                                            <span class="badge bg-danger text-dark" style="font-size: 20px">Détails Circuits</span> </br>
-
-                                            <label for="input11" class="form-label">Prix Circuit</label>
-                                            <input type="text" class="form-control mb-10"  name="prix" id="">
-
-                                            <label for="input11" class="form-label">Age Minimal</label>
-                                            <input type="number" class="form-control mb-10"  name="age-min" id="">
-
-                                            <label for="input11" class="form-label">Types de Circuit</label>
-                                            <input type="text" class="form-control mb-10"  name="type-circuit" id="">
-
-                                            <label for="input11" class="form-label">Ville Concernée</label>
-                                            <input type="text" class="form-control mb-10"  name="lieux" id="">
-                                        </div>
+                       
                                            
     
                                            

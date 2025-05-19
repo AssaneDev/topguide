@@ -8,6 +8,7 @@ use App\Http\Controllers\Usercontroller;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\ExcursionController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocalController;
 use App\Models\Destination;
@@ -70,11 +71,18 @@ Route::middleware(['auth','roles:admin'])->group(function(){
             Route::post('/update/destination','UpdateDestination')->name('update.destination');
             Route::get('/delete/destination/{id}','DeleteDestination')->name('delete.destination');
              Route::get('/delete/multiimage/{id}','DeleteMultiImage')->name('multi.image.delete');
-          
 
+        });
 
-
-
+          //programme
+          Route::controller(ExcursionController::class)->group(function(){
+            Route::get('/all/excursion/','AllExcursion')->name('all.excursion');
+            Route::get('/add/excursion/','AddExcursion')->name('add.excursion');
+            Route::post('/store/excursion/','StoreExcursion')->name('store.excursion');
+            Route::get('/edit/excursion/{id}','EditExcursion')->name('edit.excursion');
+            Route::post('/update/excursion','UpdateExcursion')->name('update.excursion');
+            Route::get('/delete/excursion/{id}','DeleteExcursion')->name('delete.excursion');
+            Route::get('/delete/multiimage/{id}','DeleteMultiImage')->name('multi.image.delete');
 
         });
 
@@ -112,9 +120,13 @@ Route::controller(DestinationController::class)->group(function(){
     Route::get('destination/detail/{id}','DestinationDetail');  
     Route::get('destination/','Destination')->name('destination');
     Route::get('vehicule/','Vehicule')->name('vehicule');
+});
 
-
-
+//Excursion Frontend
+Route::controller(ExcursionController::class)->group(function(){
+    Route::get('excursion/detail/{id}','ExcursionDetail');  
+    Route::get('excursion/','Excursion')->name('excursion');
+    
 });
 //Evoie
 Route::controller(FormController::class)->group(function(){

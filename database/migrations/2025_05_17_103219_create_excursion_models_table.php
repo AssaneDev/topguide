@@ -11,27 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('destinations', function (Blueprint $table) {
+        Schema::create('excursion_models', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->longText('short_descp')->nullable();
             $table->string('image_cap')->nullable();
             $table->string('image')->nullable();
-            $table->int('prix')->nullable();
-            $table->int('prix_guide')->nullable();
+            $table->string('prix')->nullable();
+            $table->string('prix_guide')->nullable();
             $table->longText('long_descp')->nullable();
             $table->longText('information')->nullable();
             $table->longText('offre_guide')->nullable();
-            $table->string('name_en')->nullable();
-            $table->string('short_descp_en')->nullable();
-            $table->string('long_descp_en')->nullable();
-            $table->string('name_es')->nullable();
-            $table->string('short_descp_es')->nullable();
-            $table->string('long_descp_es')->nullable();
-            $table->int('dure_sejour')->nullable();
-            $table->string('type_circuit')->nullable();
+            $table->string('dure_sejour')->nullable();
+            $table->string('type_excursion')->nullable();
             $table->string('lieux')->nullable();
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 
@@ -40,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('destinations');
+        Schema::dropIfExists('excursion_models');
     }
 };

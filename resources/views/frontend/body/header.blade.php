@@ -221,7 +221,11 @@
 
 
                         <li>
-                          <a href="{{route('destination')}}">Destination</a>
+                          <a href="{{route('destination')}}">Circuits</a>
+                          
+                        </li>
+                        <li>
+                          <a href="{{route('excursion')}}">Excursions</a>
                           
                         </li>
                         <li>
@@ -236,31 +240,6 @@
                     @endif
 
 
-                    @if ($locale == 'es')
-                    <li>
-                      <a href="{{url('/')}}">Casa</a>
-                      
-                    </li>
-                    <li>
-                      <a href="{{route('apropos')}}">Quiénes somos</a>
-                    
-                    </li>
-
-
-                    <li>
-                      <a href="{{route('destination')}}">Destinos</a>
-                      
-                    </li>
-                    <li>
-                      <a href="{{route('blog.list')}}">Blog</a>
-                      
-                    </li>
-                  
-                    <li>
-                      <a href="{{route('contact')}}">Contacto</a>
-                    </li>
-                   
-                @endif
 
                   {{-- <button class="vs-btn style4">Devenir Partenaire</button> --}}
 
@@ -273,7 +252,7 @@
               <div class="col-auto d-none d-xl-block">
                 <div class="header-right">
                   <ul>
-                    <li class="mr-40">
+                    {{-- <li class="mr-40">
                       <div class="header-btns">
                         <button class="searchBoxTggler">
                           <i class="fal fa-search"></i>
@@ -282,9 +261,9 @@
                           <i class="fas fa-shopping-basket"></i><span class="button-badge">2</span>
                         </button>
                       </div>
-                    </li>
+                    </li> --}}
                     <li>
-                      <a class="vs-btn style7" href="contact.html">
+                      {{-- <a class="vs-btn style7" href="contact.html">
                         Get in Touch
                         <i>
                           <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -293,7 +272,7 @@
                               fill="white" />
                           </svg>
                         </i>
-                      </a>
+                      </a> --}}
                     </li>
                   </ul>
                 </div>
