@@ -46,7 +46,7 @@
                 <div class="package-img">
                   <a href="tour-booking.html">
                 
-                    <a href="{{ url('destination/detail/'.$item->id) }}">  <img src=" {{asset($item->image_cap)}} " alt="destination image"> </a> 
+                      <img src="{{asset($item->image_cap)}}" alt="destination image"> 
                     
                   </a>
                   <div class="price-box">
