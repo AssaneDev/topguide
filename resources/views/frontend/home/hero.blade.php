@@ -14,7 +14,7 @@
 <section class="hero-layout1">
   <div>
     <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSNeCP.png')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/bgSNeCP.png')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/hero2-bg2.jpg')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/hero2-bg2.jpg')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/touriste.jpg')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/touriste.jpg')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -70,7 +70,7 @@
 
 
 @if ($locale == 'fr')
-<section class="hero-layout3" data-bg-src=" {{asset('frontend/assets/img/bg/bg-1.jpg')}} ">
+<section class="hero-layout3" data-bg-src=" {{asset('assets/img/bg/bg-1.jpg')}} ">
   <div class="hero-mask">
     <div class="container">
       <div class="row align-items-center justify-content-start">
@@ -86,17 +86,17 @@
               <div class="vs-carousel" id="hero-slider" data-slide-show="1" autoplay="false">
                 <div class="hero-slide">
                   <div class="hero-img">
-                    <img class="img1" src=" {{asset('frontend/assets/img/banner/hero-slide-1-1.jpg')}} " alt="hero">
+                    <img class="img1" src=" {{asset('assets/img/banner/hero-slide-1-1.jpg')}} " alt="hero">
                   </div>
                 </div>
                 <div class="hero-slide">
                   <div class="hero-img">
-                    <img class="img1" src=" {{asset('frontend/assets/img/banner/hero-slide-1-2.jpg')}} " alt="hero">
+                    <img class="img1" src=" {{asset('assets/img/banner/hero-slide-1-2.jpg')}} " alt="hero">
                   </div>
                 </div>
                 <div class="hero-slide">
                   <div class="hero-img">
-                    <img class="img1" src=" {{asset('frontend/assets/img/banner/hero-slide-1-3.jpg')}} " alt="hero">
+                    <img class="img1" src=" {{asset('assets/img/banner/hero-slide-1-3.jpg')}} " alt="hero">
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@
 <section class="hero-layout1">
   <div>
     <div class="vs-carousel hero-slider2" data-slide-show="1" data-fade="true">
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/bgSNeCP.png')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/bgSNeCP.png')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -131,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/hero2-bg2.jpg')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/hero2-bg2.jpg')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">
@@ -146,7 +146,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/touriste.jpg')}} ">
+      <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/banner/touriste.jpg')}} ">
         <div class="container">
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6">

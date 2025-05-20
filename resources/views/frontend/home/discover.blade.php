@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Session;
 @endphp
 <section class="space bg-light gallery2 shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-left="0%">
-      <img src=" {{asset('frontend/assets/img/shape/visit-left.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/visit-left.png')}} " alt="svg">
     </div>
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-right="0%">
-      <img src=" {{asset('frontend/assets/img/shape/visit-right.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/visit-right.png')}} " alt="svg">
     </div>
     <div class="shadow-color"></div>
     <div class="container">

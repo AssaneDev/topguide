@@ -186,7 +186,7 @@
               </li> --}}
               <li class="list-item">
                 <div class="about-icon">
-                  <img src=" {{asset('frontend/assets/img/icons/about-icon2.png')}} " alt="about-icon">
+                  <img src=" {{asset('assets/img/icons/about-icon2.png')}} " alt="about-icon">
                 </div>
                 <div class="icon-content">
                   <h3 class="title">Prix Accessible Aux Voyageurs</h3>
@@ -198,7 +198,7 @@
               <a href="about.html" class="vs-btn style5">Réservez votre guide</a>
               <div class="item2">
                 <div class="item2__icon">
-                  <img src=" {{asset('frontend/assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">
+                  <img src=" {{asset('assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">
                 </div>
                 <div class="item2__text">
                   <span>Téléphone:</span>
@@ -216,9 +216,9 @@
                 <span class="media-info">25</span>
               </div>
             </div>
-            <img class="img1" src=" {{asset('frontend/assets/img/about/img-3-1.jpg')}} " alt="about image">
+            <img class="img1" src=" {{asset('assets/img/about/img-3-1.jpg')}} " alt="about image">
             <div class="bottom-img">
-              <img class="img3" src=" {{asset('frontend/assets/img/about/img-3-2.jpg')}} " alt="about image">
+              <img class="img3" src=" {{asset('assets/img/about/img-3-2.jpg')}} " alt="about image">
             </div>
           </div>
         </div>
@@ -293,10 +293,10 @@
           </div>
           <div class="col-xl-6">
             <div class="img-box3">
-              <img class="img1" src=" {{asset('frontend/assets/img/about/about-1-1.jpg')}} " alt="about image">
+              <img class="img1" src=" {{asset('assets/img/about/about-1-1.jpg')}} " alt="about image">
               <div class="bottom-img">
-                <img class="img2" src="{{asset('frontend/assets/img/about/deux.jpg')}}" alt="about image">
-                <img class="img3" src="{{asset('frontend/assets/img/about/about-1-3.jpg')}}" alt="about image">
+                <img class="img2" src="{{asset('assets/img/about/deux.jpg')}}" alt="about image">
+                <img class="img3" src="{{asset('assets/img/about/about-1-3.jpg')}}" alt="about image">
               </div>
             </div>
           </div>

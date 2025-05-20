@@ -9,12 +9,12 @@
 @endphp
 
  
-      <section class="space space-extra-bottom bg-light shape-mockup-wrap" data-bg-src=" {{asset('frontend/assets/img/shape/Bg.png')}} ">
+      <section class="space space-extra-bottom bg-light shape-mockup-wrap" data-bg-src=" {{asset('assets/img/shape/Bg.png')}} ">
         <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-top="-20%" data-right="-8%">
-          <img src=" {{asset('frontend/assets/img/shape/circle1.png')}} " alt="circle">
+          <img src=" {{asset('assets/img/shape/circle1.png')}} " alt="circle">
         </div>
         <div class="shape-mockup d-none d-xl-block  z-index-negative" data-bottom="13%" data-left="0%">
-          <img src=" {{asset('frontend/assets/img/shape/walk.png')}} " alt="circle">
+          <img src=" {{asset('assets/img/shape/walk.png')}} " alt="circle">
         </div>
 
      

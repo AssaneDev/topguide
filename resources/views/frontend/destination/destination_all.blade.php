@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Session;
   
 
   @if ($locale =='fr')
-  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
     <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Session;
   @endif
 
   @if ($locale =='en')
-  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
     <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title" style="display: none" >Destinations</h1>
@@ -56,7 +56,7 @@ use Illuminate\Support\Facades\Session;
   @endif
 
   @if ($locale =='es')
-  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
+  <div class="breadcumb-wrapper" data-bg-src=" {{asset('assets/img/breadcumb/desti.png')}} " style="width: 1280;height: 800;">
     <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title" style="display: none" >Destinos</h1>
