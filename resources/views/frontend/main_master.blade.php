@@ -31,15 +31,15 @@
     ============================== -->
   <!-- Bootstrap -->
   <!-- <link rel="stylesheet" href="assets/css/app.min.css"> -->
-  <link rel="stylesheet" href=" {{asset('frontend/assets/css/bootstrap.min.css')}} ">
+  <link rel="stylesheet" href=" {{asset('assets/css/bootstrap.min.css')}} ">
   <!-- Fontawesome Icon -->
-  <link rel="stylesheet" href=" {{asset('frontend/assets/css/fontawesome.min.css')}} ">
+  <link rel="stylesheet" href=" {{asset('assets/css/fontawesome.min.css')}} ">
   <!-- Magnific Popup -->
-  <link rel="stylesheet" href=" {{asset('frontend/assets/css/magnific-popup.min.css')}} ">
+  <link rel="stylesheet" href=" {{asset('assets/css/magnific-popup.min.css')}} ">
   <!-- Slick Slider -->
-  <link rel="stylesheet" href=" {{asset('frontend/assets/css/slick.min.css')}} ">
+  <link rel="stylesheet" href=" {{asset('assets/css/slick.min.css')}} ">
   <!-- Theme Custom CSS -->
-  <link rel="stylesheet" href=" {{asset('frontend/assets/css/style.css')}} ">
+  <link rel="stylesheet" href=" {{asset('assets/css/style.css')}} ">
 
 
 
@@ -149,24 +149,24 @@
     All Js File
   ================================ -->
   <!-- Jquery -->
-  <script src=" {{asset('frontend/assets/js/vendor/jquery-3.6.0.min.js')}} "></script>
+  <script src=" {{asset('assets/js/vendor/jquery-3.6.0.min.js')}} "></script>
   <!-- Slick Slider -->
-  <script src="{{asset('frontend/assets/js/slick.min.js')}}"></script>
+  <script src="{{asset('assets/js/slick.min.js')}}"></script>
   <!-- Bootstrap -->
-  <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
   <!-- Magnific Popup -->
-  <script src="{{asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
   <!-- jquery Ui -->
-  <script src="{{asset('frontend/assets/js/jquery-ui.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
   <!-- Circle Progress -->
-  <script src="{{asset('frontend/assets/js/circle-progress.min.js')}}"></script>
+  <script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
   <!-- isotope -->
-  <script src="{{asset('frontend/assets/js/imagesLoaded.js')}}"></script>
-  <script src="{{asset('frontend/assets/js/isotope.js')}}"></script>
+  <script src="{{asset('assets/js/imagesLoaded.js')}}"></script>
+  <script src="{{asset('assets/js/isotope.js')}}"></script>
   <!-- Wow.js -->
-  <script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
+  <script src="{{asset('assets/js/wow.min.js')}}"></script>
   <!-- Main Js File -->
-  <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 
 </html>

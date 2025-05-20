@@ -6,9 +6,9 @@
       <div class="row">
         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
           <div class="features-style1">
-            <div class="features-bg" data-bg-src=" {{asset('frontend/assets/img/shape/features.png')}} "></div>
+            <div class="features-bg" data-bg-src=" {{asset('assets/img/shape/features.png')}} "></div>
             <div class="features-image">
-              <img src=" {{asset('frontend/assets/img/features/features-1-1.png')}} " alt="image">
+              <img src=" {{asset('assets/img/features/features-1-1.png')}} " alt="image">
             </div>
             <div class="features-content">
               <h3 class="features-title">Guide spécialiste</h3>
@@ -18,9 +18,9 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
           <div class="features-style1">
-            <div class="features-bg" data-bg-src=" {{asset('frontend/assets/img/shape/features.png')}} "></div>
+            <div class="features-bg" data-bg-src=" {{asset('assets/img/shape/features.png')}} "></div>
             <div class="features-image">
-              <img src=" {{asset('frontend/assets/img/features/features-1-2.png')}} " alt="image">
+              <img src=" {{asset('assets/img/features/features-1-2.png')}} " alt="image">
             </div>
             <div class="features-content">
               <h3 class="features-title">Guides Personnel </h3>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-xl-3 col-md-6 col-sm-6 col-12">
           <div class="features-style1">
-            <div class="features-bg" data-bg-src=" {{asset('frontend/assets/img/shape/features.png')}} "></div>
+            <div class="features-bg" data-bg-src=" {{asset('assets/img/shape/features.png')}} "></div>
             <div class="features-image">
               <img src=" {{asset('frontend/assets/img/features/features-1-3.png')}} " alt="image">
             </div>
