@@ -11,7 +11,7 @@
      <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
           <div class="container z-index-common">
             <div class="breadcumb-content">
-              <h1 class="breadcumb-title">{{$destination->name}} / {{$destination->dure_sejour}}</h1>
+              <h1 class="breadcumb-title">{{$destination->name}} : {{$destination->dure_sejour}}</h1>
               <div class="breadcumb-menu-wrap">
                 {{-- <ul class="breadcumb-menu">
                   <li><a href="index.html">{{$destination->name}}</a></li>
@@ -34,12 +34,12 @@
             <div class="filter-menu1 filter-menu-active wow fadeInUp wow-animated">
               <button class="tab-button active" data-filter=".tab-content1"><i class="fas fa-info-circle"></i>
                 Offre Tout Compris</button>
-                <button class="tab-button active" data-filter=".tab-content5"><i class="fas fa-info-circle"></i>
-                  Offre Guides Unique</button>
-              <button class="tab-button" data-filter=".tab-content2"><i class="fas fa-calendar"></i> Itineraire Circuit</button>
+                <button class="tab-button" data-filter=".tab-content5"><i class="fas fa-info-circle"></i>
+                  Offre Guide</button>
+              <button class="tab-button " data-filter=".tab-content2"><i class="fas fa-calendar"></i> Itineraire Circuit</button>
               {{-- <button class="tab-button" data-filter=".tab-content3"><i class="fas fa-map-marker-alt"></i>
                 Location</button> --}}
-              <button class="tab-button" data-filter=".tab-content4"><i class="fas fa-camera-retro"></i> Gallery</button>
+              <button class="tab-button" data-filter=".tab-content4"><i class="fas fa-camera-retro"></i> Galerie</button>
               {{-- <button class="tab-button" data-filter=".tab-content5"><i class="fas fa-comments"></i> Reviews</button> --}}
             </div>
             <div class="container">
@@ -110,7 +110,7 @@
                     <div class="sidebar-area tours-sidebar">
                         
                          <div class="widget widget-newsletter">
-                              <h3 class="widget_title">Demander un programme {{$destination->name}}</h3>
+                              <h3 class="widget_title">Personaliser ou Réserver un {{$destination->name}}</h3>
                               <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
                                 @csrf
                                 <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
