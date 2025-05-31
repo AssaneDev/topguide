@@ -78,7 +78,8 @@
                 <div class="package-meta">
                   <ul>
                     <li>
-                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-user-friends"></i><strong>Durée</strong>{{$item->dure_sejour}}</a>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-calendar-alt"></i><strong>Durée</strong>{{$item->dure_sejour}}</a>
+                      
                     </li>
                     <li>
                       <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fab fa-telegram-plane"></i><strong> Type Circuit:</strong>{{$item->type_circuit}}</a>
