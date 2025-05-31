@@ -1,4 +1,4 @@
-<section class="space position-relative" data-bg-src=" {{asset('frontend/assets/img/bg/offer-bg.jpg')}} ">
+<section class="space position-relative" data-bg-src=" {{asset('assets/img/bg/offer-bg.jpg')}} ">
     <div class="container">
       <div class="row align-items-center justify-content-between ">
         <div class="col-xl-5 col-lg-6 col-md-6">
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="img-1-2">
-            <img src=" {{asset('frontend/assets/img/shape/bag.png')}} " alt="image">
+            <img src=" {{asset('assets/img/shape/bag.png')}} " alt="image">
           </div>
         </div>
       </div>

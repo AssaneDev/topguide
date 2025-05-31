@@ -49,7 +49,7 @@
                                                 <label for="input1"  class="form-label">Lieux</label>
                                                 <input  type="text" name="lieux"  class="form-control mb-10" id="input1" >
                                                 <label for="input1"  class="form-label">Durée Séjours</label>
-                                                <input  type="number" name="dure_circuit"  class="form-control mb-10" id="input1" >
+                                                <input  type="text" name="dure_circuit"  class="form-control mb-10" id="input1" >
                                                 {{-- <label for="input1" class="form-label "><span class="badge rounded-pill text-bg-primary">Nom ANGLAIS</span></label>
                                                 <input type="text" name="name_en"  class="form-control mb-10" id="input1" >
                                                 <label for="input1" class="form-label"> <span class="badge rounded-pill text-bg-primary"> Nom ESPAGNOL </span></label>

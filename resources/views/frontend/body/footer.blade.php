@@ -12,10 +12,10 @@
   <footer class="footer-wrapper footer-layout1 shape-mockup-wrap">
 
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-left="0%">
-      <img src=" {{asset('frontend/assets/img/shape/tree-left.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/tree-left.png')}} " alt="svg">
     </div>
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-right="0%">
-      <img src=" {{asset('frontend/assets/img/shape/tree-right.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/tree-right.png')}} " alt="svg">
     </div>
     <div class="container ">
       <div class="footer-newsletter2 space-top">
@@ -23,7 +23,7 @@
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="newsletter-style2">
               <div class="newsletter-img">
-                <img src=" {{asset('frontend/assets/img/shape/call.png')}} " alt="image">
+                <img src=" {{asset('assets/img/shape/call.png')}} " alt="image">
               </div>
               <h3 class="newsletter-text">Contactez-nous 24/7</h3>
               <a href="tel:+221757529148"> +221 75 752 9148 </a>
@@ -58,7 +58,7 @@
             <div class="widget footer-widget">
               <div class="vs-widget-about">
                 <div class="footer-logo">
-                  <a href="index.html"><img src=" {{asset('frontend/assets/img/logor.png')}} " alt="Travolo" class="logo" /></a>
+                  <a href="index.html"><img src=" {{asset('assets/img/logor.png')}} " alt="Travolo" class="logo" /></a>
                 </div>
                 <p class="footer-text">Nous croyons que chaque voyageur mérite une expérience authentique et inoubliable.</p>
                 <div class="social-style1">
@@ -91,8 +91,10 @@
                 <ul class="menu">
                   <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mbour, Saly
                       .</a></li>
-                  <li><a href="#"><i class="fas fa-envelope"></i> contact@vacancesenegal.com</a></li>
+                  <li><a href="#"><i class="fas fa-envelope"></i> vacancesenegal221@gmail.com</a></li>
                   <li><a href="#"><i class="fas fa-phone-alt"></i> +221 75 752 9148 </a></li>
+                  <li><a href="#"><i class="fas fa-phone-alt"></i> 33 999 41 57 </a></li>
+
                 </ul>
               </div>
             </div>

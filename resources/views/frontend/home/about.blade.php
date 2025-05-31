@@ -46,7 +46,7 @@
                 <div class="package-img">
                   <a href="tour-booking.html">
                 
-                      <img src="{{asset($item->image_cap)}}" alt="destination image"> 
+                    <a href="{{ url('destination/detail/'.$item->id) }}">  <img src="{{asset($item->image_cap)}}" alt="destination image"> 
                     
                   </a>
                   <div class="price-box">
@@ -78,7 +78,7 @@
                 <div class="package-meta">
                   <ul>
                     <li>
-                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-user-friends"></i><strong>Min:</strong>Age15+</a>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-user-friends"></i><strong>Durée</strong>{{$item->dure_sejour}}</a>
                     </li>
                     <li>
                       <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fab fa-telegram-plane"></i><strong> Type Circuit:</strong>{{$item->type_circuit}}</a>
@@ -107,16 +107,16 @@
   
   <section class="space shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="5%">
-      <img src="{{asset('frontend/assets/img/shape/Ballon.png')}}" alt="svg">
+      <img src="{{asset('assets/img/shape/Ballon.png')}}" alt="svg">
     </div>
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="10%" data-right="10%">
-      <img src="{{asset('frontend/assets/img/shape/up-arrow.png')}}" alt="svg">
+      <img src="{{asset('assets/img/shape/up-arrow.png')}}" alt="svg">
     </div>
-    <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="0%" data-left="0%">
-      <img class="plane2" src="{{asset('frontend/assets/img/shape/plane2.png')}}" alt="svg">
-    </div>
+    {{-- <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="0%" data-left="0%">
+      <img class="plane2" src="{{asset('assets/img/shape/afri.jpg')}}" alt="svg">
+    </div> --}}
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="15%" data-right="5%">
-      <img src="{{asset('frontend/assets/img/shape/Lines.png')}}" alt="svg">
+      <img src="{{asset('assets/img/shape/Lines.png')}}" alt="svg">
     </div>
 
    
@@ -216,9 +216,9 @@
                 <span class="media-info">25</span>
               </div>
             </div>
-            <img class="img1" src=" {{asset('assets/img/about/img-3-1.jpg')}} " alt="about image">
+            <img class="img1" src=" {{asset('assets/img/about/guide1.jpg')}} " alt="about image">
             <div class="bottom-img">
-              <img class="img3" src=" {{asset('assets/img/about/img-3-2.jpg')}} " alt="about image">
+              <img class="img3" src=" {{asset('assets/img/about/guide2.jpg')}} " alt="about image">
             </div>
           </div>
         </div>

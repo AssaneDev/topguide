@@ -175,7 +175,7 @@
             <div class="row align-items-center justify-content-between">
               <div class="col-auto">
                 <div class="vs-logo">
-                  <a href="index.html"><img src="{{asset('frontend/assets/img/logor.png')}}" style="width: 100px;height: 100px;" alt="logo"></a>
+                  <a href="index.html"><img src="{{asset('assets/img/logo2.svg')}}" style="width: 100px;height: 100px;" alt="logo"></a>
                 </div>
               </div>
               <div class="col text-end">

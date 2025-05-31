@@ -82,7 +82,7 @@
       <div class="vs-menu-area text-center">
         <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-          <a href="index.html"><img src="assets/img/logo.svg" alt="Travolo"></a>
+          <a href="{{url('/')}}"><img src=" {{asset('assets/img/logo2.svg')}} " alt="Travolo"></a>
         </div>
         <div class="vs-mobile-menu">
           <ul>

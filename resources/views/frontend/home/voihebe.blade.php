@@ -44,7 +44,7 @@ App::setLocale($locale);
       </div>
       <div class="blog-style4">
         <div class="blog-image">
-          <img src="{{asset('frontend/assets/img/blog/Hebergement.jpg')}}" alt="blog image">
+          <img src="{{asset('assets/img/about/hebergement.jpg')}}" alt="blog image">
      
           
           @if ($locale == 'fr')
@@ -75,7 +75,7 @@ App::setLocale($locale);
           @endif
           
         </div>
-        <div class="blog-content" data-bg-src="{{asset('frontend/assets/img/shape/blog-bg.png')}}">
+        <div class="blog-content" data-bg-src="{{asset('assets/img/shape/blog-bg.png')}}">
           {{-- <a class="blog-date" href="blog-details.html"><i class="far fa-calendar-alt "></i> July 21, 2023</a> --}}
 
           
@@ -106,7 +106,7 @@ App::setLocale($locale);
         @if ($locale == 'fr')
             <div class="blog-style4">
               <div class="blog-image">
-                <img src="{{asset('frontend/assets/img/about/herbergement221.jpg')}} " alt="blog image">
+                <img src="{{asset('assets/img/about/herbergement221.jpg')}} " alt="blog image">
                 <div class="category-tag"><a href="#"><i class="fas fa-tag"></i> Voitures</a></div>
               </div>
               <div class="blog-content" data-bg-src="assets/img/shape/blog-bg.png">

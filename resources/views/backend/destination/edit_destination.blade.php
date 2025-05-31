@@ -44,7 +44,7 @@
                                                 <label for="input1"  class="form-label">Lieux</label>
                                                 <input  type="text" name="lieux"  class="form-control mb-10" id="input1"value="{{$dataDesti->lieux}}" >
                                                 <label for="input1"  class="form-label">Durée Séjours</label>
-                                                <input  type="number" name="dure_sejour"  class="form-control mb-10" id="input1"value="{{$dataDesti->dure_sejour}}" >
+                                                <input  type="text" name="dure_sejour"  class="form-control mb-10" id="input1"value="{{$dataDesti->dure_sejour}}" >
                                                 {{-- <label for="input1" class="form-label ">Nom ANGLAIS</label>
                                                 <input type="text" name="name_en"  class="form-control mb-10" id="input1" value="{{$dataDesti->name_en}}">
                                                 <label for="input1" class="form-label">Nom ESPAGNOL</label>
