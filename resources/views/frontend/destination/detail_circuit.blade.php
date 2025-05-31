@@ -11,13 +11,13 @@
      <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
           <div class="container z-index-common">
             <div class="breadcumb-content">
-              <h1 class="breadcumb-title">{{$destination->name}} / {{$destination->dure_sejour}}-Jours</h1>
+              <h1 class="breadcumb-title">{{$destination->name}} / {{$destination->dure_sejour}}</h1>
               <div class="breadcumb-menu-wrap">
-                <ul class="breadcumb-menu">
+                {{-- <ul class="breadcumb-menu">
                   <li><a href="index.html">{{$destination->name}}</a></li>
                   <li>Circuit</li>
                   <li>{{$destination->dure_sejour}} </li>
-                </ul>
+                </ul> --}}
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                       </div>
                      
                     <div class="filter-item tab-content5">
-                      <h2 style="font-size: 40px" class="badge bg-warning text-dark">{{$destination->prix_guide}}/Jours</h2> </br>
+                      <h2 style="font-size: 40px" class="badge bg-warning text-dark">{{$destination->prix_guide}}€/Jours</h2> </br>
                       <div class="info-image">
                         <img src="{{asset($destination->image)}}" alt="tours-img">
                         
