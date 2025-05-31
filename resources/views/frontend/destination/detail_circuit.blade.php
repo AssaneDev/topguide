@@ -16,7 +16,7 @@
                 <ul class="breadcumb-menu">
                   <li><a href="index.html">{{$destination->name}}</a></li>
                   <li>Circuit</li>
-                  <li>{{$destination->dure_sejour}} - Jours / 7 Nuits</li>
+                  <li>{{$destination->dure_sejour}} </li>
                 </ul>
               </div>
             </div>
