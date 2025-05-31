@@ -61,7 +61,7 @@
                       </div>
                      
                     <div class="filter-item tab-content5">
-                      <h2 style="font-size: 40px" class="badge bg-warning text-dark">50€/Jours</h2> </br>
+                      <h2 style="font-size: 40px" class="badge bg-warning text-dark">{{$destination->prix_guide}}</h2> </br>
                       <div class="info-image">
                         <img src="{{asset($destination->image)}}" alt="tours-img">
                         
