@@ -35,7 +35,7 @@
               <button class="tab-button active" data-filter=".tab-content1"><i class="fas fa-info-circle"></i>
                 Offre Tout Compris</button>
                 <button class="tab-button" data-filter=".tab-content5"><i class="fas fa-info-circle"></i>
-                  Offre Guide</button>
+                  Offre Juste Un Guide</button>
               <button class="tab-button " data-filter=".tab-content2"><i class="fas fa-calendar"></i> Itineraire Circuit</button>
               {{-- <button class="tab-button" data-filter=".tab-content3"><i class="fas fa-map-marker-alt"></i>
                 Location</button> --}}
