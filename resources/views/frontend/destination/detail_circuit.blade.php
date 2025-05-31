@@ -110,7 +110,7 @@
                     <div class="sidebar-area tours-sidebar">
                         
                          <div class="widget widget-newsletter">
-                              <h3 class="widget_title">Personaliser ou Réserver un {{$destination->name}}</h3>
+                              <h3 class="widget_title">Personaliser ou Réserver Votre {{$destination->name}}</h3>
                               <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
                                 @csrf
                                 <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
