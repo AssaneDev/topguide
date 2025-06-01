@@ -191,7 +191,7 @@
                 </div>
                 <div class="icon-content">
                   <h3 class="title">Prix Accessible Aux Voyageurs</h3>
-                  <p class="text">There are many variations of passages Nulla vestibulum tincidunt.</p>
+                  <p class="text">Vous ne payez que la prestation du guide.</p>
                 </div>
               </li>
             </ul>
@@ -213,7 +213,7 @@
           <div class="img-box3">
             <div class="box1">
               <div class="media-box1">
-                <p class="media-text"> Année D'Experience</p>
+                <p class="media-text"> Années D'Experiences</p>
                 <span class="media-info">25</span>
               </div>
             </div>

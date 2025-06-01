@@ -14,16 +14,16 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="image-box1">
-          <img class="img1" src="{{asset('frontend/assets/img/about/img-2-1.jpg')}}" alt="image1">
-          <img class="img2" src="{{asset('frontend/assets/img/about/img-2-2.jpg')}}" alt="image2">
+          <img class="img1" src="{{asset('assets/img/about/img-2-1.jpg')}}" alt="image1">
+          <img class="img2" src="{{asset('assets/img/about/img-2-2.jpg')}}" alt="image2">
           <div class="media-box1">
             <span class="media-info">20 années</span>
             <p class="media-text">D'Experiences</p>
           </div>
-          <div class="media-box2">
-            <span class="media-info">1000+</span>
+          {{-- <div class="media-box2">
+            <span class="media-info"></span>
             <p class="media-text">Clients Satisfaits</p>
-          </div>
+          </div> --}}
         </div>
       </div>
       <div class="col-lg-5">

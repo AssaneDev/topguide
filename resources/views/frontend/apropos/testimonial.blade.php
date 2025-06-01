@@ -9,7 +9,7 @@
 
 
 @if ($locale == 'fr')
-<section class="space testimonial-style2" data-bg-src=" {{asset('frontend/assets/img/bg/testimonial-bg-2.jpg')}} ">
+<section class="space testimonial-style2" data-bg-src=" {{asset('assets/img/bg/testimonial-bg-2.jpg')}} ">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6">
@@ -106,7 +106,7 @@
 
 
 @if ($locale == 'en')
-<section class="space testimonial-style2" data-bg-src=" {{asset('frontend/assets/img/bg/testimonial-bg-2.jpg')}} ">
+<section class="space testimonial-style2" data-bg-src=" {{asset('assets/img/bg/testimonial-bg-2.jpg')}} ">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6">
@@ -202,7 +202,7 @@
 
 
 @if ($locale == 'es')
-<section class="space testimonial-style2" data-bg-src=" {{asset('frontend/assets/img/bg/testimonial-bg-2.jpg')}} ">
+<section class="space testimonial-style2" data-bg-src=" {{asset('assets/img/bg/testimonial-bg-2.jpg')}} ">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6">
