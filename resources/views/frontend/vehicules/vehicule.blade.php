@@ -16,7 +16,7 @@
   <section class="hero-layout2">
     <div>
       <div class="vs-carousel hero-slider3" data-slide-show="1" data-fade="true" >
-        <div class="hero-slide hero-mask" data-bg-src=" {{asset('frontend/assets/img/banner/vehicule.jpg')}} ">
+        <div class="hero-slide hero-mask" data-bg-src=" {{asset('assets/img/about/herbergement221.jpg')}} ">
           <div class="container">
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-8">
@@ -50,7 +50,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="hero-img">
-                  <img class="shape-mokup d-none d-lg-block" src=" {{asset('frontend/assets/img/banner/brush.png')}} " alt="brush">
+                  <img class="shape-mokup d-none d-lg-block" src=" {{asset('assets/img/banner/brush.png')}} " alt="brush">
                  
                 </div>
               </div>
@@ -73,16 +73,16 @@
   ============================== -->
   <section class="space shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="5%">
-      <img src=" {{asset('frontend/assets/img/shape/Ballon.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/Ballon.png')}} " alt="svg">
     </div>
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="10%" data-right="10%">
-      <img src=" {{asset('frontend/assets/img/shape/up-arrow.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/up-arrow.png')}} " alt="svg">
     </div>
     <div class="  shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="0%" data-left="0%">
-      <img class="plane2" src="{{asset('frontend/assets/img/shape/plane2.png')}}" alt="svg">
+      <img class="plane2" src="{{asset('assets/img/shape/plane2.png')}}" alt="svg">
     </div>
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-bottom="15%" data-right="5%">
-      <img src=" {{asset('frontend/assets/img/shape/Lines.png')}} " alt="svg">
+      <img src=" {{asset('assets/img/shape/Lines.png')}} " alt="svg">
     </div>
     <div class="container">
       <div class="row align-items-center">
@@ -193,7 +193,7 @@
         </div>
         <div class="col-xl-6">
           <div class="img-box3">
-            <img class="img1" src="{{asset('frontend/assets/img/about/loc.jpg')}}" alt="about image">
+            <img class="img1" src="{{asset('assets/img/about/herbergement221.jpg')}}" alt="about image">
             
           </div>
         </div>

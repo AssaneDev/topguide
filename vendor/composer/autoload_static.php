@@ -118,6 +118,7 @@ class ComposerStaticInit01aa740bea8e8cdb24b3133e0fae365f
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Modules\\' => 8,
             'Mockery\\' => 8,
         ),
         'L' => 
@@ -397,6 +398,10 @@ class ComposerStaticInit01aa740bea8e8cdb24b3133e0fae365f
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/modules',
+        ),
         'Mockery\\' => 
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
@@ -558,21 +563,29 @@ class ComposerStaticInit01aa740bea8e8cdb24b3133e0fae365f
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Backend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BlogController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DestinationAngController' => __DIR__ . '/../..' . '/app/Http/Controllers/DestinationAngController.php',
         'App\\Http\\Controllers\\DestinationController' => __DIR__ . '/../..' . '/app/Http/Controllers/DestinationController.php',
+        'App\\Http\\Controllers\\ExcursionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExcursionController.php',
         'App\\Http\\Controllers\\FormController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormController.php',
         'App\\Http\\Controllers\\GuideController' => __DIR__ . '/../..' . '/app/Http/Controllers/GuideController.php',
+        'App\\Http\\Controllers\\LocalController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocalController.php',
+        'App\\Http\\Controllers\\OptimizationController' => __DIR__ . '/../..' . '/app/Http/Controllers/OptimizationController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\Usercontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/Usercontroller.php',
         'App\\Http\\Middleware\\AdminRole' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminRole.php',
         'App\\Http\\Middleware\\GuideRole' => __DIR__ . '/../..' . '/app/Http/Middleware/GuideRole.php',
+        'App\\Http\\Middleware\\LocalizationMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/LocalizationMiddleware.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Models\\BlogCategory' => __DIR__ . '/../..' . '/app/Models/BlogCategory.php',
         'App\\Models\\BlogPost' => __DIR__ . '/../..' . '/app/Models/BlogPost.php',
         'App\\Models\\Destination' => __DIR__ . '/../..' . '/app/Models/Destination.php',
+        'App\\Models\\DestinationEng' => __DIR__ . '/../..' . '/app/Models/DestinationEng.php',
+        'App\\Models\\ExcursionModel' => __DIR__ . '/../..' . '/app/Models/ExcursionModel.php',
         'App\\Models\\MessageDemande' => __DIR__ . '/../..' . '/app/Models/MessageDemande.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\multi_image' => __DIR__ . '/../..' . '/app/Models/multi_image.php',
+        'App\\Models\\multi_image_Excu' => __DIR__ . '/../..' . '/app/Models/multi_image_Excu.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',

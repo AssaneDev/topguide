@@ -35,7 +35,7 @@
                 <li> <a href="{{route('all.excursion')}}"><i class='bx bx-radio-circle'></i>Excursions</a>
                 </li>
 
-                <li> <a href="{{route('all.destinations')}}"><i class='bx bx-radio-circle'></i>Voyage de Groupes</a>
+                <li> <a href="{{route('all.voyage')}}"><i class='bx bx-radio-circle'></i>Voyage de Groupes</a>
                 </li>
                
             </ul>

@@ -15,8 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicons - Place favicon.ico in the root directory -->
-  <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
+  <link rel="icon" type="image/png" href="{{asset('assets/img/logor2.png')}}">
+  <meta name="msapplication-TileColor" content="#ffffff"> 
   <meta name="theme-color" content="#ffffff">
 
   <!--==============================

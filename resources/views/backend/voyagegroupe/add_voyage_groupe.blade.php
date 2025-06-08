@@ -6,11 +6,10 @@
     }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
 <div class="page-content">
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Destinations</div>
+        <div class="breadcrumb-title pe-3">Voyages De Groupe</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
@@ -34,24 +33,23 @@
                             <div class="card">
                                 <div class="card-body p-4">
                               
-                        <form class="row g-3"  action="{{route('store.destination')}}" method="post" enctype="multipart/form-data">
+                        <form class="row g-3"  action="{{route('store.voyage')}}" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <span class="badge bg-warning text-dark">ETAPE  1</span> </br>
                                                 <label for="input1"  class="form-label">Nom</label>
                                                 <input  type="text" name="name"  class="form-control mb-10" id="input1" >
-                                                <label for="input1"  class="form-label">Prix Circuit</label>
+                                                <label for="input1"  class="form-label">Prix Voyage</label>
                                                 <input  type="number" name="prix"  class="form-control mb-10" id="input1" >
-                                                <label for="input1"  class="form-label">Prix Guide</label>
-                                                <input  type="number" name="prix_guide"  class="form-control mb-10" id="input1" >
-                                                <label for="input1"  class="form-label">Types Circuit</label>
-                                                <input  type="text" name="type_circuit"  class="form-control mb-10" id="input1" >
+                                                <label for="input1"  class="form-label">Types Voyages</label>
+                                                <input  type="text" name="type_voyage"  class="form-control mb-10" id="input1" >
                                                 <label for="input1"  class="form-label">Lieux</label>
                                                 <input  type="text" name="lieux"  class="form-control mb-10" id="input1" >
                                                 <label for="input1"  class="form-label">Durée Séjours</label>
                                                 <input  type="text" name="dure_circuit"  class="form-control mb-10" id="input1" >
+                                                  <label for="input1"  class="form-label">Nombre Participant</label>
+                                                <input  type="text" name="nbr_participant"  class="form-control mb-10" id="input1" >
                                                 {{-- <label for="input1" class="form-label "><span class="badge rounded-pill text-bg-primary">Nom ANGLAIS</span></label>
                                                 <input type="text" name="name_en"  class="form-control mb-10" id="input1" >
                                                 <label for="input1" class="form-label"> <span class="badge rounded-pill text-bg-primary"> Nom ESPAGNOL </span></label>
@@ -61,33 +59,36 @@
                                         
                                          
                                         </div>
-                                       
-                                        <div class="form-group mb-3">
-    <label>Offre Tout Compris</label>
-    <div id="editor-information" style="height: 150px;"></div>
-    <input type="hidden" name="information" id="input-information">
-</div>
+                                        <div class="col-md-12 ">
+                                            <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
 
-<div class="form-group mb-3">
-    <label>Offre Guide Unique</label>
-    <div id="editor-guide" style="height: 150px;"></div>
-    <input type="hidden" name="offre_guide" id="input-guide">
-</div>
+                                            <label for="input11" class="form-label">Offre Tout Compris</label>
+                                            <textarea class="form-control" name="information" id="myeditorinstance" placeholder="" rows="3"></textarea>
 
-<div class="form-group mb-3">
-    <label>Courte Description</label>
-    <div id="editor-short" style="height: 150px;"></div>
-    <input type="hidden" name="short_descp" id="input-short">
-</div>
+                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
+                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
 
-<div class="form-group mb-3">
-    <label>Description complète</label>
-    <div id="editor-long" style="height: 150px;"></div>
-    <input type="hidden" name="long_descp" id="input-long">
-</div>
-
+                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
+                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
+                                        </div>
                                       
+                                        <div class="col-md-12 ">
+                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
 
+                                            <label for="input11" class="form-label">Courte Description</label>
+                                            <textarea class="form-control" name="short_descp" id="myeditorinstance" placeholder="" rows="3"></textarea>
+
+                                           
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
+
+                                            <label for="input11" class="form-label">Description </label>
+                                            <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3"></textarea>
+
+                                           
+                                        </div>
                                         
                                         <div class="row">
                                             <div class="col-md-6">
@@ -113,7 +114,7 @@
                                         </div>
 
 
-                                        <div class="col-md-6">
+                                        {{-- <div class="col-md-6">
                                             <span class="badge bg-warning text-dark">ETAPE  7</span> </br>
 
                                             <label for="input4" class="form-label">Images Galerie</label>
@@ -122,10 +123,10 @@
                                             {{-- @foreach ($multiimgs as $item)
                                             <img src=" {{ (!empty($item->multi_img)) ? url('upload/roomimg/multi_img/'.$item->multi_img)  : url('upload/no_image.jpg') }} " alt="Admin" class="bg-primary" width="70px" />
                                             <a href="{{route('multi.image.delete',$item->id)}}"> <i class="lni lni-close"></i> </a>
-                                            @endforeach --}}
+                                            @endforeach 
 
                                             <div class="row" id="preview_img"></div>
-                                        </div>
+                                        </div> --}}
 
                        
                                            
@@ -190,45 +191,4 @@
      });
     });
  </script>
-<script>
-    const toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'header': 1 }, { 'header': 2 }],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],
-        [{ 'indent': '-1'}, { 'indent': '+1' }],
-        [{ 'direction': 'rtl' }],
-        [{ 'size': ['small', false, 'large', 'huge'] }],
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'color': [] }, { 'background': [] }],
-        [{ 'font': [] }],
-        [{ 'align': [] }],
-        ['clean']
-    ];
-
-    const editors = [
-        { id: 'information', label: 'editor-information', input: 'input-information' },
-        { id: 'guide', label: 'editor-guide', input: 'input-guide' },
-        { id: 'short', label: 'editor-short', input: 'input-short' },
-        { id: 'long', label: 'editor-long', input: 'input-long' }
-    ];
-
-    const quillInstances = {};
-
-    editors.forEach(({ id, label, input }) => {
-        quillInstances[id] = new Quill(`#${label}`, {
-            theme: 'snow',
-            modules: {
-                toolbar: toolbarOptions
-            }
-        });
-
-        // On form submit, update the hidden input with Quill content
-        document.querySelector('form').addEventListener('submit', function() {
-            document.getElementById(input).value = quillInstances[id].root.innerHTML;
-        });
-    });
-</script>
-
-
 @endsection

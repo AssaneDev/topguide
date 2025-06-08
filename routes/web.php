@@ -13,6 +13,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocalController;
 use App\Models\Destination;
 use App\Http\Controllers\OptimizationController;
+use App\Http\Controllers\VoyageController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -86,6 +87,17 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
         });
 
+           //voyage
+          Route::controller(VoyageController::class)->group(function(){
+            Route::get('/all/voyagegroupe/','AllVoyages')->name('all.voyage');
+            Route::get('/add/voyagegroupe/','AddVoyage')->name('add.voyage');
+            Route::post('/store/voyage/','StoreVoyage')->name('store.voyage');
+            Route::get('/edit/voyage/{id}','EditVoyage')->name('edit.voyage');
+            Route::post('/update/voyage','UpdateVoyage')->name('update.voyage');
+            Route::get('/delete/voyage/{id}','DeleteVoyage')->name('delete.voyage');
+            // Route::get('/delete/multiimage/{id}','DeleteMultiImage')->name('multi.image.delete');
+
+        });
 
 
 
@@ -128,6 +140,15 @@ Route::controller(ExcursionController::class)->group(function(){
     Route::get('excursion/','Excursion')->name('excursion');
     
 });
+
+//Voyage Groupe Frontend
+Route::controller(VoyageController::class)->group(function(){
+    Route::get('voyage/detail/{id}','VoyageDetail');  
+    Route::get('destination/','Destination')->name('destination');
+    Route::get('vehicule/','Vehicule')->name('vehicule');
+    Route::get('formulaire/voyage/','FormulaireVoyage')->name('formulaire.voyage');
+
+});
 //Evoie
 Route::controller(FormController::class)->group(function(){
     Route::post('/envoie/form','Envoie')->name('envoie.form');
@@ -148,6 +169,14 @@ Route::controller(LocalController::class)->group(function(){
 
      
 }); 
+
+
+
+Route::get('/quill', function () {
+    return view('backend.quill');
+})->name('quill.form');
+
+
 
 
 

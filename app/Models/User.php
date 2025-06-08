@@ -40,4 +40,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+        public function voyagesInteresses() {
+        return $this->belongsToMany(\Modules\VoyagesGroupes\Models\Voyage::class, 'interets_voyage');
+    }
+
+    public function voyagesInscrits() {
+        return $this->belongsToMany(\Modules\VoyagesGroupes\Models\Voyage::class, 'inscriptions_voyage');
+    }
+
 }

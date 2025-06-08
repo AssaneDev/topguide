@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\VoyageModel;
+
 
 class Usercontroller extends Controller
 {
     //
+       
     public function Index(){
-        return view('frontend.index');
+         $voyage = VoyageModel::latest()->get();
+        return view('frontend.index',compact('voyage'));
     }
 }

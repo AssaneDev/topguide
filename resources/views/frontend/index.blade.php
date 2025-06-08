@@ -28,7 +28,10 @@
       ==============================-->
      @include('frontend.home.destination')
       {{-- ==============================--> --}}
-      @include('frontend.home.voihebe')
+      {{-- @include('frontend.home.voihebe') --}}
+
+      @include('frontend.home.voyagegroupe')
+
           <!--==============================
                <!--==============================
          
