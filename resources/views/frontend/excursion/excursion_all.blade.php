@@ -73,10 +73,10 @@ use Illuminate\Support\Facades\Session;
               <p class="package-text">{{$desti->lieux}}</p>
               <div class="package-meta">
                 <a href="{{ url('excursion/detail/'.$desti->id) }}"><i class="fas fa-calendar-alt"></i> Jours: {{$desti->dure_sejour}}</a>
-                <a href="{{ url('excursion/detail/'.$desti->id) }}"><i class="fas fa-user"></i> Offres: 2</a>
+                <span class="package-price">{{$desti->prix}} €/Pers</span>
+              
               </div>
               <div class="package-footer">
-                <span class="package-price">{{$desti->prix}} €/Pers</span>
                 <a href="{{ url('excursion/detail/'.$desti->id) }}"class="vs-btn">Voir detail</a>
               </div>
             </div>
