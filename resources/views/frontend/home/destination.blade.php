@@ -50,7 +50,7 @@
                         <div class="package-meta">
                           <a style="color: white" href=""><i class="fas fa-calendar-alt"></i>{{$item->dure_sejour}} </a>
                           
-                          <span style="color: white" class="package-price">{{$item->prix}} €/Pers</span>
+                          <span style="color: white" class="package-price">{{$item->prix}}€</span>
                         </div>
                         <p class="destination-text">{{$item->short_desc}}</p>
                       </div>
