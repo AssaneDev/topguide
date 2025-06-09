@@ -38,7 +38,6 @@
                 <div class="ds-img1">
                   <img src="{{asset($destination->image)}}" alt="image" >
                 </div>
-                <h2 class="ds-title">{{$destination->name}}</h2>
                 <p class="ds-text">{!!$destination->long_descp!!}</p>
                 @endif
                
