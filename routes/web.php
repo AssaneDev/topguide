@@ -13,6 +13,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocalController;
 use App\Models\Destination;
 use App\Http\Controllers\OptimizationController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\VoyageController;
 
 // Route::get('/', function () {
@@ -170,11 +171,15 @@ Route::controller(LocalController::class)->group(function(){
      
 }); 
 
+Route::get('/reservation-guide', [ReservationController::class, 'create'])->name('reservation.form');
+Route::post('/reservation-guide', [ReservationController::class, 'store'])->name('reservation.store');
+
+
 
 
 Route::get('/quill', function () {
-    return view('backend.quill');
-})->name('quill.form');
+    return view('frontend.formulaire.guidejourne');
+})->name('test.form');
 
 
 

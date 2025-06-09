@@ -33,7 +33,7 @@
               <h2 class="sec-title h1">Ils plaisent aux voyageurs</h2>
             </div>
             <div class="title-btn">
-              <a class="vs-btn style4" href="tour-booking.html">Tous Les Circuits</a>
+              <a class="vs-btn style4" href="{{route('destination')}}">Tous Les Circuits</a>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@
             <div class="title-area">
               <span class="sec-subtitle">Vacance Sénégal</span>
               <h2 class="sec-title h1"> Votre Guide à la journée </h2>
-              <p class="sec-text">Nos guides multilingues et spécialistes vous accompagneront pour une expérience unique.Notre renommée repose sur nos pratiques innovantes dans le secteur du voyage, en particulier notre système offrant aux voyageurs la possibilité de bénéficier des services d’un guide touristique local professionnel agréé par le Ministère du Tourisme. </p>
+              <p class="sec-text">Partez à l’aventure avec un guide expérimenté tout en gardant la liberté de gérer votre budget à votre façon. Vous ne payez que la prestation du guide. Nous vous assistons dans l'organisation, mais vous restez libre sur l'hébergement, les repas et les transports. </p>
             </div>
             <ul class="about-list3">
               {{-- <li class="list-item">
@@ -196,7 +196,7 @@
               </li>
             </ul>
             <div class="about-bottom">
-              <a href="about.html" class="vs-btn style5">Réservez votre guide</a>
+              <a href="{{route('test.form')}}" class="vs-btn style5">Réservez votre guide</a>
               <div class="item2">
                 <div class="item2__icon">
                   <img src=" {{asset('assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">
