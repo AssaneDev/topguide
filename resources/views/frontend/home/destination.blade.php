@@ -48,8 +48,8 @@
                       <div class="destination-info">
                         <h4 class="destination-name"><a href="{{ url('excursion/detail/'.$item->id) }}"> {{$item->name}} </a></h4>
                         <div class="package-meta">
-                          <a style="color: white" href=""><i class="fas fa-calendar-alt"></i> Durée: {{$item->dure_sejour}} </a>
-                          <a style="color: white" href=""><i class="fas fa-user"></i> Offres: 2</a>
+                          <a style="color: white" href=""><i class="fas fa-calendar-alt"></i>{{$item->dure_sejour}} </a>
+                          
                           <span style="color: white" class="package-price">{{$item->prix}} €/Pers</span>
                         </div>
                         <p class="destination-text">{{$item->short_desc}}</p>
