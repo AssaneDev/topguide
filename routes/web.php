@@ -144,7 +144,7 @@ Route::controller(ExcursionController::class)->group(function(){
 //Voyage Groupe Frontend
 Route::controller(VoyageController::class)->group(function(){
     Route::get('voyage/detail/{id}','VoyageDetail');  
-    Route::get('destination/','Destination')->name('destination');
+    // Route::get('destination/','Destination')->name('destination');
     Route::get('vehicule/','Vehicule')->name('vehicule');
     Route::get('formulaire/voyage/','FormulaireVoyage')->name('formulaire.voyage');
 
