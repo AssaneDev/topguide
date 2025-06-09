@@ -62,7 +62,7 @@
                                          
                                         </div>
                                        
-                                        <div class="form-group mb-3">
+<div class="form-group mb-3">
     <label>Offre Tout Compris</label>
     <div id="editor-information" style="height: 150px;"></div>
     <input type="hidden" name="information" id="input-information">

@@ -59,55 +59,30 @@
                                         
                                          
                                         </div>
-                                        <div class="col-md-12 ">
-                                            <span class="badge bg-warning text-dark">ETAPE  2</span> </br>
-
-                                            <label for="input11" class="form-label">Offre Tout Compris</label>
-                                            <textarea class="form-control" name="information" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
-                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
-                                        </div>
-                                        <div class="col-md-12 ">
-                                         
-
-                                            <label for="input11" class="form-label">Offre Guide Unique</label>
-                                            <textarea class="form-control" name="offre_guide" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
-                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
-                                        </div>
-                                        <div class="col-md-12 ">
-                                            <span class="badge bg-warning text-dark">ETAPE  3</span> </br>
-
-                                            <label for="input11" class="form-label">Courte Description</label>
-                                            <textarea class="form-control" name="short_descp" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            {{-- <label for="input11" class="form-label mb-10">Courte Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
-                                            <textarea class="form-control" name="short_descp_en" id="myeditorinstance" placeholder="" rows="3"></textarea>
-
-                                            <label for="input11" class="form-label mb-10"> Courte Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="short_descp_es" id="myeditorinstance" placeholder="" rows="3"></textarea> --}}
-                                        </div>
-
+                                      
                                         <div class="col-md-12">
-                                            <span class="badge bg-warning text-dark">ETAPE  4</span> </br>
+        <label for="input11" class="form-label">Offre Tout Compris</label>
+        <div id="editor-information" style="height: 150px;"></div>
+        <input type="hidden" name="information" id="input-information">
+    </div>
 
-                                            <label for="input11" class="form-label">Description </label>
-                                            <textarea class="form-control" name="long_descp"  id="myeditorinstance" name="description" value rows="3"></textarea>
+    <div class="col-md-12">
+        <label for="input11" class="form-label">Offre Guide Unique</label>
+        <div id="editor-guide" style="height: 150px;"></div>
+        <input type="hidden" name="offre_guide" id="input-guide">
+    </div>
 
-                                            {{-- <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ENGLAIS</span></label>
-                                            <textarea class="form-control" name="long_descp_en"  id="myeditorinstance" name="description" value rows="3"></textarea>
+    <div class="col-md-12">
+        <label for="input11" class="form-label">Courte Description</label>
+        <div id="editor-short" style="height: 150px;"></div>
+        <input type="hidden" name="short_descp" id="input-short">
+    </div>
 
-                                            <label for="input11" class="form-label mb-10">Description <span class="badge rounded-pill text-bg-primary">ESPAGNOL</span></label>
-                                            <textarea class="form-control" name="long_descp_es"  id="myeditorinstance" name="description" value rows="3"></textarea> --}}
-                                        </div>
+    <div class="col-md-12">
+        <label for="input11" class="form-label">Description</label>
+        <div id="editor-long" style="height: 150px;"></div>
+        <input type="hidden" name="long_descp" id="input-long">
+    </div>
                                         
                                         <div class="row">
                                             <div class="col-md-6">
@@ -210,4 +185,45 @@
      });
     });
  </script>
+ <!-- Quill JS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script>
+    const toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'header': 1 }, { 'header': 2 }],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'indent': '-1' }, { 'indent': '+1' }],
+        [{ 'direction': 'rtl' }],
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'font': [] }],
+        [{ 'align': [] }],
+        ['clean']
+    ];
+
+    const editors = [
+        { id: 'information', label: 'editor-information', input: 'input-information' },
+        { id: 'guide', label: 'editor-guide', input: 'input-guide' },
+        { id: 'short', label: 'editor-short', input: 'input-short' },
+        { id: 'long', label: 'editor-long', input: 'input-long' }
+    ];
+
+    const quillInstances = {};
+
+    editors.forEach(({ id, label, input }) => {
+        quillInstances[id] = new Quill(`#${label}`, {
+            theme: 'snow',
+            modules: {
+                toolbar: toolbarOptions
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function () {
+            document.getElementById(input).value = quillInstances[id].root.innerHTML;
+        });
+    });
+</script>
 @endsection
+
+
