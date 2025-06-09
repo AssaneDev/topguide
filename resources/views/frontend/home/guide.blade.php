@@ -1,4 +1,4 @@
-<section class="space-extra-bottom shape-mockup-wrap">
+<section class="shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-bottom="10%" data-right="13%">
       <img src=" {{asset('frontend/assets/img/shape/circle.png')}} " alt="svg">
     </div>

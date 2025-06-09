@@ -23,7 +23,7 @@
   <!--==============================
     Tour Package Area Start 
   ==============================-->
-  <section class="space package-layout1">
+  <section class=" package-layout1">
     <div class="container ">
       <div class="row">
         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
@@ -106,7 +106,7 @@
   ==============================-->
 
   
-  <section class="space shape-mockup-wrap">
+  <section class=" shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block ripple-animation z-index-negative" data-top="10%" data-left="5%">
       <img src="{{asset('assets/img/shape/Ballon.png')}}" alt="svg">
     </div>
@@ -165,7 +165,7 @@
       <!--==============================
     About Area Start 
   ==============================-->
-  <section class="space-top about-layout1 bg-smoke">
+  <section class=" about-layout1 bg-smoke">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -217,7 +217,7 @@
                 <span class="media-info">25</span>
               </div>
             </div>
-            <img class="img1" src=" {{asset('assets/img/about/guide1.jpg')}} " alt="about image">
+            <img class="img1" src=" {{asset('assets/img/about/guide3.jpg')}} " alt="about image">
             <div class="bottom-img">
               <img class="img3" src=" {{asset('assets/img/about/guide2.jpg')}} " alt="about image">
             </div>

@@ -4,300 +4,178 @@
   <meta charset="UTF-8">
   <title>Réservation guide - Étapes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
+    .fade-transition {
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
     }
-
-    .container {
-      max-width: 750px;
-      margin: 50px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-
-    .stepper {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin-bottom: 40px;
-    }
-
-    .stepper::before {
-      content: "";
-      position: absolute;
-      top: 18px;
-      left: 50px;
-      right: 50px;
-      height: 2px;
-      background: #ddd;
-      z-index: 0;
-    }
-
-    .step {
-      position: relative;
-      text-align: center;
-      z-index: 1;
-      flex: 1;
-    }
-
-    .step .circle {
-      width: 36px;
-      height: 36px;
-      margin: auto;
-      border-radius: 50%;
-      background: #ccc;
-      color: white;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      transition: background 0.3s;
-    }
-
-    .step.active .circle,
-    .step.completed .circle {
-      background: #cc5500;
-    }
-
-    .step.completed .circle::after {
-      content: "✔";
-      font-size: 16px;
-    }
-
-    .step .label {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    .form-step {
-      display: none;
-    }
-
-    .form-step.active {
-      display: block;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-top: 5px;
-      font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .btn-group {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
-
-    button {
-      padding: 12px 20px;
-      background: #cc5500;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #b34700;
+    .fade-transition.show {
+      opacity: 1;
+      max-height: 200px;
     }
   </style>
 </head>
-<body>
-
-<div class="container">
-  <div class="stepper">
-    <div class="step active">
-      <div class="circle">1</div>
-      <div class="label">Infos</div>
-    </div>
-    <div class="step">
-      <div class="circle">2</div>
-      <div class="label">Programme</div>
-    </div>
-    <div class="step">
-      <div class="circle">3</div>
-      <div class="label">Confirmation</div>
-    </div>
+<body class="bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-pattern.jpg');">
+  <div class="relative bg-cover bg-center min-h-[200px] flex items-center justify-center" style="background-image: url('/images/bg-guide.jpg');">
+    <h1 class="text-white text-3xl md:text-4xl font-bold bg-black/50 px-4 py-2 rounded-md">🌍 Réservez votre guide au Sénégal</h1>
   </div>
 
-<form id="formEtapes" action="{{ route('reservation.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
+  <div class="w-full bg-white shadow-md">
+    <div class="h-2 bg-orange-600 transition-all duration-500" id="progress-bar"></div>
+  </div>
 
-    <!-- Étape 1 -->
-    <div class="form-step active">
-      <label>Nom complet</label>
-      <input type="text" name="name" required value="{{ old('name') }}">
-
-      <label>Email</label>
-      <input type="email" name="email" required value="{{ old('email') }}">
-
-      <label>Téléphone (WhatsApp)</label>
-      <input type="tel" name="phone" required value="{{ old('phone') }}">
-
-      <label>Date souhaitée</label>
-      <input type="date" name="date" required value="{{ old('date') }}">
-
-      <label>Ville de départ</label>
-      <input type="text" name="ville" required value="{{ old('ville') }}">
-
-      <div class="btn-group">
-        <div></div>
-        <button type="button" onclick="nextStep()">Suivant</button>
+  <div class="max-w-3xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg">
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 mx-auto rounded-full bg-orange-600 text-white flex items-center justify-center font-bold">1</div>
+        <p class="text-sm text-gray-500 mt-1">🧍 Infos</p>
+      </div>
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 mx-auto rounded-full bg-gray-300 text-white flex items-center justify-center font-bold">2</div>
+        <p class="text-sm text-gray-500 mt-1">📋 Programme</p>
+      </div>
+      <div class="flex-1 text-center">
+        <div class="w-10 h-10 mx-auto rounded-full bg-gray-300 text-white flex items-center justify-center font-bold">3</div>
+        <p class="text-sm text-gray-500 mt-1">✅ Confirmation</p>
       </div>
     </div>
 
-    <!-- Étape 2 -->
-    <div class="form-step">
-      <label>Durée du programme</label>
-      <select id="duree" name="duree" onchange="updateEtape2()" required>
-        <option value="">Sélectionner</option>
-        <option value="journee" {{ old('duree') == 'journee' ? 'selected' : '' }}>Journée</option>
-        <option value="circuit" {{ old('duree') == 'circuit' ? 'selected' : '' }}>Circuit</option>
-      </select>
+    <form id="formEtapes" action="{{ route('reservation.store') }}" method="POST" enctype="multipart/form-data">
+      @csrf
 
-      <div id="joursField" style="display:none;">
-        <label>Nombre de jours</label>
-        <input type="number" name="nbJours" min="2" value="{{ old('nbJours') }}">
+      <!-- Étape 1 -->
+      <div class="form-step">
+        <h2 class="text-xl font-semibold text-orange-600 mb-4">Étape 1 – 👤 Vos informations</h2>
+
+        <label class="block mb-2 font-medium">Nom complet</label>
+        <input type="text" name="name" required value="{{ old('name') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <label class="block mb-2 font-medium">Email</label>
+        <input type="email" name="email" required value="{{ old('email') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <label class="block mb-2 font-medium">Téléphone (WhatsApp)</label>
+        <input type="tel" name="phone" required value="{{ old('phone') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <label class="block mb-2 font-medium">Date souhaitée</label>
+        <input type="date" name="date" required value="{{ old('date') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <label class="block mb-2 font-medium">Ville de départ</label>
+        <input type="text" name="ville" required value="{{ old('ville') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <div class="flex justify-end mt-6">
+          <button type="button" onclick="nextStep()" class="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700">Suivant</button>
+        </div>
       </div>
 
-      <label>Langue du guide</label>
-      <select name="langue" required>
-        <option value="">Sélectionner</option>
-        <option value="fr" {{ old('langue') == 'fr' ? 'selected' : '' }}>Français</option>
-        <option value="en" {{ old('langue') == 'en' ? 'selected' : '' }}>Anglais</option>
-        <option value="it" {{ old('langue') == 'it' ? 'selected' : '' }}>Italien</option>
-        <option value="es" {{ old('langue') == 'es' ? 'selected' : '' }}>Espagnol</option>
-      </select>
+      <!-- Étape 2 -->
+      <div class="form-step hidden">
+        <h2 class="text-xl font-semibold text-orange-600 mb-4">Étape 2 – 🧭 Programme du guide</h2>
 
-      <div id="uploadField" style="display:none;">
-        <label>Itinéraire (PDF)</label>
-        <input type="file" name="itineraire" accept=".pdf">
+        <label class="block mb-2 font-medium">Durée du programme</label>
+        <select id="duree" name="duree" onchange="updateEtape2()" required class="w-full border border-gray-300 p-2 rounded-md mb-4">
+          <option value="">Sélectionner</option>
+          <option value="journee" {{ old('duree') == 'journee' ? 'selected' : '' }}>Journée</option>
+          <option value="circuit" {{ old('duree') == 'circuit' ? 'selected' : '' }}>Circuit</option>
+        </select>
+
+        <div id="joursField" class="fade-transition">
+          <label class="block mb-2 font-medium">Nombre de jours</label>
+          <input type="number" name="nbJours" min="2" value="{{ old('nbJours') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+        </div>
+
+        <label class="block mb-2 font-medium">Langue du guide</label>
+        <select name="langue" required class="w-full border border-gray-300 p-2 rounded-md mb-4">
+          <option value="">Sélectionner</option>
+          <option value="fr" {{ old('langue') == 'fr' ? 'selected' : '' }}>Français</option>
+          <option value="en" {{ old('langue') == 'en' ? 'selected' : '' }}>Anglais</option>
+          <option value="it" {{ old('langue') == 'it' ? 'selected' : '' }}>Italien</option>
+          <option value="es" {{ old('langue') == 'es' ? 'selected' : '' }}>Espagnol</option>
+        </select>
+
+        <div id="uploadField" class="fade-transition">
+          <label class="block mb-2 font-medium">Itinéraire (PDF)</label>
+          <input type="file" name="itineraire" accept=".pdf" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+        </div>
+
+        <div class="flex justify-between mt-6">
+          <button type="button" onclick="prevStep()" class="bg-gray-300 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-400">Retour</button>
+          <button type="button" onclick="nextStep()" class="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700">Suivant</button>
+        </div>
       </div>
 
-      <div class="btn-group">
-        <button type="button" onclick="prevStep()">Retour</button>
-        <button type="button" onclick="nextStep()">Suivant</button>
+      <!-- Étape 3 -->
+      <div class="form-step hidden">
+        <h2 class="text-xl font-semibold text-orange-600 mb-4">Étape 3 – ✉️ Détails et confirmation</h2>
+
+        <label class="block mb-2 font-medium">Centres d’intérêt</label>
+        <textarea name="interets" rows="3" class="w-full border border-gray-300 p-2 rounded-md mb-4">{{ old('interets') }}</textarea>
+
+        <label class="block mb-2 font-medium">Détails du programme</label>
+        <textarea name="details" rows="4" class="w-full border border-gray-300 p-2 rounded-md mb-4">{{ old('details') }}</textarea>
+
+        <label class="block mb-2 font-medium">Prix (€)</label>
+        <input type="text" id="prix" name="prix" readonly value="{{ old('prix') }}" class="w-full border border-gray-300 p-2 rounded-md mb-4">
+
+        <div class="flex justify-between mt-6">
+          <button type="button" onclick="prevStep()" class="bg-gray-300 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-400">Retour</button>
+          <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">Valider</button>
+        </div>
       </div>
-    </div>
+    </form>
+  </div>
 
-    <!-- Étape 3 -->
-    <div class="form-step">
-      <label>Centres d’intérêt</label>
-      <textarea name="interets" rows="3">{{ old('interets') }}</textarea>
-
-      <label>Détails du programme</label>
-      <textarea name="details" rows="4">{{ old('details') }}</textarea>
-
-      <label>Prix (€)</label>
-      <input type="text" id="prix" name="prix" readonly value="{{ old('prix') }}">
-
-      <div class="btn-group">
-        <button type="button" onclick="prevStep()">Retour</button>
-        <button type="submit">Valider</button>
-      </div>
-    </div>
-</form>
-
-@if ($errors->any())
-    <div style="color: red; margin-top: 10px;">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>❌ {{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-@if (session('success'))
-    <div style="color: green; margin-top: 10px;">
-        ✅ {{ session('success') }}
-    </div>
-@endif
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
+  <script>
     let currentStep = 0;
     const steps = document.querySelectorAll('.form-step');
-    const timeline = document.querySelectorAll('.step');
+    const progressBar = document.getElementById('progress-bar');
 
-    function updateSteps() {
-      steps.forEach((s, i) => {
-        s.classList.toggle('active', i === currentStep);
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.toggle('hidden', i !== index);
       });
-
-      timeline.forEach((t, i) => {
-        t.classList.toggle('active', i === currentStep);
-        t.classList.toggle('completed', i < currentStep);
-      });
+      const width = ((index + 1) / steps.length) * 100;
+      progressBar.style.width = width + '%';
     }
 
-    window.nextStep = function () {
+    function nextStep() {
       if (currentStep < steps.length - 1) {
         currentStep++;
-        updateSteps();
+        showStep(currentStep);
       }
-    };
+    }
 
-    window.prevStep = function () {
+    function prevStep() {
       if (currentStep > 0) {
         currentStep--;
-        updateSteps();
+        showStep(currentStep);
       }
-    };
+    }
 
-    window.updateEtape2 = function () {
+    function updateEtape2() {
       const duree = document.getElementById('duree').value;
       const jours = document.getElementById('joursField');
       const upload = document.getElementById('uploadField');
       const prix = document.getElementById('prix');
 
       if (duree === 'circuit') {
-        jours.style.display = 'block';
-        upload.style.display = 'block';
+        jours.classList.add('show');
+        upload.classList.add('show');
         prix.value = "50";
       } else if (duree === 'journee') {
-        jours.style.display = 'none';
-        upload.style.display = 'none';
+        jours.classList.remove('show');
+        upload.classList.remove('show');
         prix.value = "38";
       } else {
-        jours.style.display = 'none';
-        upload.style.display = 'none';
+        jours.classList.remove('show');
+        upload.classList.remove('show');
         prix.value = "";
       }
-    };
+    }
 
-    document.getElementById("formEtapes").addEventListener("submit", function(e) {
-    // Activer tous les steps pour permettre l'envoi de tous les champs
-    document.querySelectorAll(".form-step").forEach(el => el.style.display = "block");
-
-    // Facultatif : désactive les boutons pour éviter double envoi
-    this.querySelectorAll("button").forEach(btn => btn.disabled = true);
-});
-
-
-    updateSteps(); // Initialisation à l'étape 0
-  });
-</script>
+    showStep(currentStep);
+  </script>
+</body>
+</html>

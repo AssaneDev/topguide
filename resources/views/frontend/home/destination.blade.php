@@ -9,7 +9,7 @@
 @endphp
 
  
-      <section class="space space-extra-bottom bg-light shape-mockup-wrap" data-bg-src=" {{asset('assets/img/shape/Bg.png')}} ">
+      <section class=" bg-light shape-mockup-wrap" data-bg-src=" {{asset('assets/img/shape/Bg.png')}} ">
         <div class="shape-mockup d-none d-xl-block spin z-index-negative" data-top="-20%" data-right="-8%">
           <img src=" {{asset('assets/img/shape/circle1.png')}} " alt="circle">
         </div>

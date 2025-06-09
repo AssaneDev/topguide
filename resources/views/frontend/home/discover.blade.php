@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
     App::setLocale($locale);
 
 @endphp
-<section class="space bg-light gallery2 shape-mockup-wrap">
+<section class=" bg-light gallery2 shape-mockup-wrap">
     <div class="shape-mockup d-none d-xl-block jump z-index-negative" data-top="20%" data-left="0%">
       <img src=" {{asset('assets/img/shape/visit-left.png')}} " alt="svg">
     </div>
