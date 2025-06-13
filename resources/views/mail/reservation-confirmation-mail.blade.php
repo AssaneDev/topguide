@@ -36,13 +36,23 @@ Voici un récapitulatif de votre demande :
 
 Si vous avez transmis un itinéraire, nous le traiterons avec soin pour personnaliser votre expérience.
 
+{{-- ✅ Bouton conditionnel --}}
+@if($reservation->duree === 'journee')
+@component('mail::button', ['url' => route('confirmation.programme', ['id' => $reservation->id])])
+Confirmer mon programme
+@endcomponent
+@elseif($reservation->duree === 'circuit')
+@component('mail::button', ['url' => url('/')])
+Prendre rendez-vous en ligne
+@endcomponent
+@else
 @component('mail::button', ['url' => url('/')])
 Visiter notre site
 @endcomponent
+@endif
 
 Merci encore pour votre confiance,  
 L’équipe **Vacance Sénégal**
-
 @endcomponent
-
 </x-mail::message>
+

@@ -24,6 +24,8 @@ class ExcursionController extends Controller
     }
     public function StoreExcursion(Request $request){
 
+
+        
     
         $image_cap = $request->file('image_cap');
         $manager_cap = new ImageManager(new Driver());

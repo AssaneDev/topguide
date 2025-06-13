@@ -42,4 +42,10 @@ class ReservationController extends Controller
 
         return redirect()->back()->with('success', 'Réservation envoyée avec succès.');
     }
+
+    public function confirmation($id)
+        {
+            $reservation = Reservation::findOrFail($id);
+            return view('confirmation-programme', compact('reservation'));
+        }
 }
