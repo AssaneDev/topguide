@@ -38,7 +38,7 @@ Si vous avez transmis un itinéraire, nous le traiterons avec soin pour personna
 
 {{-- ✅ Bouton conditionnel --}}
 @if($reservation->duree === 'journee')
-@component('mail::button', ['url' => route('confirmation.programme', ['id' => $reservation->id])])
+@component('mail::button', ['url' => URL::signedRoute('confirmation.programme', ['id' => $reservation->id])])
 Confirmer mon programme
 @endcomponent
 @elseif($reservation->duree === 'circuit')

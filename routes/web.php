@@ -182,7 +182,9 @@ Route::get('/quill', function () {
 })->name('test.form');
 
 
-Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confirmation'])->name('confirmation.programme');
+Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confirmation'])
+->name('confirmation.programme')
+ ->middleware('signed');
 
 
 
