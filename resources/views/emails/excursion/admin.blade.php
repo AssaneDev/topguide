@@ -1,16 +1,24 @@
 <x-mail::message>
-@component('mail::message')
 # Nouvelle réservation confirmée
 
-**Nom :** {{ $reservation->nom }}  
-**Destination :** {{ $reservation->destination }}  
-**Date :** {{ $reservation->date->format('d/m/Y') }}
+Une excursion vient d'être confirmée par le client. Voici les détails :
+
+- **Nom** : {{ $reservation->nom }}
+- **Email** : {{ $reservation->email }}
+- **Téléphone** : {{ $reservation->tel }}
+- **Destination** : {{ $reservation->destination }}
+- **Date** : {{ $reservation->date->format('d/m/Y') }}
+- **Nombre de personnes** : {{ $reservation->nbr_Pax }}
+- **Message du client** :  
+> {{ $reservation->message }}
+
 {{-- 
-@component('mail::button', ['url' => route('admin.excursions.show', $reservation->id)])
+<x-mail::button :url="route('admin.excursions.show', $reservation->id)">
 Voir la réservation
-@endcomponent --}}
+</x-mail::button>
+--}}
 
-@endcomponent
+Merci de traiter cette demande dans les plus brefs délais.
 
-{{ config('app.name') }}
+— {{ config('app.name') }}
 </x-mail::message>
