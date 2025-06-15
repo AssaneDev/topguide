@@ -180,6 +180,7 @@ Route::post('/reservation-guide', [ReservationController::class, 'store'])->name
 Route::get('/quill', function () {
     return view('frontend.formulaire.guidejourne');
 })->name('test.form');
+Route::get('/reservation/remerciement/{id}', [ReservationController::class, 'remerciement'])->name('reservation.remerciement');
 
 
 Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confirmation'])

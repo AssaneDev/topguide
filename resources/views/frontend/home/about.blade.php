@@ -196,7 +196,7 @@
               </li>
             </ul>
             <div class="about-bottom">
-              <a href="{{route('test.form')}}" class="vs-btn style5">Réservez votre guide</a>
+              <a href="{{route('test.form')}}" target="_blank" class="vs-btn style5">Réservez votre guide</a>
               <div class="item2">
                 <div class="item2__icon">
                   <img src=" {{asset('assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">

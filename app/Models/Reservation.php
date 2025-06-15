@@ -20,8 +20,9 @@ class Reservation extends Model
     'nbJours',
     'interets',
     'details',
-    'prix',
+    'prix_final', // ✅ Ajouté ici
     'itineraire',
+    'nb_personnes',
 ];
 
 }
