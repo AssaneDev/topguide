@@ -188,7 +188,7 @@ Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confi
  ->middleware('signed');
 
 //Email Excursion
-Route::get('/confirm-excursion/{id}', [ExcursionController::class, 'confirmReservation'])->name('excursion.confirm');
+Route::get('/confirm-excursion/{id}', [FormController::class, 'confirmReservation'])->name('excursion.confirm');
 
 
 
