@@ -1,5 +1,6 @@
 <x-mail::message>
 @component('mail::message')
+
 # 👋 Bonjour {{ $reservation->name }},
 
 Merci pour votre réservation avec **Vacance Sénégal** !  
