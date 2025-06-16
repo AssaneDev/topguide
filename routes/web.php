@@ -7,6 +7,7 @@ use App\Http\Controllers\GuideController;
 use App\Http\Controllers\Usercontroller;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CircuitReservationController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\ExcursionController;
 use App\Http\Controllers\FormController;
@@ -191,7 +192,15 @@ Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confi
 Route::get('/confirm-excursion/{id}', [FormController::class, 'confirmReservation'])->name('excursion.confirm');
 
 
+//Email Circuit
+Route::post('/circuit/reservation', [CircuitReservationController::class, 'store'])->name('envoie.circuit.resa');
+Route::get('/circuit/confirm/{id}', [CircuitReservationController::class, 'confirm'])->name('circuit.confirma');
 
+Route::get('/reservation-circuit/success', function () {
+    return view('frontend.destination.reservation_success');
+})->name('circuit.success');
+
+Route::get('/excursions', [ExcursionController::class, 'Excursion'])->name('excursion.filtres');
 
 
 

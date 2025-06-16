@@ -1,4 +1,8 @@
 <x-mail::message>
+ <p style="text-align: center;">
+  <img src="{{ asset('assets/img/logo.jpg') }}" alt="Logo" width="120" style="margin-bottom: 20px;">
+</p>
+
 # Bonjour {{ $reservation->nom }},
 
 Merci pour votre demande de réservation pour **{{ $reservation->destination }}** prévue le **{{ $reservation->date->format('d/m/Y') }}**.

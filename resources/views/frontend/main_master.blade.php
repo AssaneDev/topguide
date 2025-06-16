@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicons - Place favicon.ico in the root directory -->
-  <link rel="icon" type="image/png" href="{{asset('assets/img/logor2.png')}}">
+  <link rel="icon" type="image/png" href="{{asset('assets/img/logo.jpg')}}">
   <meta name="msapplication-TileColor" content="#ffffff"> 
   <meta name="theme-color" content="#ffffff">
 
@@ -41,6 +41,7 @@
   <link rel="stylesheet" href=" {{asset('assets/css/slick.min.css')}} ">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href=" {{asset('assets/css/style.css')}} ">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -83,33 +84,24 @@
       <div class="vs-menu-area text-center">
         <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-          <a href="{{url('/')}}"><img src=" {{asset('assets/img/logo2.svg')}} " alt="Travolo"></a>
+          <a href="{{url('/')}}"><img src=" {{asset('assets/img/logo.jpg')}} " alt="Vacance Sénégal "></a>
         </div>
         <div class="vs-mobile-menu">
           <ul>
-            <li>
-              <a href="{{url('/')}}">Acceuil</a>
-              
+                <li><a href="{{ url('/') }}">Accueil</a></li>
+                <li><a href="{{ route('apropos') }}">À propos</a></li>
+                <li><a href="{{ route('destination') }}">Circuits</a></li>
+               <li class="menu-item-has-children">
+              <a href="{{ route('excursion.filtres') }}">Excursions</a>
+              <ul class="sub-menu">
+                <li><a href="{{ route('excursion', ['duree' => 'demi-journee']) }}">Demi-journée</a></li>
+                <li><a href="{{ route('excursion', ['duree' => 'journee']) }}">Journée</a></li>
+              </ul>
             </li>
-            <li>
-              <a href="{{route('apropos')}}">A Propos</a>
-             
-            </li>
-  
-  
-            <li>
-              <a href="{{route('destination')}}">Destination</a>
-              
-            </li>
-            <li>
-              <a href="{{route('blog.list')}}">Blog</a>
-              
-            </li>
-          
-            <li>
-              <a href="{{route('contact')}}">Contact</a>
-            </li>
-          </ul>
+
+                <li><a href="{{ route('blog.list') }}">Blog</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
+              </ul>
         </div>
       </div>
     </div>
@@ -168,6 +160,9 @@
   <script src="{{asset('assets/js/wow.min.js')}}"></script>
   <!-- Main Js File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
+
+
+
 </body>
 
 </html>

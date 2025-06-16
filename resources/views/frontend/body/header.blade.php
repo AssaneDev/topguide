@@ -6,7 +6,7 @@
           <div class="col-auto">
             <div class="vs-logo">
               <a href="{{ url('/') }}">
-                <img src="{{ asset('assets/img/logo2.svg') }}" style="width: 100px; height: 100px;" alt="logo">
+                <img src="{{ asset('assets/img/logo.jpg') }}" style="width: 80px; height: 80px;" alt="logo">
               </a>
             </div>
           </div>
@@ -17,7 +17,14 @@
                 <li><a href="{{ url('/') }}">Accueil</a></li>
                 <li><a href="{{ route('apropos') }}">À propos</a></li>
                 <li><a href="{{ route('destination') }}">Circuits</a></li>
-                <li><a href="{{ route('excursion') }}">Excursions</a></li>
+               <li class="menu-item-has-children">
+              <a href="{{ route('excursion.filtres') }}">Excursions</a>
+              <ul class="sub-menu">
+                <li><a href="{{ route('excursion', ['duree' => 'demi-journee']) }}">Demi-journée</a></li>
+                <li><a href="{{ route('excursion', ['duree' => 'journee']) }}">Journée</a></li>
+              </ul>
+            </li>
+
                 <li><a href="{{ route('blog.list') }}">Blog</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
               </ul>

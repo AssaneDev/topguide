@@ -225,10 +225,24 @@ class ExcursionController extends Controller
         return  redirect()->back()->with($notification);
     } 
     //end
-    public function Excursion(){
-        $destination = ExcursionModel::latest()->get();
-        return view('frontend.excursion.excursion_all',compact('destination'));
-     }  
+  public function Excursion(Request $request)
+{
+    $query = ExcursionModel::query();
+
+  if ($request->duree === 'demi-journee') {
+    $query->where('dure_sejour', 'LIKE', '%demi%');
+} elseif ($request->duree === 'journee') {
+    $query->where('dure_sejour', 'LIKE', '%journ%')
+          ->where('dure_sejour', 'NOT LIKE', '%demi%');
+}
+
+
+    $destination = $query->latest()->get();
+
+    return view('frontend.excursion.excursion_all', compact('destination'));
+}
+
+
     //end
     public function ExcursionDetail($id){
 

@@ -2,7 +2,8 @@
 @section('main')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
- 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
  <!--==============================
@@ -111,13 +112,25 @@
                         
                          <div class="widget widget-newsletter">
                               <h3 class="widget_title">Personaliser ou Réserver Votre {{$destination->name}}</h3>
-                              <form action="{{route('envoie.form')}}" method="POST" class="newsletter-form">
+                              <form  action="{{route('envoie.circuit.resa')}}" method="POST" class="newsletter-form">
                                 @csrf
                                 <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
                                 <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
                                 <input class="form-control" name="tel" type="text" placeholder="Entrer votre numéro de Téléphone" />
                                 <input class="form-control" type="hidden" name="destination" value="{{$destination->name}}"  />
                                 <input class="form-control" type="number" name="nbr_Pax" placeholder="Nombre de personne" />
+                            
+
+                          <div class="form-check my-2">
+                            <input class="form-check-input" type="radio" name="offre" value="Tout Compris" id="tout_compris" checked>
+                            <label class="form-check-label" for="tout_compris">Offre Tout Compris</label>
+                          </div>
+
+                          <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="offre" value="Juste un Guide" id="juste_guide">
+                            <label class="form-check-label" for="juste_guide">Juste un Guide</label>
+                          </div>
+
                                 <textarea class="form-control" type="text" id="bsValidation13" name="message" placeholder="message" rows="3" required=""></textarea>
                         
                                 
@@ -129,7 +142,7 @@
                                 <label class="form-check-label" for="flexCheckCheckedSuccess">
                                   Voiture
                                 </label>  --}}
-                                <button type="submit" class="vs-btn style4">Envoyez</button>
+                                <button type="submit" class="vs-btn style4" id="submitBtn">Envoyez</button>
                               </form>
                             </div>
                             <div class="widget widget-social">
@@ -153,6 +166,16 @@
         <!--==============================
              Tours Booking Area End
 
+  <!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h4 class="text-success mb-3">✅ Demande reçue</h4>
+      <p>Merci pour votre demande. Un email vous a été envoyé avec les prochaines étapes.<br>Nous reviendrons vers vous très bientôt !</p>
+      <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Fermer</button>
+    </div>
+  </div>
+</div>
 
 
 
@@ -189,5 +212,6 @@
   }
   @endif 
  </script>
+
     
 @endsection
