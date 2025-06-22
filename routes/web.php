@@ -178,7 +178,7 @@ Route::post('/reservation-guide', [ReservationController::class, 'store'])->name
 
 
 
-Route::get('/quill', function () {
+Route::get('/guide-senegal', function () {
     return view('frontend.formulaire.guidejourne');
 })->name('test.form');
 Route::get('/reservation/remerciement/{id}', [ReservationController::class, 'remerciement'])->name('reservation.remerciement');

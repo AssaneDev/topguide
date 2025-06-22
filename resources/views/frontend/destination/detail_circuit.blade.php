@@ -12,7 +12,27 @@
      <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
           <div class="container z-index-common">
             <div class="breadcumb-content">
-              <h1 class="breadcumb-title">{{$destination->name}} : {{$destination->dure_sejour}}</h1>
+<h1 class="breadcumb-title">{{$destination->name}} : {{$destination->dure_sejour}}</h1>
+
+<!-- Bouton visible uniquement sur mobile (jusqu'à 767px) -->
+<style>
+  @media (min-width: 768px) {
+    #cta-mobile {
+      display: none !important;
+    }
+  }
+</style>
+
+<div id="cta-mobile" class="mt-4">
+  <a href="#formulaire-circuit"
+     class="w-full inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-md shadow text-center transition duration-300" style="color: white; background-color: brown">
+    📩 Réserver maintenant
+  </a>
+</div>
+
+
+
+
               <div class="breadcumb-menu-wrap">
                 {{-- <ul class="breadcumb-menu">
                   <li><a href="index.html">{{$destination->name}}</a></li>
@@ -40,7 +60,7 @@
               <button class="tab-button " data-filter=".tab-content2"><i class="fas fa-calendar"></i> Itineraire Circuit</button>
               {{-- <button class="tab-button" data-filter=".tab-content3"><i class="fas fa-map-marker-alt"></i>
                 Location</button> --}}
-              <button class="tab-button" data-filter=".tab-content4"><i class="fas fa-camera-retro"></i> Galerie</button>
+              {{-- <button class="tab-button" data-filter=".tab-content4"><i class="fas fa-camera-retro"></i> Galerie</button> --}}
               {{-- <button class="tab-button" data-filter=".tab-content5"><i class="fas fa-comments"></i> Reviews</button> --}}
             </div>
             <div class="container">
@@ -86,10 +106,8 @@
                         </div>
                       </div>
                       <div class="filter-item tab-content4">
-                        <h2 class="tab-title">Top Gallery</h2>
-                        <p class="tab-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                          eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes,
-                          nascetur ridiculus mus</p>
+                        <h2 class="tab-title">Gallery</h2>
+                        <p class="tab-text"> </p>
                         <div class="gx-gy gallery-mesonary">
                          @foreach ($imageGalerie as $item)
                          <div class="col-lg-4 col-md-6 col-sm-6 col-auto">
@@ -111,8 +129,8 @@
                     <div class="sidebar-area tours-sidebar">
                         
                          <div class="widget widget-newsletter">
-                              <h3 class="widget_title">Personaliser ou Réserver Votre {{$destination->name}}</h3>
-                              <form  action="{{route('envoie.circuit.resa')}}" method="POST" class="newsletter-form">
+                              <h3 class="widget_title">Personaliser ou Réserver Votre Circuit {{$destination->name}}</h3>
+                              <form id="formulaire-circuit" action="{{route('envoie.circuit.resa')}}" method="POST" class="newsletter-form">
                                 @csrf
                                 <input class="form-control" type="text" name="nom" placeholder="Entrer votre nom" />
                                 <input class="form-control" name="email" type="email" placeholder="Entrer votre Email" />
@@ -180,7 +198,6 @@
 
 
 
-
 <!--==============================
           Destination Details Area End
      <!--notification js -->
@@ -212,6 +229,21 @@
   }
   @endif 
  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>
+
+
 
     
 @endsection

@@ -11,7 +11,7 @@
 @endphp
 
   <!-- Hero Area Start -->
-  <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/bg.png')}} ">
+  {{-- <div class="breadcumb-wrapper" data-bg-src=" {{asset('frontend/assets/img/breadcumb/bg.png')}} ">
    <div class="container z-index-common">
       <div class="breadcumb-content">
         <h1 class="breadcumb-title"></h1>
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div> 
-  </div>
+  </div> --}}
   <!-- Hero Area End -->
 
   <!-- Blog details Content Area Start -->

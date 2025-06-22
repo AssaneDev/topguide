@@ -20,10 +20,58 @@
 </head>
 <body class="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col" style="background-image: url('{{ asset('assets/img/bg.JPG') }}');">
 
+  <header class="bg-white shadow-md z-50 sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center space-x-2">
+      <img src="{{ asset('assets/img/logo.jpg') }}" class="h-10 w-auto" alt="Logo">
+      <span class="text-xl font-semibold text-orange-600">Vacance Sénégal</span>
+    </a>
 
-  <div class="relative bg-cover bg-center min-h-[200px] flex items-center justify-center" style="background-image: url('/images/bg-guide.jpg');">
-    <h1 class="text-white text-3xl md:text-4xl font-bold bg-black/50 px-4 py-2 rounded-md">🌍 Réservez votre guide au Sénégal</h1>
+    <!-- Bouton menu mobile -->
+    <button id="menuToggle" class="md:hidden text-2xl text-gray-700 focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Menu de navigation -->
+    <nav id="mainMenu" class="hidden md:flex space-x-6">
+      <a href="/" class="text-gray-700 hover:text-orange-600 font-medium">Accueil</a>
+      <a href="{{ route('apropos') }}" class="text-gray-700 hover:text-orange-600 font-medium">À propos</a>
+      <a href="{{ route('destination') }}" class="text-gray-700 hover:text-orange-600 font-medium">Circuits</a>
+      <div class="relative group">
+        <button class="text-gray-700 hover:text-orange-600 font-medium">Excursions</button>
+        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded mt-2">
+          <a href="{{ route('excursion', ['duree' => 'demi-journee']) }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Demi-journée</a>
+          <a href="{{ route('excursion', ['duree' => 'journee']) }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Journée</a>
+        </div>
+      </div>
+      <a href="{{ route('blog.list') }}" class="text-gray-700 hover:text-orange-600 font-medium">Blog</a>
+      <a href="{{ route('contact') }}" class="text-gray-700 hover:text-orange-600 font-medium">Contact</a>
+    </nav>
   </div>
+
+  <!-- Menu mobile -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 bg-white shadow">
+    <a href="/" class="block text-gray-700 hover:text-orange-600">Accueil</a>
+    <a href="{{ route('apropos') }}" class="block text-gray-700 hover:text-orange-600">À propos</a>
+    <a href="{{ route('destination') }}" class="block text-gray-700 hover:text-orange-600">Circuits</a>
+    <a href="{{ route('excursion', ['duree' => 'demi-journee']) }}" class="block text-gray-700 hover:text-orange-600">Excursion demi-journée</a>
+    <a href="{{ route('excursion', ['duree' => 'journee']) }}" class="block text-gray-700 hover:text-orange-600">Excursion journée</a>
+    <a href="{{ route('blog.list') }}" class="block text-gray-700 hover:text-orange-600">Blog</a>
+    <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-orange-600">Contact</a>
+  </div>
+</header>
+
+
+  <div class="relative bg-cover bg-center min-h-[220px] flex flex-col items-center justify-center text-center px-4" style="background-image: url('/images/bg-guide.jpg');">
+  <h1 class="text-white text-3xl md:text-4xl font-bold bg-black/50 px-4 py-2 rounded-md">
+    🌍 Réservez votre guide au Sénégal
+  </h1>
+  <p class="mt-4 text-white text-base md:text-lg bg-black/60 px-4 py-2 rounded-md max-w-2xl">
+    Partez à l’aventure avec un guide expérimenté tout en gardant la liberté de gérer votre budget à votre façon. Vous ne payez que la prestation du guide.
+  </p>
+</div>
+
+
 
   <div class="w-full bg-white shadow-md">
     <div class="h-2 bg-orange-600 transition-all duration-500" id="progress-bar"></div>
@@ -158,6 +206,13 @@
 
     </div>
   </div>
+  <script>
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 
 <script>
 let currentStep = 0;

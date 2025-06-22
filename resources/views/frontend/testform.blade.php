@@ -79,9 +79,135 @@
     .hidden {
       display: none;
     }
+    /* Menue */
+.main-header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.main-menu ul li {
+  position: relative;
+}
+
+.main-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 4px;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 100;
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu li a {
+  padding: 10px;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Toggle button (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-menu {
+    display: none;
+    width: 100%;
+  }
+
+  .main-menu.show {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .main-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
   </style>
 </head>
 <body>
+
+<header class="main-header">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <img src="https://via.placeholder.com/100x40?text=Logo" alt="logo" style="height: 40px;">
+
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="main-menu" id="mainMenu">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/apropos">À propos</a></li>
+        <li><a href="/circuits">Circuits</a></li>
+        <li class="has-submenu">
+          <a href="/excursions">Excursions</a>
+          <ul class="submenu">
+            <li><a href="/excursions?duree=demi-journee">Demi-journée</a></li>
+            <li><a href="/excursions?duree=journee">Journée</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
 
 <div class="container">
   <h1>Réservez votre guide à la journée</h1>
@@ -128,6 +254,12 @@
     </div>
   </form>
 </div>
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function () {
+    document.getElementById('mainMenu').classList.toggle('show');
+  });
+</script>
+
 
 <script>
   const dureeSelect = document.getElementById('duree');

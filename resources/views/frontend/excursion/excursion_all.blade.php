@@ -9,7 +9,7 @@ Session::put('local', $locale);
 App::setLocale($locale);
 @endphp
 
-@if ($locale == 'fr')
+{{-- @if ($locale == 'fr')
   <div class="breadcumb-wrapper" data-bg-src="{{ asset('frontend/assets/img/breadcumb/desti.png') }}" style="width: 100%; height: auto;">
     <div class="container z-index-common">
       <div class="breadcumb-content text-center">
@@ -17,12 +17,12 @@ App::setLocale($locale);
       </div>
     </div>
   </div>
-@endif
+@endif --}}
 
 <section class="space-top space-extra-bottom">
   <div class="container">
     <!-- ✅ FILTRE DANS UNE LIGNE SÉPARÉE -->
-    <div class="row justify-content-center mb-4">
+    {{-- <div class="row justify-content-center mb-4">
       <div class="col-lg-6 text-center">
         <form method="GET" action="{{ route('excursion.filtres') }}">
           <label for="duree" class="form-label fw-bold me-2">Filtrer par durée :</label>
@@ -34,7 +34,7 @@ App::setLocale($locale);
 
         </form>
       </div>
-    </div>
+    </div> --}}
 
     <!-- ✅ GRILLE DES EXCURSIONS -->
     <div class="row justify-content-center">

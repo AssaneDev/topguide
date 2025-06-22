@@ -6,7 +6,7 @@
           <div class="col-auto">
             <div class="vs-logo">
               <a href="{{ url('/') }}">
-                <img src="{{ asset('assets/img/logo.jpg') }}" style="width: 80px; height: 80px;" alt="logo">
+                <img src="{{ asset('assets/img/logo.jpg') }}" style="width: 60px;" alt="logo">
               </a>
             </div>
           </div>
@@ -31,7 +31,7 @@
             </nav>
             <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="fal fa-bars"></i></button>
           </div>
-{{-- 
+
           <div class="col-auto d-none d-xl-block">
             <div class="header-right">
               <ul>
@@ -43,7 +43,7 @@
                 </li>
               </ul>
             </div>
-          </div> --}}
+          </div> 
 
         </div>
       </div>

@@ -8,10 +8,10 @@
     
      @include('frontend.home.destination')
 
-      @include('frontend.home.voyagegroupe')
-
+      {{-- @include('frontend.home.voyagegroupe') --}}
+     @include('frontend.home.blog')
      @include('frontend.home.discover')
 
 
-     @include('frontend.home.blog')
+     
       @endsection  
