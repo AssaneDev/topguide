@@ -78,7 +78,7 @@ class ExcursionController extends Controller
             }
         }
 
-        return redirect()->back()->with(['message' => 'Bravo, Excursion ajoutée avec succès', 'alert-type' => 'success']);
+        return redirect()->route('all.excursion')->with(['message' => 'Bravo, Excursion ajoutée avec succès', 'alert-type' => 'success']);
     }
 
     /**
@@ -149,7 +149,7 @@ class ExcursionController extends Controller
             }
         }
 
-        return redirect()->back()->with(['message' => 'Excursion modifiée avec succès', 'alert-type' => 'success']);
+        return redirect()->route('all.excursion')->with(['message' => 'Excursion modifiée avec succès', 'alert-type' => 'success']);
     }
 
     /**
