@@ -126,8 +126,7 @@ $(function () {
   // Même traitement pour chart7 à chart18
   for (let i = 7; i <= 18; i++) {
     const canvas = document.getElementById(`chart${i}`);
-    if (!canvas) continue;
-
+    if (!canvas || typeof canvas.getContext !== 'function') continue;
     const ctx = canvas.getContext('2d');
     // Ne réécris pas ici tous les graphes si tu ne les utilises pas,
     // tu peux les regrouper comme pour les autres ou les supprimer du code si inutiles.

@@ -26,7 +26,10 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Modules\\": "modules/"
-        }
+        },
+         "files": [
+        "app/Helpers/HtmlCleaner.php"
+    ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -67,5 +70,6 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+    
     
 }
