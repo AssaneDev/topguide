@@ -202,6 +202,12 @@ Route::get('/reservation-circuit/success', function () {
 
 Route::get('/excursions', [ExcursionController::class, 'Excursion'])->name('excursion.filtres');
 
+use App\Http\Controllers\Admin\ExcursionRequestController;
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('excursion-requests', [ExcursionRequestController::class, 'index'])->name('admin.excursion_requests.index');
+    Route::get('excursion-requests/delete/{id}', [ExcursionRequestController::class, 'destroy'])->name('admin.excursion_requests.destroy');
+});
 
 
 require __DIR__.'/auth.php';
