@@ -216,5 +216,12 @@ Route::get('guide-reservations/delete/{id}', [ReservationAdminController::class,
 Route::get('guide-reservations/confirm/{id}', [ReservationAdminController::class, 'confirm'])->name('admin.guide_reservations.confirm');
 
 
+use App\Http\Controllers\Admin\CircuitAdminReservationController;
+
+Route::get('circuit-reservations', [CircuitAdminReservationController::class, 'index'])->name('admin.circuit_reservations.index');
+Route::get('circuit-reservations/confirm/{id}', [CircuitAdminReservationController::class, 'confirm'])->name('admin.circuit_reservations.confirm');
+Route::get('circuit-reservations/delete/{id}', [CircuitAdminReservationController::class, 'destroy'])->name('admin.circuit_reservations.destroy');
+
+
 
 require __DIR__.'/auth.php';

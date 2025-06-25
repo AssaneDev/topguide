@@ -7,11 +7,33 @@ use Illuminate\Http\Request;
 
 class ReservationAdminController extends Controller
 {
-    public function index()
-    {
-        $reservations = Reservation::latest()->get();
-        return view('admin.guide_reservation.index', compact('reservations'));
+
+    public function index(Request $request)
+{
+    $query = Reservation::query();
+
+    $filter = $request->get('filter');
+
+    switch ($filter) {
+        case 'today':
+            $query->whereDate('created_at', today());
+            break;
+        case 'week':
+            $query->whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()]);
+            break;
+        case 'unconfirmed':
+            $query->where('confirmed', false);
+            break;
+        // default: all
     }
+
+    $reservations = $query->latest()->paginate(10);
+    $latestId = Reservation::latest()->value('id');
+
+    return view('admin.guide_reservation.index', compact('reservations', 'latestId', 'filter'));
+}
+
+
 
     public function confirm($id)
 {
@@ -28,6 +50,8 @@ class ReservationAdminController extends Controller
 
     return redirect()->back()->with('message', 'Réservation confirmée avec succès.');
 }
+
+
 
 
     public function destroy($id)
