@@ -209,5 +209,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('excursion-requests/delete/{id}', [ExcursionRequestController::class, 'destroy'])->name('admin.excursion_requests.destroy');
 });
 
+use App\Http\Controllers\Admin\ReservationAdminController;
+
+Route::get('guide-reservations', [ReservationAdminController::class, 'index'])->name('admin.guide_reservations.index');
+Route::get('guide-reservations/delete/{id}', [ReservationAdminController::class, 'destroy'])->name('admin.guide_reservations.destroy');
+Route::get('guide-reservations/confirm/{id}', [ReservationAdminController::class, 'confirm'])->name('admin.guide_reservations.confirm');
+
+
 
 require __DIR__.'/auth.php';

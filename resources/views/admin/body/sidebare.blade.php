@@ -73,6 +73,13 @@
                <li> <a href="{{ route('admin.excursion_requests.index') }}"><i class='bx bx-radio-circle'></i>Résa Excursions</a>
                   </li>
 
+                   <li>
+    <a href="{{ route('admin.guide_reservations.index') }}">
+        <i class='bx bx-radio-circle'></i>Réservations Guide
+    </a>
+</li>
+
+
 
                 
                
