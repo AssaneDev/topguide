@@ -79,7 +79,7 @@
             <div class="col-lg-7">
               <div class="hero-content">
                 <span class="hero-subtitle">Agence local Sénégalaise </span>
-                <h1 class="hero-title">Explorez le Sénegal avec des guides pationnés!</h1>
+                <h1 class="hero-title">Explorez le Sénégal avec des guides passionnés!</h1>
               </div>
             </div>
             <div class="col-lg-5">
