@@ -59,7 +59,8 @@
                                 @if ($res->confirmed_at)
                                     <span class="badge bg-success">
                                         Confirmée<br>
-                                        <small>{{ $res->confirmed_at->format('d/m/Y H:i') }}</small>
+                                        <small>{{ \Carbon\Carbon::parse($res->confirmed_at)->format('d/m/Y H:i') }}</small>
+
                                     </span>
                                 @else
                                     <a href="{{ route('admin.circuit_reservations.confirm', $res->id) }}" class="btn btn-sm btn-outline-success">
