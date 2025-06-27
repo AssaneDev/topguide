@@ -222,6 +222,17 @@ Route::get('circuit-reservations', [CircuitAdminReservationController::class, 'i
 Route::get('circuit-reservations/confirm/{id}', [CircuitAdminReservationController::class, 'confirm'])->name('admin.circuit_reservations.confirm');
 Route::get('circuit-reservations/delete/{id}', [CircuitAdminReservationController::class, 'destroy'])->name('admin.circuit_reservations.destroy');
 
+use Stevebauman\Location\Facades\Location;
+
+Route::get('/test-ip', function () {
+    try {
+       $position = Location::get('8.8.8.8');
+dd($position);
+    } catch (\Throwable $e) {
+        dd($e->getMessage(), $e->getTraceAsString());
+    }
+});
+
 
 
 require __DIR__.'/auth.php';
