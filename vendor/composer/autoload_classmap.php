@@ -58,6 +58,7 @@ return array(
     'App\\Models\\MessageDemande' => $baseDir . '/app/Models/MessageDemande.php',
     'App\\Models\\Reservation' => $baseDir . '/app/Models/Reservation.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\Visiteur' => $baseDir . '/app/Models/Visiteur.php',
     'App\\Models\\VoyageModel' => $baseDir . '/app/Models/VoyageModel.php',
     'App\\Models\\multi_image' => $baseDir . '/app/Models/multi_image.php',
     'App\\Models\\multi_image_Excu' => $baseDir . '/app/Models/multi_image_Excu.php',

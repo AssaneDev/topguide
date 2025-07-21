@@ -633,6 +633,7 @@ class ComposerStaticInit01aa740bea8e8cdb24b3133e0fae365f
         'App\\Models\\MessageDemande' => __DIR__ . '/../..' . '/app/Models/MessageDemande.php',
         'App\\Models\\Reservation' => __DIR__ . '/../..' . '/app/Models/Reservation.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Visiteur' => __DIR__ . '/../..' . '/app/Models/Visiteur.php',
         'App\\Models\\VoyageModel' => __DIR__ . '/../..' . '/app/Models/VoyageModel.php',
         'App\\Models\\multi_image' => __DIR__ . '/../..' . '/app/Models/multi_image.php',
         'App\\Models\\multi_image_Excu' => __DIR__ . '/../..' . '/app/Models/multi_image_Excu.php',
