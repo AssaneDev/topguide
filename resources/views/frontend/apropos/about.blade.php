@@ -33,7 +33,7 @@
             <h2 class="sec-title h1">Voyagez à votre rythme </h2>
             <h2 style="font-size: 20px" class="sec-text">  Notre réputation s’appuie sur une approche innovante du voyage. Grâce à notre système flexible, vous organisez vos vacances en toute liberté, selon vos envies.
 Nous vous proposons deux formules au choix :
- <li>1. Voyage sur mesure et</li>
+ <li>1. Voyage sur mesure</li>
 Profitez de l’accompagnement de nos experts pour concevoir un séjour personnalisé, qui respecte vos goûts, vos envies et votre rythme.<br><br>
 <li>2. Option "Juste un guide"</li> 
 Vous avez déjà une idée de votre parcours ? Bénéficiez simplement des services d’un guide local professionnel, agréé par le Ministère du Tourisme, pour enrichir votre expérience.
