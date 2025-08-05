@@ -11,7 +11,7 @@
 
     <!--navigation-->
     <ul class="metismenu" id="menu">
-
+        
         <li>
             <a href="{{ route('admin.dashboard') }}">
                 <div class="parent-icon"><i class='bx bx-home-alt'></i></div>
@@ -31,6 +31,21 @@
                 <li><a href="{{ route('all.voyage') }}"><i class='bx bx-radio-circle'></i>Voyage de Groupes</a></li>
             </ul>
         </li>
+
+        {{-- NOUVELLE SECTION : COORDINATION ÉQUIPE --}}
+        {{-- NOUVELLE SECTION : COORDINATION ÉQUIPE --}}
+<li class="menu-label">Communication</li>
+<li>
+    <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-camera'></i></div>
+        <div class="menu-title">Coordination Équipe</div>
+    </a>
+    <ul>
+        <li><a href="{{ route('circuits.dashboard') }}"><i class='bx bx-radio-circle'></i>Gestion Circuits</a></li>
+        <li><a href="{{ route('equipe.dashboard') }}"><i class='bx bx-radio-circle'></i>Équipes Terrain</a></li>
+<li><a href="{{ route('templates.index') }}"><i class='bx bx-radio-circle'></i>Templates Consignes</a></li>
+    </ul>
+</li>
 
         <li class="menu-label">Blog</li>
         <li>
