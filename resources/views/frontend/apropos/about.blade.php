@@ -14,8 +14,8 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="image-box1">
-          <img class="img1" src="{{asset('assets/img/about/img-2-14.jpg')}}" alt="image1">
-          <img class="img2" src="{{asset('assets/img/about/img-2-2.jpg')}}" alt="image2">
+          <img class="img1" src="{{asset('assets/img/about/agence.jpg')}}" alt="image1">
+          <img class="img2" src="{{asset('assets/img/about/flyers.jpg')}}" alt="image2">
           <div class="media-box1">
             <span class="media-info">20 années</span>
             <p class="media-text">D'Experiences</p>
