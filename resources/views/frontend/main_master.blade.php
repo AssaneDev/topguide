@@ -42,8 +42,16 @@
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href=" {{asset('assets/css/style.css')}} ">
   
-  <!-- Tailwind CSS via Vite -->
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Tailwind CSS et JS compilés -->
+  @if(app()->environment('production'))
+    <link rel="stylesheet" href="{{ asset('build/assets/app-J7afuc6T.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-DSJ4q-aD.css') }}">
+    <script src="{{ asset('build/assets/app-DMNFtpgP.js') }}" defer></script>
+  @else
+    <!-- Fallback CSS si Vite ne fonctionne pas -->
+    <link rel="stylesheet" href="{{ asset('css/fallback.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @endif
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
