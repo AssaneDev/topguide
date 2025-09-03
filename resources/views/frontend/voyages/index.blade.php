@@ -102,22 +102,22 @@
             <div class="group">
                 <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col circuit-card">
                     <!-- Image Container -->
-                    <div class="relative overflow-hidden h-64">
-                        <a href="{{ route('voyages.detail', $voyage->id) }}">
+                    <div class="relative overflow-hidden" style="padding-bottom: 60%;">
+                        <a href="{{ route('voyages.detail', $voyage->id) }}" class="block">
                             <img src="{{ asset($voyage->image_couverture) }}" 
                                  alt="{{ $voyage->nom_voyage }}" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </a>
                         
                         <!-- Price Badge -->
-                        <div class="absolute top-3 right-3">
+                        <div class="absolute top-3 right-3 z-10">
                             <div class="bg-white/90 backdrop-blur rounded-lg px-3 py-1 shadow-sm">
                                 <div class="text-sm font-bold text-orange-600">{{ $voyage->prix_base_eur_formate ?? $voyage->prix_base_formate }}</div>
                             </div>
                         </div>
                         
                         <!-- Type Badge -->
-                        <div class="absolute top-3 left-3">
+                        <div class="absolute top-3 left-3 z-10">
                             <span class="bg-blue-600/90 text-white px-2 py-1 rounded-md text-xs font-medium backdrop-blur">
                                 {{ $voyage->type_voyage_label ?? $voyage->type_voyage }}
                             </span>
@@ -282,6 +282,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/* Image responsive ratio - élimine l'espace gris */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Améliorer les transitions */
