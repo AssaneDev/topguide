@@ -104,7 +104,7 @@
                                 <div class="text-center">
                                     <span class="badge bg-secondary">{{ $voyage->niveau_confort_label ?? 'Standard' }}</span>
                                     <br>
-                                    <small class="text-muted">{{ $voyage->getDifficulteLabel() }}</small>
+                                    <small class="text-muted">{{ $voyage->difficulte_label }}</small>
                                     @if($voyage->point_depart)
                                     <br>
                                     <small class="text-info">
