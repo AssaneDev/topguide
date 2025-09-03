@@ -6,7 +6,7 @@
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
     <div class="relative container mx-auto px-4 h-full flex items-center min-h-[60vh]">
         <div class="text-white max-w-2xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 class="hero-title">
                 Découvrez nos <span class="text-orange-400">Circuits Exceptionnels</span>
             </h1>
             <p class="text-xl mb-8 text-gray-200">
@@ -230,28 +230,32 @@
 
 @push('styles')
 <style>
-/* Voyage Cards - CSS Custom Simple */
+/* Import Google Fonts pour l'émotion */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* Voyage Cards - Design Émotionnel */
 .voyage-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
 }
 
 .voyage-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 /* Image Container - ZERO espace gris */
 .voyage-image {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 220px;
     overflow: hidden;
 }
 
@@ -259,163 +263,276 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .voyage-card:hover .voyage-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Badges */
+/* Badges avec plus d'impact */
 .price-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-weight: bold;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 700;
     color: #ea580c;
-    font-size: 14px;
-    backdrop-filter: blur(4px);
+    font-size: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(234, 88, 12, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .type-badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(37, 99, 235, 0.9);
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
     color: white;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* Content - DIRECTEMENT collé à l'image */
+/* Content - Design émotionnel */
 .voyage-content {
-    padding: 16px;
+    padding: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .voyage-title {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
     color: #1f2937;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .voyage-title a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #1f2937, #1f2937);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .voyage-title a:hover {
-    color: #ea580c;
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-1px);
 }
 
 .voyage-description {
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex: 1;
+    font-weight: 400;
 }
 
-/* Informations */
+/* Informations avec plus d'espace */
 .voyage-info {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 3px solid #ea580c;
 }
 
 .info-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    font-size: 12px;
-    color: #6b7280;
+    font-size: 13px;
+    color: #475569;
+    font-weight: 500;
 }
 
 .info-item i {
-    margin-right: 4px;
+    margin-right: 6px;
     color: #ea580c;
-    width: 12px;
+    width: 14px;
+    font-size: 12px;
 }
 
-/* Services */
+/* Services avec style émotionnel */
 .voyage-services {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 16px;
+    gap: 6px;
+    margin-bottom: 18px;
 }
 
 .service-tag {
     display: inline-flex;
     align-items: center;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+}
+
+.service-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .service-tag i {
-    margin-right: 4px;
+    margin-right: 5px;
+    font-size: 11px;
 }
 
-.service-green { background: #dcfce7; color: #166534; }
-.service-blue { background: #dbeafe; color: #1e40af; }
-.service-purple { background: #e9d5ff; color: #7c3aed; }
+.service-green { 
+    background: linear-gradient(135deg, #10b981, #047857); 
+    color: white;
+}
+.service-blue { 
+    background: linear-gradient(135deg, #3b82f6, #1e40af); 
+    color: white;
+}
+.service-purple { 
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed); 
+    color: white;
+}
 
-/* Actions */
+/* Actions avec plus d'émotion */
 .voyage-actions {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     margin-top: auto;
 }
 
 .btn-primary, .btn-secondary {
     flex: 1;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
     text-align: center;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .btn-primary {
-    background: #ea580c;
+    background: linear-gradient(135deg, #ea580c, #f97316);
     color: white;
     border: none;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
 }
 
 .btn-primary:hover {
-    background: #dc2626;
-    transform: scale(1.02);
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.4);
 }
 
 .btn-secondary {
     background: white;
     color: #ea580c;
-    border: 1px solid #ea580c;
+    border: 2px solid #ea580c;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.1);
 }
 
 .btn-secondary:hover {
-    background: #fef3f2;
+    background: linear-gradient(135deg, #fef3f2, #fed7d7);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 88, 12, 0.2);
+    border-color: #f97316;
+}
+
+/* Typography émotionnelle */
+.voyage-card * {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Title - Typography émotionnelle */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Animation d'entrée */
+.voyage-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design amélioré */
+@media (max-width: 768px) {
+    .voyage-card {
+        margin-bottom: 20px;
+    }
+    
+    .voyage-content {
+        padding: 16px;
+    }
+    
+    .voyage-title {
+        font-size: 18px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
 }
 
 /* Custom pagination styles for Tailwind */
