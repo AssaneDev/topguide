@@ -36,7 +36,6 @@
     <nav id="mainMenu" class="hidden md:flex space-x-6">
       <a href="/" class="text-gray-700 hover:text-orange-600 font-medium">Accueil</a>
       <a href="{{ route('apropos') }}" class="text-gray-700 hover:text-orange-600 font-medium">À propos</a>
-      <a href="{{ route('destination') }}" class="text-gray-700 hover:text-orange-600 font-medium">Circuits</a>
       <div class="relative group">
         <button class="text-gray-700 hover:text-orange-600 font-medium">Excursions</button>
         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded mt-2">
@@ -53,7 +52,6 @@
   <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 bg-white shadow">
     <a href="/" class="block text-gray-700 hover:text-orange-600">Accueil</a>
     <a href="{{ route('apropos') }}" class="block text-gray-700 hover:text-orange-600">À propos</a>
-    <a href="{{ route('destination') }}" class="block text-gray-700 hover:text-orange-600">Circuits</a>
     <a href="{{ route('excursion', ['duree' => 'demi-journee']) }}" class="block text-gray-700 hover:text-orange-600">Excursion demi-journée</a>
     <a href="{{ route('excursion', ['duree' => 'journee']) }}" class="block text-gray-700 hover:text-orange-600">Excursion journée</a>
     <a href="{{ route('blog.list') }}" class="block text-gray-700 hover:text-orange-600">Blog</a>

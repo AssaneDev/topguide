@@ -27,25 +27,10 @@ class Vehicle extends Model
         'base_price' => 'decimal:2',
     ];
 
-    // Relation avec les réservations
-    public function bookings()
+    // Vérifier si le véhicule est disponible
+    public function isAvailable()
     {
-        return $this->hasMany(ShuttleBooking::class);
-    }
-
-    // Vérifier si le véhicule est disponible à une date donnée
-    public function isAvailableAt($datetime)
-    {
-        if (!$this->is_available) {
-            return false;
-        }
-
-        // Vérifier s'il n'y a pas de réservation confirmée à cette heure
-        return !$this->bookings()
-            ->where('pickup_datetime', '<=', $datetime)
-            ->where('pickup_datetime', '>=', now()->subHours(4)) // Marge de 4h
-            ->whereIn('status', ['confirmed', 'paid'])
-            ->exists();
+        return $this->is_available;
     }
 
     // Calculer le prix pour une distance donnée

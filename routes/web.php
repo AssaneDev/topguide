@@ -10,14 +10,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CircuitReservationController;
-use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\ExcursionController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocalController;
 use App\Http\Controllers\OptimizationController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\VoyageController;
-use App\Http\Controllers\ShuttleController;
 use App\Http\Controllers\CircuitController;
 use App\Http\Controllers\TerrainController;
 use App\Http\Controllers\EquipeController;
@@ -25,14 +23,15 @@ use App\Http\Controllers\TemplateConsigneController;
 use App\Http\Controllers\Admin\ExcursionRequestController;
 use App\Http\Controllers\Admin\ReservationAdminController;
 use App\Http\Controllers\Admin\CircuitAdminReservationController;
+use App\Http\Controllers\ClientDashboardsController;
 
 // ===================== SHUTTLE ROUTES =====================
-Route::prefix('shuttle')->group(function () {
-    Route::get('/', [ShuttleController::class, 'index'])->name('shuttle.index');
-    Route::post('/book', [ShuttleController::class, 'book'])->name('shuttle.book');
-    Route::get('/success', [ShuttleController::class, 'success'])->name('shuttle.success');
-    Route::get('/booking/{bookingReference}', [ShuttleController::class, 'bookingDetails'])->name('shuttle.booking-details');
-});
+// Route::prefix('shuttle')->group(function () {
+//     Route::get('/', [ShuttleController::class, 'index'])->name('shuttle.index');
+//     Route::post('/book', [ShuttleController::class, 'book'])->name('shuttle.book');
+//     Route::get('/success', [ShuttleController::class, 'success'])->name('shuttle.success');
+//     Route::get('/booking/{bookingReference}', [ShuttleController::class, 'bookingDetails'])->name('shuttle.booking-details');
+// });
 
 // ===================== PUBLIC FRONTEND ROUTES =====================
 Route::get('/', [UserController::class, 'Index']);
@@ -44,22 +43,59 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('blog/cat/list/{id}', 'BlogCatList');
 });
 
-Route::controller(DestinationController::class)->group(function () {
-    Route::get('destination/', 'Destination')->name('destination');
-    Route::get('destination/detail/{id}', 'DestinationDetail');
-    Route::get('vehicule/', 'Vehicule')->name('vehicule');
-});
+// Route véhicules conservée (sans destinations)
+Route::get('vehicule/', [App\Http\Controllers\Admin\VehicleController::class, 'index'])->name('vehicule');
 
 Route::controller(ExcursionController::class)->group(function () {
     Route::get('excursion/', 'Excursion')->name('excursion');
     Route::get('excursion/detail/{id}', 'ExcursionDetail');
+    Route::get('/excursions', 'Excursion')->name('excursion.filtres');
 });
 
+// ===================== ROUTES VOYAGES FRONTEND (NOUVELLES) =====================
 Route::controller(VoyageController::class)->group(function () {
-    Route::get('voyage/detail/{id}', 'VoyageDetail');
-    Route::get('formulaire/voyage/', 'FormulaireVoyage')->name('formulaire.voyage');
+    // Routes publiques voyages - CORRIGÉ: nom des routes cohérent
+    Route::get('/nos-voyages', 'PublicVoyages')->name('voyages.index');
+    Route::get('/voyages/{id}/detail', 'VoyageDetail')->name('voyages.detail');
+    Route::get('/voyages/{id}/programme', 'VoyageProgramme')->name('voyages.programme');
+    Route::get('/voyages/{id}/galerie', 'VoyageGalerie')->name('voyages.galerie');
+    
+    // Routes existantes (compatibilité)
+    Route::get('voyage/detail/{id}', 'VoyageDetail')->name('voyage.detail.old'); // CORRIGÉ: nom unique
+    Route::get('/formulaire/voyage/', 'FormulaireVoyage')->name('formulaire.voyage');
+    
+    // Routes protégées (nécessitent connexion)
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/voyages/{id}/programme-complet', 'VoyageProgrammeComplet')->name('voyages.programme-complet');
+        Route::get('/voyages/{id}/reservation', 'VoyageReservation')->name('voyages.reservation');
+    });
+    
+    // Routes AJAX pour consultation progressive
+    Route::get('/voyages/{id}/etape/{numero}', 'getEtapeDetail')->name('voyages.etape-detail');
+    Route::post('/voyages/{id}/track-consultation', 'trackConsultation')->name('voyages.track-consultation');
+    Route::get('/voyages/{id}/consultation-status', 'getConsultationStatus')->name('voyages.consultation-status');
 });
 
+// ===================== DASHBOARD CLIENT =====================
+Route::middleware(['auth'])->group(function () {
+    // Dashboard principal - MODIFICATION: éviter conflit avec le dashboard existant
+    Route::get('/mon-espace', [ClientDashboardsController::class, 'index'])->name('client.dashboard');
+    
+    // Gestion des voyages client
+    Route::get('/mes-voyages', [ClientDashboardsController::class, 'mesVoyages'])->name('client.voyages');
+    Route::get('/mes-reservations', [ClientDashboardsController::class, 'mesReservations'])->name('client.reservations');
+    
+    // Profil utilisateur
+    Route::get('/profil', [ClientDashboardsController::class, 'profil'])->name('client.profil');
+    Route::put('/profil', [ClientDashboardsController::class, 'updateProfil'])->name('client.profil.update');
+    Route::put('/profil/password', [ClientDashboardsController::class, 'updatePassword'])->name('client.profil.password');
+    
+    // Actions AJAX
+    Route::post('/voyages/{id}/toggle-favori', [ClientDashboardsController::class, 'toggleFavori'])->name('client.toggle-favori');
+    Route::delete('/consultations/{voyage_id}', [ClientDashboardsController::class, 'supprimerConsultation'])->name('client.supprimer-consultation');
+});
+
+// ===================== AUTRES ROUTES EXISTANTES =====================
 Route::controller(FormController::class)->group(function () {
     Route::post('/envoie/form', 'Envoie')->name('envoie.form');
     Route::get('/Contact', 'Contact')->name('contact');
@@ -75,7 +111,6 @@ Route::controller(LocalController::class)->group(function () {
 // Reservation guide
 Route::get('/reservation-guide', [ReservationController::class, 'create'])->name('reservation.form');
 Route::post('/reservation-guide', [ReservationController::class, 'store'])->name('reservation.store');
-Route::get('/guide-senegal', fn() => view('frontend.formulaire.guidejourne'))->name('test.form');
 Route::get('/reservation/remerciement/{id}', [ReservationController::class, 'remerciement'])->name('reservation.remerciement');
 Route::get('/confirmation-programme/{id}', [ReservationController::class, 'confirmation'])->name('confirmation.programme')->middleware('signed');
 
@@ -84,20 +119,33 @@ Route::get('/confirm-excursion/{id}', [FormController::class, 'confirmReservatio
 Route::post('/circuit/reservation', [CircuitReservationController::class, 'store'])->name('envoie.circuit.resa');
 Route::get('/circuit/confirm/{id}', [CircuitReservationController::class, 'confirm'])->name('circuit.confirma');
 Route::get('/reservation-circuit/success', fn() => view('frontend.destination.reservation_success'))->name('circuit.success');
-Route::get('/excursions', [ExcursionController::class, 'Excursion'])->name('excursion.filtres');
+
+// ===================== FRONTEND HÉBERGEMENTS ROUTES (PUBLIC) =====================
+Route::controller(App\Http\Controllers\Frontend\HebergementController::class)->group(function () {
+    Route::get('/hebergements', 'index')->name('hebergements.index');
+    Route::get('/hebergements/{hebergement:slug}', 'show')->name('hebergements.show');
+    Route::get('/hebergements/region/{region}', 'parRegion')->name('hebergements.region');
+    Route::get('/hebergements/search', 'search')->name('hebergements.search');
+    Route::get('/api/hebergements/carte', 'apiCarte')->name('hebergements.api.carte');
+    Route::get('/api/hebergements/filtres', 'apiFiltres')->name('hebergements.api.filtres');
+    Route::post('/hebergements/{hebergement}/commentaire', 'ajouterCommentaire')->name('hebergements.commentaire');
+    Route::post('/hebergements/{hebergement}/favori', 'toggleFavori')->name('hebergements.favori')->middleware('auth');
+    Route::get('/hebergements/comparateur', 'comparateur')->name('hebergements.comparateur');
+    Route::post('/hebergements/comparer', 'comparer')->name('hebergements.comparer');
+});
 
 // ===================== AUTHENTICATION ROUTES =====================
 require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', fn() => view('dashboard'))->middleware(['verified'])->name('dashboard');
-
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// ===================== ADMIN ROUTES =====================
+// ===================== ADMIN ROUTES PRINCIPAL =====================
+// TEMPORAIRE: Utilisation du middleware AdminRole custom
 Route::middleware(['auth', 'roles:admin'])->group(function () {
 
     // Admin Profile
@@ -124,16 +172,6 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::get('/delete/blog/post/{id}', 'DeleteBlogPost')->name('delete.blog.post');
     });
 
-    // Destinations / Excursions / Voyages
-    Route::controller(DestinationController::class)->group(function () {
-        Route::get('/all/destination/', 'AllDestination')->name('all.destinations');
-        Route::get('/add/destination/', 'AddDestination')->name('add.destination');
-        Route::post('/store/destination/', 'StoreDestination')->name('store.destination');
-        Route::get('/edit/destination/{id}', 'EditDestination')->name('edit.destination');
-        Route::post('/update/destination', 'UpdateDestination')->name('update.destination');
-        Route::get('/delete/destination/{id}', 'DeleteDestination')->name('delete.destination');
-        Route::get('/delete/multiimage/{id}', 'DeleteMultiImage')->name('multi.image.delete');
-    });
 
     Route::controller(ExcursionController::class)->group(function () {
         Route::get('/all/excursion/', 'AllExcursion')->name('all.excursion');
@@ -144,43 +182,23 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::get('/delete/excursion/{id}', 'DeleteExcursion')->name('delete.excursion');
     });
 
-    Route::controller(VoyageController::class)->group(function () {
-        Route::get('/all/voyagegroupe/', 'AllVoyages')->name('all.voyage');
-        Route::get('/add/voyagegroupe/', 'AddVoyage')->name('add.voyage');
-        Route::post('/store/voyage/', 'StoreVoyage')->name('store.voyage');
-        Route::get('/edit/voyage/{id}', 'EditVoyage')->name('edit.voyage');
-        Route::post('/update/voyage', 'UpdateVoyage')->name('update.voyage');
-        Route::get('/delete/voyage/{id}', 'DeleteVoyage')->name('delete.voyage');
-    });
-
     // Optimisation
     Route::get('/optimize', [OptimizationController::class, 'optimize']);
 
-  // Coordination Circuits - ROUTES COMPLÈTES
+    // Coordination Circuits
     Route::controller(CircuitController::class)->group(function () {
-        // Dashboard principal
         Route::get('/admin/coordination/circuits', 'dashboard')->name('circuits.dashboard');
-        
-        // CRUD Circuit
         Route::post('/admin/coordination/circuits', 'store')->name('circuits.store');
         Route::get('/admin/coordination/circuits/{circuit}/edit', 'edit')->name('circuits.edit');
-        
-        // ✅ ROUTES IMPORTANTES QUI MANQUENT
         Route::put('/admin/coordination/circuits/{circuit}', 'update')->name('circuits.update');
         Route::patch('/admin/coordination/circuits/{circuit}', 'update');
-        
-        // ✅ CORRIGER LES URLS DES PROGRAMMES
         Route::put('/admin/coordination/programme/{programme}', 'updateJour')->name('programme.update');
         Route::patch('/admin/coordination/programme/{programme}', 'updateJour');
         Route::post('/admin/coordination/programme/{programme}/consignes', 'genererConsignes')->name('programme.consignes');
-        
-        // Actions sur les circuits
         Route::post('/admin/coordination/circuits/{circuit}/activer', 'activerCircuit')->name('circuits.activer');
         Route::post('/admin/coordination/circuits/{circuit}/envoyer-liens', 'envoyerLiensCircuit')->name('circuits.envoyer-liens');
         Route::post('/admin/coordination/circuits/envoyer-liens-aujourdhui', 'envoyerLiensAujourdhui')->name('circuits.envoyer-liens-aujourdhui');
         Route::get('/admin/coordination/circuits/{circuit}/liens-equipe', 'voirLiensEquipe')->name('circuits.liens-equipe');
-        
-        // Suppression
         Route::delete('/admin/coordination/circuits/{circuit}', 'destroy')->name('circuits.destroy');
     });
 
@@ -212,39 +230,83 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::get('/coordination/templates/export', 'export')->name('templates.export');
         Route::post('/coordination/templates/import', 'import')->name('templates.import');
     });
+
+    // ===================== HÉBERGEMENTS ROUTES =====================
+    Route::controller(App\Http\Controllers\Admin\HebergementController::class)->group(function () {
+        Route::get('/admin/hebergements', 'index')->name('admin.hebergements.index');
+        Route::get('/admin/hebergements/create', 'create')->name('admin.hebergements.create');
+        Route::post('/admin/hebergements', 'store')->name('admin.hebergements.store');
+        Route::get('/admin/hebergements/{hebergement}', 'show')->name('admin.hebergements.show');
+        Route::get('/admin/hebergements/{hebergement}/edit', 'edit')->name('admin.hebergements.edit');
+        Route::put('/admin/hebergements/{hebergement}', 'update')->name('admin.hebergements.update');
+        Route::delete('/admin/hebergements/{hebergement}', 'destroy')->name('admin.hebergements.destroy');
+        Route::post('/admin/hebergements/{hebergement}/toggle-featured', 'toggleFeatured')->name('admin.hebergements.toggle-featured');
+        Route::post('/admin/hebergements/update-ordre', 'updateOrdre')->name('admin.hebergements.update-ordre');
+        Route::delete('/admin/hebergements/{hebergement}/image', 'deleteImage')->name('admin.hebergements.delete-image');
+        Route::get('/admin/hebergements-commentaires', 'commentaires')->name('admin.hebergements.commentaires');
+        Route::post('/admin/commentaires/{commentaire}/approuver', 'approuverCommentaire')->name('admin.commentaires.approuver');
+        Route::post('/admin/commentaires/{commentaire}/rejeter', 'rejeterCommentaire')->name('admin.commentaires.rejeter');
+        Route::get('/admin/hebergements-statistiques', 'statistiques')->name('admin.hebergements.statistiques');
+        Route::get('/admin/hebergements-export', 'export')->name('admin.hebergements.export');
+    });
+});
+
+// ===================== VOYAGES BACKEND (ADMIN SEULEMENT) =====================
+// TEMPORAIRE: Utilisation du middleware AdminRole custom
+Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
+    
+    // Routes CRUD de base pour les voyages - CORRIGÉ: Noms de routes préfixés admin
+    Route::get('/voyages', [VoyageController::class, 'AllVoyages'])->name('admin.voyages.index');
+    Route::get('/voyages/create', [VoyageController::class, 'AddVoyage'])->name('admin.voyages.create');
+    Route::post('/voyages/store', [VoyageController::class, 'StoreVoyage'])->name('admin.voyages.store');
+    Route::get('/voyages/{id}/edit', [VoyageController::class, 'EditVoyage'])->name('admin.voyages.edit');
+    Route::post('/voyages/update', [VoyageController::class, 'UpdateVoyage'])->name('admin.voyages.update');
+    Route::get('/voyages/{id}/delete', [VoyageController::class, 'DeleteVoyage'])->name('admin.voyages.delete');
+    
+    // Routes AJAX pour la gestion des étapes - CORRIGÉ: Noms de routes préfixés admin
+    Route::get('/voyages/{id}/etapes', [VoyageController::class, 'getVoyageEtapes'])->name('admin.voyages.etapes');
+    Route::post('/voyages/{voyage_id}/etapes', [VoyageController::class, 'AddEtapeToVoyage'])->name('admin.voyages.etapes.store');
+    Route::get('/etapes/{etape_id}/edit', [VoyageController::class, 'getEtapeForEdit'])->name('admin.etapes.edit');
+    Route::put('/etapes/{etape_id}', [VoyageController::class, 'UpdateEtape'])->name('admin.etapes.update');
+    Route::delete('/etapes/{etape_id}', [VoyageController::class, 'DeleteEtape'])->name('admin.etapes.delete');
+    
+    // Routes AJAX pour la gestion des activités - CORRIGÉ: Noms de routes préfixés admin
+    Route::get('/voyages/{id}/activites', [VoyageController::class, 'getVoyageActivites'])->name('admin.voyages.activites');
+    Route::post('/voyages/{voyage_id}/activites', [VoyageController::class, 'AddActiviteToVoyage'])->name('admin.voyages.activites.store');
+    Route::get('/activites/{activite_id}/edit', [VoyageController::class, 'getActiviteForEdit'])->name('admin.activites.edit');
+    Route::put('/activites/{activite_id}', [VoyageController::class, 'UpdateActivite'])->name('admin.activites.update');
+    Route::delete('/activites/{activite_id}', [VoyageController::class, 'DeleteActivite'])->name('admin.activites.delete');
+    
+    // Routes pour la gestion des galeries - CORRIGÉ: Noms de routes préfixés admin
+    Route::post('/voyages/{voyage_id}/galeries', [VoyageController::class, 'AddImageToGalerie'])->name('admin.voyages.galeries.store');
+    Route::delete('/galeries/{galerie_id}', [VoyageController::class, 'DeleteImageGalerie'])->name('admin.galeries.delete');
+    
+    // Route pour dupliquer un voyage - CORRIGÉ: Nom de route préfixé admin
+    Route::post('/voyages/{id}/duplicate', [VoyageController::class, 'DuplicateVoyage'])->name('admin.voyages.duplicate');
 });
 
 // ===================== GUIDE ROUTES =====================
-Route::middleware(['auth', 'guide:guide'])->group(function () {
+// CORRIGÉ: Utilisation du middleware AdminRole pour le rôle guide
+Route::middleware(['auth', 'role:guide'])->group(function () {
     Route::get('/guide/dashboard', [GuideController::class, 'GuideDashboard'])->name('guide.dashboard');
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 // ===================== ADMIN RESERVATIONS BACKEND =====================
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+// TEMPORAIRE: Utilisation du middleware AdminRole custom
+Route::prefix('admin')->middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('excursion-requests', [ExcursionRequestController::class, 'index'])->name('admin.excursion_requests.index');
     Route::get('excursion-requests/delete/{id}', [ExcursionRequestController::class, 'destroy'])->name('admin.excursion_requests.destroy');
+    Route::get('guide-reservations', [ReservationAdminController::class, 'index'])->name('admin.guide_reservations.index');
+    Route::get('guide-reservations/delete/{id}', [ReservationAdminController::class, 'destroy'])->name('admin.guide_reservations.destroy');
+    Route::get('guide-reservations/confirm/{id}', [ReservationAdminController::class, 'confirm'])->name('admin.guide_reservations.confirm');
+    Route::get('circuit-reservations', [CircuitAdminReservationController::class, 'index'])->name('admin.circuit_reservations.index');
+    Route::get('circuit-reservations/confirm/{id}', [CircuitAdminReservationController::class, 'confirm'])->name('admin.circuit_reservations.confirm');
+    Route::get('circuit-reservations/delete/{id}', [CircuitAdminReservationController::class, 'destroy'])->name('admin.circuit_reservations.destroy');
 });
-
-Route::get('guide-reservations', [ReservationAdminController::class, 'index'])->name('admin.guide_reservations.index');
-Route::get('guide-reservations/delete/{id}', [ReservationAdminController::class, 'destroy'])->name('admin.guide_reservations.destroy');
-Route::get('guide-reservations/confirm/{id}', [ReservationAdminController::class, 'confirm'])->name('admin.guide_reservations.confirm');
-
-Route::get('circuit-reservations', [CircuitAdminReservationController::class, 'index'])->name('admin.circuit_reservations.index');
-Route::get('circuit-reservations/confirm/{id}', [CircuitAdminReservationController::class, 'confirm'])->name('admin.circuit_reservations.confirm');
-Route::get('circuit-reservations/delete/{id}', [CircuitAdminReservationController::class, 'destroy'])->name('admin.circuit_reservations.destroy');
 
 // ===================== TERRAIN (ACCÈS PAR TOKEN) =====================
 Route::get('/terrain/{token}', [TerrainController::class, 'accesToken'])->name('terrain.acces');
 Route::get('/api/terrain/{token}', [TerrainController::class, 'apiProgrammeJour'])->name('terrain.api');
 
-// ===================== IP TEST =====================
-Route::get('/test-ip', function () {
-    try {
-        $position = Location::get('8.8.8.8');
-        dd($position);
-    } catch (\Throwable $e) {
-        dd($e->getMessage(), $e->getTraceAsString());
-    }
-});

@@ -41,6 +41,13 @@
   <link rel="stylesheet" href=" {{asset('assets/css/slick.min.css')}} ">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href=" {{asset('assets/css/style.css')}} ">
+  
+  <!-- Tailwind CSS via Vite -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  
+  <!-- Fallback Tailwind CDN (en cas de problème avec Vite) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -63,7 +70,7 @@
   <!-- End Google Tag Manager -->
 
   <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="60239d0b-c958-4f1e-b562-6faf74f7b289";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
+  @stack('styles')
 </head>
 
 
@@ -90,7 +97,6 @@
           <ul>
                 <li><a href="{{ url('/') }}">Accueil</a></li>
                 <li><a href="{{ route('apropos') }}">À propos</a></li>
-                <li><a href="{{ route('destination') }}">Circuits</a></li>
                <li class="menu-item-has-children">
               <a href="{{ route('excursion.filtres') }}">Excursions</a>
               <ul class="sub-menu">

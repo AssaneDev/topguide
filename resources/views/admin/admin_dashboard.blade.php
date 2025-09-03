@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" class="semi-dark">
-
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -9,7 +8,6 @@
 
 	<!-- Toastr pour les notifications -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<!--favicon-->
 	<link rel="icon" href="{{asset('backend/assets/images/favicon-32x32.png')}}" type="image/png" />
 	<!--plugins-->
@@ -36,12 +34,11 @@
 	
 	{{-- Datatable --}}
 	<link href=" {{asset('backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	
+	{{-- SUPPRIMÉ : jQuery sera chargé dans le body comme d'habitude --}}
+
 	<title>Soluguide Dashboard</title>
-
-
-
 </head>
-
 <body >
 	<!--wrapper-->
 	<div class="wrapper">
@@ -177,18 +174,41 @@
 		<script src="https://cdn.tiny.cloud/1/ncgg3kfk200ae0f3hax0io2deq63iv2afbadbbdkgo0ymmn4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 		
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
-	<script>
-        tinymce.init({
-        selector : "#myeditorinstance",
-        content_css: 'writer',
-        theme: "silver",
-        width: 1200,
-        plugins: [ 'table powerpaste',
-                   'lists media',
-                   'paste' ],
-        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify',
-        })
-    </script>
+<script>
+tinymce.init({
+    selector: "#myeditorinstance",
+    content_css: 'writer',
+    theme: "silver",
+    height: 300,
+    plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar: 'undo redo | formatselect | bold italic backcolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat | help',
+    
+    // Important : Valider le contenu lors de la sauvegarde
+    setup: function (editor) {
+        editor.on('change', function () {
+            editor.save(); // Synchronise avec le textarea
+        });
+        
+        editor.on('blur', function () {
+            editor.save(); // Synchronise quand on perd le focus
+        });
+    },
+    
+    // Désactiver la validation HTML5 native
+    validate: false,
+    
+    // Callback quand l'éditeur est prêt
+    init_instance_callback: function (editor) {
+        console.log('TinyMCE initialisé pour:', editor.id);
+    }
+});
+</script>
 {{-- <textarea>
   Welcome to TinyMCE!
 </textarea>
@@ -222,6 +242,7 @@
 	  <textarea>
 		Welcome to TinyMCE!
 	  </textarea> --}}
+	  @stack('scripts')
 </body>
 
 </html>

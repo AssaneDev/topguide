@@ -76,7 +76,6 @@
               <div class="menu-all-pages-container">
                 <ul class="menu">
                   <li><a href="{{url('/')}}"> Acceuil</a></li>
-                  <li><a href="{{route('destination')}}"> Destinations</a></li>
                   <li><a href="{{route('blog.list')}}">Blog</a></li>
                   <li><a href="{{route('contact')}}">Contact</a></li>
                 
@@ -207,7 +206,6 @@
               <div class="menu-all-pages-container">
                 <ul class="menu">
                   <li><a href="{{url('/')}}"> Home</a></li>
-                  <li><a href="{{route('destination')}}"> Destination</a></li>
                   <li><a href="{{route('blog.list')}}">Blog</a></li>
                   <li><a href="{{route('contact')}}">Contact us</a></li>
                 
@@ -335,7 +333,6 @@
               <div class="menu-all-pages-container">
                 <ul class="menu">
                   <li><a href="{{url('/')}}"> Inicio</a></li>
-                  <li><a href="{{route('destination')}}"> Destino</a></li>
                   <li><a href="{{route('blog.list')}}">Blog</a></li>
                   <li><a href="{{route('contact')}}">Contáctenos</a></li>
                 

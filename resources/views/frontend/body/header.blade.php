@@ -16,7 +16,6 @@
               <ul>
                 <li><a href="{{ url('/') }}">Accueil</a></li>
                 <li><a href="{{ route('apropos') }}">À propos</a></li>
-                <li><a href="{{ route('destination') }}">Circuits</a></li>
                <li class="menu-item-has-children">
               <a href="{{ route('excursion.filtres') }}">Excursions</a>
               <ul class="sub-menu">
@@ -36,7 +35,7 @@
             <div class="header-right">
               <ul>
                 <li>
-                  <a class="vs-btn style7" href="{{route('test.form')}}">
+                  <a class="vs-btn style7" href="{{route('reservation.form')}}">
                     Réservez votre guide à la journée
                     <i class="fas fa-arrow-right ms-2"></i>
                   </a>

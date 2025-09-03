@@ -33,7 +33,6 @@
               <h2 class="sec-title h1">Ils plaisent aux voyageurs</h2>
             </div>
             <div class="title-btn">
-              <a class="vs-btn style4" href="{{route('destination')}}">Tous Les Circuits</a>
             </div>
           </div>
         </div>
@@ -196,7 +195,7 @@
               </li>
             </ul>
             <div class="about-bottom">
-              <a href="{{route('test.form')}}" target="_blank" class="vs-btn style5">Réservez votre guide</a>
+              <a href="{{route('reservation.form')}}" target="_blank" class="vs-btn style5">Réservez votre guide</a>
               <div class="item2">
                 <div class="item2__icon">
                   <img src=" {{asset('assets/img/icons/phone-icon-2.svg')}} " alt="phone icon 1">
