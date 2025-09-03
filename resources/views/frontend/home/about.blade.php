@@ -6,7 +6,7 @@
   //       App::setLocale($locale);
 
        
-  $destination = App\Models\Destination::latest()->limit(3)->get();
+  $destination = App\Models\VoyageModel::latest()->limit(3)->get();
 
 
     use Illuminate\Support\Facades\App;
@@ -81,7 +81,7 @@
                       
                     </li>
                     <li>
-                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fab fa-telegram-plane"></i><strong> Type Circuit:</strong>{{$item->type_circuit}}</a>
+                      <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fab fa-telegram-plane"></i><strong> Type Circuit:</strong>{{$item->type_voyage}}</a>
                     </li>
                     <li>
                       <a href="{{ url('destination/detail/'.$item->id) }}"><i class="fas fa-map-marker-alt"></i><strong>Lieux:</strong>{{$item->lieux}}</a>
