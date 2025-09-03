@@ -1,482 +1,278 @@
 @extends('frontend.main_master')
 
 @section('main')
-<!-- Hero Section -->
-<div class="hero-section position-relative" style="height: 70vh; background: url('{{ asset($voyage->image_principale) }}') center/cover;">
-    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
-    <div class="container h-100 position-relative">
-        <div class="row h-100 align-items-center">
-            <div class="col-lg-8">
-                <div class="hero-content text-white">
-                    <div class="mb-3">
-                        <span class="badge bg-primary fs-6 px-3 py-2">{{ $voyage->type_voyage_label }}</span>
-                        <span class="badge bg-success fs-6 px-3 py-2 ms-2">{{ $voyage->duree_formatee }}</span>
-                    </div>
-                    <h1 class="display-4 fw-bold mb-4">{{ $voyage->nom_voyage }}</h1>
-                    <p class="lead mb-4">{{ $voyage->description_courte }}</p>
+<!-- Hero Section avec Tailwind -->
+<div class="relative h-screen min-h-[600px] bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 overflow-hidden flex items-center">
+    @if($voyage->image_principale)
+        <img src="{{ asset($voyage->image_principale) }}" alt="{{ $voyage->nom_voyage }}" 
+             class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
+    @endif
+    
+    <!-- Overlay subtil -->
+    <div class="absolute inset-0 bg-gradient-to-br from-orange-600/90 via-orange-500/80 to-orange-700/85 z-10"></div>
+    
+    <!-- Contenu du hero -->
+    <div class="relative z-20 w-full max-w-7xl mx-auto px-6 text-white">
+        <!-- Breadcrumb moderne -->
+        <nav class="inline-flex items-center space-x-2 mb-8 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <a href="{{ url('/') }}" class="text-white/80 hover:text-white transition-colors duration-300">🏠 Accueil</a>
+            <span class="text-white/50">→</span>
+            <a href="{{ route('voyages.index') }}" class="text-white/80 hover:text-white transition-colors duration-300">✈️ Voyages</a>
+            <span class="text-white/50">→</span>
+            <span class="text-white font-medium">{{ Str::limit($voyage->nom_voyage, 30) }}</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Contenu principal -->
+            <div class="space-y-8">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30">
+                        {{ $voyage->type_voyage }}
+                    </span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30">
+                        📍 {{ $voyage->region }}
+                    </span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30">
+                        ⭐ {{ $voyage->difficulte_label ?? 'Standard' }}
+                    </span>
+                </div>
+
+                <!-- Titre et description -->
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg">
+                        {{ $voyage->nom_voyage }}
+                    </h1>
+                    <p class="text-xl text-white/90 leading-relaxed max-w-2xl">
+                        {{ $voyage->description_courte }}
+                    </p>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="flex flex-wrap gap-4">
+                    @auth
+                        <a href="{{ route('voyages.reservation', $voyage->id) }}" 
+                           class="inline-flex items-center px-8 py-4 bg-white text-orange-600 rounded-full font-semibold hover:bg-orange-50 hover:scale-105 transition-all duration-300 shadow-lg">
+                            ✨ Réserver maintenant
+                        </a>
+                    @else
+                        <a href="{{ route('register') }}" 
+                           class="inline-flex items-center px-8 py-4 bg-white text-orange-600 rounded-full font-semibold hover:bg-orange-50 hover:scale-105 transition-all duration-300 shadow-lg">
+                            🚀 S'inscrire pour réserver
+                        </a>
+                    @endauth
                     
-                    <!-- Infos rapides -->
-                    <div class="row g-3 mb-4">
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                                <span>{{ $voyage->region }}</span>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-users me-2 text-primary"></i>
-                                <span>{{ $voyage->participants_min }}-{{ $voyage->participants_max }} participants</span>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-mountain me-2 text-primary"></i>
-                                <span>{{ $voyage->difficulte_label }}</span>
-                            </div>
-                        </div>
-                        @if($voyage->niveau_confort)
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-star me-2 text-primary"></i>
-                                <span>{{ $voyage->niveau_confort_label }}</span>
-                            </div>
-                        </div>
-                        @endif
-                        @if($voyage->point_depart && $voyage->point_arrivee)
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-route me-2 text-primary"></i>
-                                <span>{{ $voyage->point_depart_arrivee }}</span>
-                            </div>
-                        </div>
-                        @endif
-                    </div>
-                    
-                    <!-- Prix et CTA -->
-                    <div class="d-flex align-items-center gap-4">
-                        <div class="price-display">
-                            <div class="price-eur h3 mb-1 text-warning fw-bold">{{ $voyage->prix_base_eur_formate }}</div>
-                            <div class="price-fcfa text-light">{{ $voyage->prix_base_formate }}</div>
-                        </div>
-                        <div class="cta-buttons">
-                            @auth
-                                <a href="{{ route('voyages.reservation', $voyage->id) }}" class="vs-btn btn-lg me-3">
-                                    <i class="fas fa-calendar-check me-2"></i>Réserver maintenant
-                                </a>
-                            @else
-                                <a href="{{ route('register') }}" class="vs-btn btn-lg me-3">
-                                    <i class="fas fa-user-plus me-2"></i>S'inscrire pour réserver
-                                </a>
-                            @endauth
-                            <a href="#programme" class="vs-btn style2 btn-lg">
-                                <i class="fas fa-list me-2"></i>Voir le programme
-                            </a>
-                        </div>
-                    </div>
+                    <a href="{{ route('voyages.programme', $voyage->id) }}" 
+                       class="inline-flex items-center px-8 py-4 bg-white/20 text-white border-2 border-white/30 rounded-full font-semibold hover:bg-white/30 hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                        📋 Voir le programme
+                    </a>
+                </div>
+            </div>
+
+            <!-- Statistiques en cartes -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-3">📅</div>
+                    <div class="text-2xl font-bold text-white">{{ $voyage->duree_jours }}</div>
+                    <div class="text-white/80 text-sm">jours</div>
+                </div>
+                
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-3">👥</div>
+                    <div class="text-2xl font-bold text-white">{{ $voyage->participants_max }}</div>
+                    <div class="text-white/80 text-sm">max</div>
+                </div>
+                
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-3">💰</div>
+                    <div class="text-lg font-bold text-white">{{ number_format($voyage->prix_base) }}</div>
+                    <div class="text-white/80 text-xs">FCFA</div>
+                </div>
+                
+                <div class="bg-white/15 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <div class="text-lg font-bold text-white">{{ $voyage->difficulte_label ?? 'Standard' }}</div>
+                    <div class="text-white/80 text-xs">niveau</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Navigation Tabs -->
-<div class="sticky-top bg-white border-bottom">
-    <div class="container">
-        <nav class="nav nav-pills py-3" id="voyage-tabs">
-            <a class="nav-link active" href="#description">Description</a>
-            <a class="nav-link" href="#programme">Programme</a>
-            <a class="nav-link" href="#activites">Activités</a>
-            <a class="nav-link" href="#inclusions">Inclusions</a>
-            <a class="nav-link" href="#galerie">Galerie</a>
-            <a class="nav-link" href="#infos">Infos pratiques</a>
-        </nav>
-    </div>
-</div>
-
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8">
-            <!-- Description -->
-            <section id="description" class="mb-5">
-                <h3 class="section-title mb-4">
-                    <i class="fas fa-info-circle me-2 text-primary"></i>Description du voyage
-                </h3>
-                <div class="content-card p-4 rounded-3 border">
-                    <div class="description-content">
-                        {!! nl2br(e($voyage->description_longue)) !!}
+<!-- Contenu principal avec Tailwind -->
+<div class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Colonne principale -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Description -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-8 text-center">
+                        <h2 class="text-3xl font-bold mb-2">✨ Découvrez votre aventure</h2>
+                        <p class="text-orange-100">Une expérience authentique vous attend</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                            {{ $voyage->description_longue }}
+                        </div>
+                        
+                        @if($voyage->points_forts)
+                            <div class="mt-8 p-6 bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-400 rounded-r-2xl">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                                    <span class="mr-2">🌟</span> Points forts de ce voyage
+                                </h4>
+                                <p class="text-gray-700">{{ $voyage->points_forts }}</p>
+                            </div>
+                        @endif
                     </div>
                 </div>
-            </section>
 
-            <!-- Programme -->
-            <section id="programme" class="mb-5">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="section-title mb-0">
-                        <i class="fas fa-route me-2 text-primary"></i>Programme détaillé
-                    </h3>
-                    <a href="{{ route('voyages.programme', $voyage->id) }}" class="vs-btn style2">
-                        Programme complet
-                    </a>
-                </div>
-                
-                <div class="timeline-container">
-                    @foreach($voyage->etapes->take(3) as $etape)
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <div class="timeline-day">{{ $etape->numero_jour }}</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="content-card p-4 rounded-3 border">
-                                <h5 class="mb-2">{{ $etape->titre_etape }}</h5>
-                                @if($etape->heures_formatees)
-                                    <p class="text-muted mb-2">
-                                        <i class="fas fa-clock me-1"></i>{{ $etape->heures_formatees }}
-                                    </p>
-                                @endif
-                                <p class="mb-3">{{ $etape->description_etape }}</p>
-                                
-                                @if($etape->lieu_depart || $etape->lieu_arrivee)
-                                <div class="locations mb-2">
-                                    @if($etape->lieu_depart)
-                                        <span class="badge bg-light text-dark me-2">
-                                            <i class="fas fa-play me-1"></i>{{ $etape->lieu_depart }}
-                                        </span>
-                                    @endif
-                                    @if($etape->lieu_arrivee)
-                                        <span class="badge bg-light text-dark">
-                                            <i class="fas fa-stop me-1"></i>{{ $etape->lieu_arrivee }}
-                                        </span>
-                                    @endif
+                <!-- Activités -->
+                @if($voyage->activites && $voyage->activites->count() > 0)
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-8 text-center">
+                        <h2 class="text-3xl font-bold mb-2">🎭 Activités incluses</h2>
+                        <p class="text-orange-100">Des expériences uniques vous attendent</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            @foreach($voyage->activites as $activite)
+                            <div class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                                <div class="h-32 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-5xl text-white">
+                                    🎯
                                 </div>
-                                @endif
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-800 mb-3">{{ $activite->nom_activite }}</h4>
+                                    <p class="text-gray-600">{{ $activite->description }}</p>
+                                </div>
                             </div>
+                            @endforeach
                         </div>
-                    </div>
-                    @endforeach
-                    
-                    @if($voyage->etapes->count() > 3)
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <div class="timeline-more">...</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="content-card p-4 rounded-3 border text-center">
-                                <h5 class="mb-3">Et {{ $voyage->etapes->count() - 3 }} autres étapes !</h5>
-                                @guest
-                                    <p class="text-muted mb-3">Connectez-vous pour découvrir le programme complet de ce voyage extraordinaire !</p>
-                                    <a href="{{ route('login') }}" class="vs-btn me-2">Se connecter</a>
-                                    <a href="{{ route('register') }}" class="vs-btn style2">S'inscrire</a>
-                                @else
-                                    <a href="{{ route('voyages.programme-complet', $voyage->id) }}" class="vs-btn">
-                                        Voir le programme complet
-                                    </a>
-                                @endguest
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </section>
-
-            <!-- Activités -->
-            <section id="activites" class="mb-5">
-                <h3 class="section-title mb-4">
-                    <i class="fas fa-hiking me-2 text-primary"></i>Activités & Expériences
-                </h3>
-                
-                @if($voyage->activitesIncluses->count() > 0)
-                <div class="mb-4">
-                    <h5 class="text-success mb-3">
-                        <i class="fas fa-check-circle me-2"></i>Activités incluses
-                    </h5>
-                    <div class="row g-3">
-                        @foreach($voyage->activitesIncluses as $activite)
-                        <div class="col-md-6">
-                            <div class="activity-card h-100 p-3 rounded-3 border border-success border-opacity-25 bg-success bg-opacity-10">
-                                <h6 class="fw-bold mb-2">{{ $activite->nom_activite }}</h6>
-                                <p class="mb-2 small">{{ $activite->description_activite }}</p>
-                                @if($activite->duree_heures)
-                                    <div class="text-muted small">
-                                        <i class="fas fa-clock me-1"></i>{{ $activite->duree_formatee }}
-                                    </div>
-                                @endif
-                                @if($activite->lieu_activite)
-                                    <div class="text-muted small">
-                                        <i class="fas fa-map-marker-alt me-1"></i>{{ $activite->lieu_activite }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                        @endforeach
                     </div>
                 </div>
                 @endif
-                
-                @if($voyage->activitesOptionnelles->count() > 0)
-                <div class="mb-4">
-                    <h5 class="text-warning mb-3">
-                        <i class="fas fa-plus-circle me-2"></i>Activités optionnelles
-                    </h5>
-                    <div class="row g-3">
-                        @foreach($voyage->activitesOptionnelles as $activite)
-                        <div class="col-md-6">
-                            <div class="activity-card h-100 p-3 rounded-3 border border-warning border-opacity-25 bg-warning bg-opacity-10">
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <h6 class="fw-bold mb-0">{{ $activite->nom_activite }}</h6>
-                                    <span class="badge bg-warning text-dark">{{ $activite->prix_eur_formate }}</span>
-                                </div>
-                                <p class="mb-2 small">{{ $activite->description_activite }}</p>
-                                <div class="activity-details">
-                                    @if($activite->duree_heures)
-                                        <div class="text-muted small mb-1">
-                                            <i class="fas fa-clock me-1"></i>{{ $activite->duree_formatee }}
-                                        </div>
-                                    @endif
-                                    @if($activite->lieu_activite)
-                                        <div class="text-muted small">
-                                            <i class="fas fa-map-marker-alt me-1"></i>{{ $activite->lieu_activite }}
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                @endif
-            </section>
 
-            <!-- Inclusions -->
-            <section id="inclusions" class="mb-5">
-                <h3 class="section-title mb-4">
-                    <i class="fas fa-list-check me-2 text-primary"></i>Ce qui est inclus / non inclus
-                </h3>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="inclusions-card p-4 rounded-3 border border-success border-opacity-25 bg-success bg-opacity-10">
-                            <h5 class="text-success mb-3">
-                                <i class="fas fa-check-circle me-2"></i>Inclus
-                            </h5>
-                            <ul class="list-unstyled mb-0">
-                                @if($voyage->repas_inclus)
-                                    <li class="mb-2">
-                                        <i class="fas fa-check text-success me-2"></i>Repas mentionnés au programme
-                                    </li>
-                                @endif
-                                @if($voyage->guide_inclus)
-                                    <li class="mb-2">
-                                        <i class="fas fa-check text-success me-2"></i>Guide local francophone
-                                    </li>
-                                @endif
-                                @if($voyage->transports_inclus)
+                <!-- Inclusions -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-8 text-center">
+                        <h2 class="text-3xl font-bold mb-2">✅ Ce qui est inclus</h2>
+                        <p class="text-green-100">Tout est prévu pour votre confort</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="space-y-4">
+                            @if($voyage->repas_inclus)
+                            <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                <span class="text-2xl mr-4">🍽️</span>
+                                <span class="text-gray-800">Repas selon programme</span>
+                            </div>
+                            @endif
+                            
+                            @if($voyage->guide_inclus)
+                            <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                <span class="text-2xl mr-4">👨‍🎓</span>
+                                <span class="text-gray-800">Guide local francophone</span>
+                            </div>
+                            @endif
+                            
+                            @if($voyage->transports_inclus)
+                                @if(is_array($voyage->transports_inclus))
                                     @foreach($voyage->transports_inclus as $transport)
-                                    <li class="mb-2">
-                                        <i class="fas fa-check text-success me-2"></i>{{ ucfirst($transport) }}
-                                    </li>
+                                    <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                        <span class="text-2xl mr-4">🚗</span>
+                                        <span class="text-gray-800">{{ ucfirst($transport) }}</span>
+                                    </div>
                                     @endforeach
+                                @else
+                                    <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                        <span class="text-2xl mr-4">🚗</span>
+                                        <span class="text-gray-800">{{ $voyage->transports_inclus }}</span>
+                                    </div>
                                 @endif
-                                @if($voyage->hebergements_inclus)
+                            @endif
+                            
+                            @if($voyage->hebergements_inclus)
+                                @if(is_array($voyage->hebergements_inclus))
                                     @foreach($voyage->hebergements_inclus as $hebergement)
-                                    <li class="mb-2">
-                                        <i class="fas fa-check text-success me-2"></i>{{ ucfirst($hebergement) }}
-                                    </li>
+                                    <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                        <span class="text-2xl mr-4">🏨</span>
+                                        <span class="text-gray-800">{{ ucfirst($hebergement) }}</span>
+                                    </div>
                                     @endforeach
+                                @else
+                                    <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                        <span class="text-2xl mr-4">🏨</span>
+                                        <span class="text-gray-800">{{ $voyage->hebergements_inclus }}</span>
+                                    </div>
                                 @endif
-                                <li class="mb-2">
-                                    <i class="fas fa-check text-success me-2"></i>Assistance 24h/7j
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="inclusions-card p-4 rounded-3 border border-danger border-opacity-25 bg-danger bg-opacity-10">
-                            <h5 class="text-danger mb-3">
-                                <i class="fas fa-times-circle me-2"></i>Non inclus
-                            </h5>
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Vols internationaux
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Visa (si nécessaire)
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Assurance voyage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Dépenses personnelles
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Pourboires
-                                </li>
-                                <li class="mb-2">
-                                    <i class="fas fa-times text-danger me-2"></i>Activités optionnelles
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Galerie -->
-            <section id="galerie" class="mb-5">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="section-title mb-0">
-                        <i class="fas fa-images me-2 text-primary"></i>Galerie photos
-                    </h3>
-                    <a href="{{ route('voyages.galerie', $voyage->id) }}" class="vs-btn style2">
-                        Voir toutes les photos
-                    </a>
-                </div>
-                
-                <div class="row g-3">
-                    @foreach($voyage->galeries->take(6) as $galerie)
-                    <div class="col-md-4 col-sm-6">
-                        <div class="gallery-item">
-                            <img src="{{ asset($galerie->chemin_image) }}" 
-                                 alt="Photo {{ $loop->iteration }}" 
-                                 class="img-fluid rounded-3"
-                                 data-bs-toggle="modal" 
-                                 data-bs-target="#galleryModal"
-                                 data-image="{{ asset($galerie->chemin_image) }}"
-                                 style="height: 200px; object-fit: cover; cursor: pointer;">
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </section>
-
-            <!-- Informations pratiques -->
-            <section id="infos" class="mb-5">
-                <h3 class="section-title mb-4">
-                    <i class="fas fa-info-circle me-2 text-primary"></i>Informations pratiques
-                </h3>
-                
-                <div class="row g-4">
-                    @if($voyage->equipements_recommandes)
-                    <div class="col-md-6">
-                        <div class="info-card p-4 rounded-3 border">
-                            <h5 class="mb-3">
-                                <i class="fas fa-backpack me-2 text-warning"></i>Équipements recommandés
-                            </h5>
-                            <div class="equipements-content">
-                                {!! nl2br(e($voyage->equipements_recommandes)) !!}
+                            @endif
+                            
+                            <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                <span class="text-2xl mr-4">📞</span>
+                                <span class="text-gray-800">Assistance 24h/7j</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                                <span class="text-2xl mr-4">🛡️</span>
+                                <span class="text-gray-800">Assurance voyage</span>
                             </div>
                         </div>
                     </div>
-                    @endif
-                    
-                    @if($voyage->conditions_particulieres)
-                    <div class="col-md-6">
-                        <div class="info-card p-4 rounded-3 border">
-                            <h5 class="mb-3">
-                                <i class="fas fa-exclamation-triangle me-2 text-danger"></i>Conditions particulières
-                            </h5>
-                            <div class="conditions-content">
-                                {!! nl2br(e($voyage->conditions_particulieres)) !!}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    
-                    @if($voyage->informations_generales)
-                    <div class="col-12">
-                        <div class="info-card p-4 rounded-3 border">
-                            <h5 class="mb-3">
-                                <i class="fas fa-info me-2 text-info"></i>Informations générales
-                            </h5>
-                            <div class="infos-content">
-                                {!! nl2br(e($voyage->informations_generales)) !!}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-            <div class="sticky-top" style="top: 120px;">
-                <!-- Carte de réservation -->
-                <div class="reservation-card p-4 rounded-3 border shadow-sm mb-4">
-                    <div class="text-center mb-4">
-                        <div class="price-display">
-                            <div class="price-eur h4 mb-1 text-primary fw-bold">{{ $voyage->prix_base_eur_formate }}</div>
-                            <div class="price-fcfa text-muted">{{ $voyage->prix_base_formate }}</div>
-                            @if($voyage->prix_avec_guide)
-                                <div class="price-guide small text-success mt-1">
-                                    Avec guide : {{ $voyage->prix_avec_guide_eur_formate }}
+            <!-- Sidebar prix -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <!-- Carte de prix -->
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                        <div class="bg-gradient-to-r from-slate-800 to-slate-700 text-white p-8 text-center">
+                            <div class="text-4xl font-bold text-amber-400 mb-2">
+                                {{ number_format($voyage->prix_base) }} FCFA
+                            </div>
+                            <div class="text-slate-300">par personne</div>
+                            
+                            @if($voyage->participants_min && $voyage->participants_max)
+                                <div class="mt-4 px-4 py-2 bg-white/10 rounded-xl">
+                                    <span class="text-sm">👥 Groupe {{ $voyage->participants_min }}-{{ $voyage->participants_max }} personnes</span>
                                 </div>
                             @endif
                         </div>
-                    </div>
-                    
-                    <div class="reservation-form">
-                        @auth
-                            <a href="{{ route('voyages.reservation', $voyage->id) }}" class="vs-btn w-100 mb-3">
-                                <i class="fas fa-calendar-check me-2"></i>Réserver maintenant
-                            </a>
-                        @else
-                            <a href="{{ route('register') }}" class="vs-btn w-100 mb-3">
-                                <i class="fas fa-user-plus me-2"></i>S'inscrire pour réserver
-                            </a>
-                            <a href="{{ route('login') }}" class="vs-btn style2 w-100 mb-3">
-                                <i class="fas fa-sign-in-alt me-2"></i>Se connecter
-                            </a>
-                        @endauth
                         
-                        <a href="{{ route('contact') }}" class="vs-btn style3 w-100">
-                            <i class="fas fa-comments me-2"></i>Demander des infos
-                        </a>
-                    </div>
-                </div>
+                        <div class="p-8 space-y-4">
+                            @auth
+                                <a href="{{ route('voyages.reservation', $voyage->id) }}" 
+                                   class="w-full inline-flex items-center justify-center px-6 py-4 bg-orange-500 text-white rounded-2xl font-semibold hover:bg-orange-600 hover:scale-105 transition-all duration-300 shadow-lg">
+                                    ✨ Réserver maintenant
+                                </a>
+                            @else
+                                <a href="{{ route('register') }}" 
+                                   class="w-full inline-flex items-center justify-center px-6 py-4 bg-orange-500 text-white rounded-2xl font-semibold hover:bg-orange-600 hover:scale-105 transition-all duration-300 shadow-lg">
+                                    🚀 Créer un compte
+                                </a>
+                            @endauth
+                            
+                            <a href="{{ route('voyages.programme', $voyage->id) }}" 
+                               class="w-full inline-flex items-center justify-center px-6 py-4 bg-gray-100 text-gray-800 rounded-2xl font-semibold hover:bg-gray-200 hover:scale-105 transition-all duration-300">
+                                📋 Voir le programme détaillé
+                            </a>
 
-                <!-- Informations voyage -->
-                <div class="voyage-info-card p-4 rounded-3 border shadow-sm mb-4">
-                    <h5 class="mb-3">Informations voyage</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="d-flex justify-content-between mb-2">
-                            <span><i class="fas fa-calendar me-2 text-muted"></i>Durée :</span>
-                            <strong>{{ $voyage->duree_formatee }}</strong>
-                        </li>
-                        <li class="d-flex justify-content-between mb-2">
-                            <span><i class="fas fa-users me-2 text-muted"></i>Participants :</span>
-                            <strong>{{ $voyage->participants_min }}-{{ $voyage->participants_max }}</strong>
-                        </li>
-                        <li class="d-flex justify-content-between mb-2">
-                            <span><i class="fas fa-mountain me-2 text-muted"></i>Difficulté :</span>
-                            <strong>{{ $voyage->difficulte_label }}</strong>
-                        </li>
-                        <li class="d-flex justify-content-between mb-2">
-                            <span><i class="fas fa-route me-2 text-muted"></i>Étapes :</span>
-                            <strong>{{ $voyage->nombre_etapes }}</strong>
-                        </li>
-                        <li class="d-flex justify-content-between">
-                            <span><i class="fas fa-hiking me-2 text-muted"></i>Activités :</span>
-                            <strong>{{ $voyage->nombre_activites }}</strong>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Contact direct -->
-                <div class="contact-card p-4 rounded-3 bg-primary text-white">
-                    <h5 class="mb-3">Une question ?</h5>
-                    <p class="mb-3">Nos experts voyage sont à votre disposition</p>
-                    <div class="contact-info">
-                        <div class="mb-2">
-                            <i class="fas fa-phone me-2"></i>
-                            <a href="tel:+221123456789" class="text-white">+221 12 345 67 89</a>
-                        </div>
-                        <div class="mb-2">
-                            <i class="fas fa-envelope me-2"></i>
-                            <a href="mailto:info@vacancesenegal.com" class="text-white">info@vacancesenegal.com</a>
-                        </div>
-                        <div>
-                            <i class="fab fa-whatsapp me-2"></i>
-                            <a href="https://wa.me/221123456789" class="text-white">WhatsApp</a>
+                            <!-- Garanties -->
+                            <div class="pt-6 border-t border-gray-200 space-y-3">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-3">🛡️</span>
+                                    <span>Annulation gratuite 48h avant</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-3">💳</span>
+                                    <span>Paiement sécurisé</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-3">📞</span>
+                                    <span>Support client 7j/7</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -485,251 +281,84 @@
     </div>
 </div>
 
-<!-- Modal Galerie -->
-<div class="modal fade" id="galleryModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Informations détaillées -->
+<div class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Description longue -->
+        <div class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">✨ Votre aventure en détail</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Plongez dans les détails de cette expérience unique au Sénégal</p>
             </div>
-            <div class="modal-body p-0">
-                <img src="" alt="Photo voyage" class="img-fluid w-100" id="modalImage">
+            
+            <div class="bg-gray-50 rounded-3xl p-12">
+                <div class="prose prose-lg max-w-none text-gray-700">
+                    {!! str_replace(['<p>', '</p>', '<br>', '<br/>', '<br />'], ['<p class="mb-6">', '</p>', ' ', ' ', ' '], $voyage->description_longue) !!}
+                </div>
             </div>
         </div>
+
+        <!-- Informations pratiques -->
+        @if($voyage->niveau_confort || $voyage->point_depart || $voyage->point_arrivee)
+        <div class="grid md:grid-cols-3 gap-8">
+            @if($voyage->niveau_confort)
+            <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl hover:shadow-lg transition-all duration-300">
+                <div class="text-6xl mb-4">🏨</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Niveau de confort</h3>
+                <p class="text-gray-600">{{ $voyage->niveau_confort_label ?? $voyage->niveau_confort }}</p>
+            </div>
+            @endif
+            
+            @if($voyage->point_depart)
+            <div class="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl hover:shadow-lg transition-all duration-300">
+                <div class="text-6xl mb-4">🛫</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Point de départ</h3>
+                <p class="text-gray-600">{{ $voyage->point_depart }}</p>
+            </div>
+            @endif
+            
+            @if($voyage->point_arrivee)
+            <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl hover:shadow-lg transition-all duration-300">
+                <div class="text-6xl mb-4">🛬</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Point d'arrivée</h3>
+                <p class="text-gray-600">{{ $voyage->point_arrivee }}</p>
+            </div>
+            @endif
+        </div>
+        @endif
     </div>
 </div>
 
-@push('styles')
-<style>
-.hero-section {
-    margin-bottom: 0;
-}
-
-.nav-pills .nav-link {
-    color: #666;
-    background: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    margin-right: 10px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.nav-pills .nav-link:hover,
-.nav-pills .nav-link.active {
-    background-color: #FF6B35;
-    color: white;
-}
-
-.section-title {
-    color: #333;
-    font-weight: 700;
-    border-bottom: 3px solid #FF6B35;
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-.content-card {
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-.content-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.timeline-container {
-    position: relative;
-    padding-left: 30px;
-}
-
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, #FF6B35, #e55a2b);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -22px;
-    top: 10px;
-    z-index: 2;
-}
-
-.timeline-day {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FF6B35, #e55a2b);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-}
-
-.timeline-more {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #f8f9fa;
-    border: 2px solid #dee2e6;
-    color: #6c757d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.timeline-content {
-    margin-left: 30px;
-}
-
-.activity-card {
-    transition: all 0.3s ease;
-}
-
-.activity-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.inclusions-card {
-    background: rgba(var(--bs-success-rgb), 0.05);
-}
-
-.info-card {
-    background: #fff;
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.reservation-card {
-    background: #fff;
-    border: 2px solid #f8f9fa;
-}
-
-.voyage-info-card {
-    background: #f8f9fa;
-}
-
-.contact-card {
-    background: linear-gradient(135deg, #FF6B35, #e55a2b) !important;
-}
-
-.vs-btn.style3 {
-    background: transparent;
-    color: #6c757d;
-    border: 2px solid #dee2e6;
-}
-
-.vs-btn.style3:hover {
-    background: #6c757d;
-    color: white;
-    border-color: #6c757d;
-}
-
-.gallery-item img {
-    transition: all 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: 50vh;
-    }
-    
-    .display-4 {
-        font-size: 2rem;
-    }
-    
-    .timeline-container {
-        padding-left: 20px;
-    }
-    
-    .timeline-content {
-        margin-left: 20px;
-    }
-}
-</style>
-@endpush
-
-@push('scripts')
-<script>
-// Smooth scrolling pour les ancres
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Gestion des tabs sticky
-window.addEventListener('scroll', function() {
-    const tabs = document.getElementById('voyage-tabs');
-    const sections = document.querySelectorAll('section[id]');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Modal galerie
-document.querySelectorAll('[data-bs-toggle="modal"]').forEach(item => {
-    item.addEventListener('click', function() {
-        const imageSrc = this.getAttribute('data-image');
-        document.getElementById('modalImage').src = imageSrc;
-    });
-});
-
-// Tracking consultation
-@auth
-fetch(`/voyages/{{ $voyage->id }}/track-consultation`, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    },
-    body: JSON.stringify({type: 'detail'})
-});
-@endauth
-</script>
-@endpush
+<!-- CTA Final -->
+<div class="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 py-20">
+    <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            🌍 Prêt pour l'aventure ?
+        </h2>
+        <p class="text-xl text-orange-100 mb-10 max-w-2xl mx-auto">
+            Rejoignez-nous pour une expérience authentique au cœur du Sénégal
+        </p>
+        
+        <div class="flex flex-wrap gap-6 justify-center">
+            @auth
+                <a href="{{ route('voyages.reservation', $voyage->id) }}" 
+                   class="inline-flex items-center px-10 py-5 bg-white text-orange-600 rounded-full text-lg font-semibold hover:bg-orange-50 hover:scale-110 transition-all duration-300 shadow-2xl">
+                    ✨ Réserver maintenant
+                </a>
+            @else
+                <a href="{{ route('register') }}" 
+                   class="inline-flex items-center px-10 py-5 bg-white text-orange-600 rounded-full text-lg font-semibold hover:bg-orange-50 hover:scale-110 transition-all duration-300 shadow-2xl">
+                    🚀 Créer mon compte
+                </a>
+            @endauth
+            
+            <a href="{{ route('contact') }}" 
+               class="inline-flex items-center px-10 py-5 bg-white/20 text-white border-2 border-white/30 rounded-full text-lg font-semibold hover:bg-white/30 hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                💬 Une question ?
+            </a>
+        </div>
+    </div>
+</div>
 
 @endsection

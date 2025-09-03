@@ -476,8 +476,6 @@ class VoyageController extends Controller
 
     // Affichage public des voyages avec filtres
     public function PublicVoyages(Request $request) {
-        // Test ultra-simple d'abord - bypass database
-        return response('<h1>TESTE SIMPLE - Contrôleur fonctionne!</h1>');
         
         $query = Voyage::where('statut', 'publie')
                       ->with(['etapes', 'activites', 'galerieGenerale']);
@@ -584,8 +582,8 @@ class VoyageController extends Controller
         $needsAuth = !auth()->check() && $totalEtapes > 3;
         
         // Charger le voyage avec les étapes (limitées si non connecté)
-        $voyage = Voyage::with(['etapes' => function($query) {
-                    if (!auth()->check()) {
+        $voyage = Voyage::with(['etapes' => function($query) use ($needsAuth) {
+                    if ($needsAuth) {
                         $query->orderBy('numero_jour')->limit(3);
                     } else {
                         $query->orderBy('numero_jour');
