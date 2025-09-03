@@ -25,7 +25,7 @@
 <section class="py-8 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Trouvez votre circuit idéal</h2>
+            <h2 class="filter-title">Trouvez votre circuit <span class="italic-accent">idéal</span></h2>
             <form method="GET" action="{{ route('voyages.index') }}">
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
                     <div>
@@ -131,23 +131,19 @@
                     <div class="voyage-info">
                         <div class="info-row">
                             <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                {{ $voyage->region }}
+                                📍 {{ $voyage->region }}
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                {{ $voyage->duree_jours ?? $voyage->duree_formatee }} jours
+                                📅 {{ $voyage->duree_jours ?? $voyage->duree_formatee }} jours
                             </div>
                         </div>
                         
                         <div class="info-row">
                             <div class="info-item">
-                                <i class="fas fa-users"></i>
-                                Max {{ $voyage->participants_max ?? '8' }}
+                                👥 Max {{ $voyage->participants_max ?? '8' }}
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-star"></i>
-                                {{ $voyage->difficulte_label ?? $voyage->difficulte ?? 'Modéré' }}
+                                ⭐ {{ $voyage->difficulte_label ?? $voyage->difficulte ?? 'Modéré' }}
                             </div>
                         </div>
                     </div>
@@ -156,17 +152,17 @@
                     <div class="voyage-services">
                         @if($voyage->repas_inclus ?? false)
                             <span class="service-tag service-green">
-                                <i class="fas fa-utensils"></i>Repas
+                                🍽️ Repas
                             </span>
                         @endif
                         @if($voyage->guide_inclus ?? false)
                             <span class="service-tag service-blue">
-                                <i class="fas fa-user-tie"></i>Guide
+                                👨‍🏫 Guide
                             </span>
                         @endif
                         @if($voyage->transports_inclus)
                             <span class="service-tag service-purple">
-                                <i class="fas fa-car"></i>Transport
+                                🚗 Transport
                             </span>
                         @endif
                     </div>
@@ -351,17 +347,19 @@
 
 /* Informations avec plus d'espace */
 .voyage-info {
-    margin-bottom: 16px;
-    background: #f8fafc;
-    padding: 12px;
-    border-radius: 10px;
-    border-left: 3px solid #ea580c;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    padding: 14px;
+    border-radius: 12px;
+    border-left: 4px solid #ea580c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .info-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    gap: 12px;
 }
 
 .info-row:last-child {
@@ -371,16 +369,24 @@
 .info-item {
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: 14px;
     color: #475569;
     font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(234, 88, 12, 0.1);
+    flex: 1;
+    justify-content: center;
+    text-align: center;
 }
 
-.info-item i {
-    margin-right: 6px;
-    color: #ea580c;
-    width: 14px;
-    font-size: 12px;
+.info-item:hover {
+    background: rgba(254, 243, 242, 0.9);
+    border-color: rgba(234, 88, 12, 0.2);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
 }
 
 /* Services avec style émotionnel */
@@ -408,9 +414,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.service-tag i {
-    margin-right: 5px;
-    font-size: 11px;
+/* Espacement pour les emojis dans les services */
+.service-tag::first-letter {
+    margin-right: 6px;
+    font-size: 13px;
 }
 
 .service-green { 
@@ -493,6 +500,35 @@
     .hero-title {
         font-size: 4.5rem;
     }
+}
+
+/* Filter Title - Typography élégante */
+.filter-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2937;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.italic-accent {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    color: #ea580c;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.italic-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ea580c, transparent);
 }
 
 /* Animation d'entrée */
