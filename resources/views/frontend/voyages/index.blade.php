@@ -100,117 +100,94 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse($voyages as $voyage)
             <div class="group">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col circuit-card">
                     <!-- Image Container -->
-                    <div class="relative overflow-hidden h-80">
+                    <div class="relative overflow-hidden h-64">
                         <a href="{{ route('voyages.detail', $voyage->id) }}">
                             <img src="{{ asset($voyage->image_couverture) }}" 
                                  alt="{{ $voyage->nom_voyage }}" 
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </a>
                         
-                        <!-- Badges Top Left -->
-                        <div class="absolute top-4 left-4 space-y-2">
-                            <span class="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                {{ $voyage->type_voyage_label }}
-                            </span>
-                            <span class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium block">
-                                {{ $voyage->duree_formatee }}
-                            </span>
-                            @if($voyage->niveau_confort)
-                                <span class="inline-block bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium block">
-                                    {{ $voyage->niveau_confort_label }}
-                                </span>
-                            @endif
-                            @foreach($voyage->badges as $badge)
-                                @if($badge === 'nouveau')
-                                    <span class="inline-block bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold block">Nouveau</span>
-                                @elseif($badge === 'recommande')
-                                    <span class="inline-block bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-medium block">Recommandé</span>
-                                @elseif($badge === 'sur-mesure')
-                                    <span class="inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium block">Sur mesure</span>
-                                @elseif($badge === 'excellent')
-                                    <span class="inline-block bg-amber-500 text-black px-3 py-1 rounded-full text-sm font-bold block">⭐ Excellent</span>
-                                @endif
-                            @endforeach
+                        <!-- Price Badge -->
+                        <div class="absolute top-3 right-3">
+                            <div class="bg-white/90 backdrop-blur rounded-lg px-3 py-1 shadow-sm">
+                                <div class="text-sm font-bold text-orange-600">{{ $voyage->prix_base_eur_formate ?? $voyage->prix_base_formate }}</div>
+                            </div>
                         </div>
                         
-                        <!-- Price Badge -->
-                        <div class="absolute bottom-4 right-4">
-                            <div class="bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                                <div class="text-lg font-bold text-orange-600">{{ $voyage->prix_base_eur_formate }}</div>
-                                <div class="text-sm text-gray-600">{{ $voyage->prix_base_formate }}</div>
-                            </div>
+                        <!-- Type Badge -->
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-blue-600/90 text-white px-2 py-1 rounded-md text-xs font-medium backdrop-blur">
+                                {{ $voyage->type_voyage_label ?? $voyage->type_voyage }}
+                            </span>
                         </div>
                     </div>
                     
-                    <!-- Content -->
-                    <div class="p-4 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2 line-clamp-2 hover:text-orange-600 transition">
+                    <!-- Content (réduit le padding) -->
+                    <div class="px-4 pt-3 pb-4 flex-1 flex flex-col content-section">
+                        <!-- Titre -->
+                        <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-orange-600 transition">
                             <a href="{{ route('voyages.detail', $voyage->id) }}">{{ $voyage->nom_voyage }}</a>
                         </h3>
                         
-                        <p class="text-gray-600 mb-3 line-clamp-3 flex-1">{{ Str::limit($voyage->description_courte, 120) }}</p>
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-3 line-clamp-2 flex-1">
+                            {{ Str::limit($voyage->description_courte, 100) }}
+                        </p>
                         
-                        <!-- Key Information -->
-                        <div class="grid grid-cols-2 gap-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-500">
-                                <i class="fas fa-map-marker-alt mr-2 text-orange-500"></i>
-                                {{ $voyage->region }}
+                        <!-- Informations clés (très compact) -->
+                        <div class="space-y-1 mb-3">
+                            <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-map-marker-alt mr-1 text-orange-500"></i>
+                                    {{ $voyage->region }}
+                                </div>
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-calendar-alt mr-1 text-orange-500"></i>
+                                    {{ $voyage->duree_jours ?? $voyage->duree_formatee }} jours
+                                </div>
                             </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <i class="fas fa-users mr-2 text-orange-500"></i>
-                                Max {{ $voyage->participants_max }} pers.
+                            
+                            <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-users mr-1 text-orange-500"></i>
+                                    Max {{ $voyage->participants_max ?? '8' }}
+                                </div>
+                                <div class="flex items-center text-gray-600">
+                                    <i class="fas fa-star mr-1 text-orange-500"></i>
+                                    {{ $voyage->difficulte_label ?? $voyage->difficulte ?? 'Modéré' }}
+                                </div>
                             </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <i class="fas fa-mountain mr-2 text-orange-500"></i>
-                                {{ $voyage->difficulte_label }}
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <i class="fas fa-route mr-2 text-orange-500"></i>
-                                {{ $voyage->nombre_etapes }} étapes
-                            </div>
-                            @if($voyage->point_depart && $voyage->point_arrivee)
-                            <div class="col-span-2 flex items-center text-sm text-gray-500">
-                                <i class="fas fa-directions mr-2 text-orange-500"></i>
-                                {{ $voyage->point_depart_arrivee }}
-                            </div>
-                            @endif
-                            @if($voyage->saisons_disponibles)
-                            <div class="col-span-2 flex items-center text-sm text-gray-500">
-                                <i class="fas fa-calendar mr-2 text-orange-500"></i>
-                                {{ $voyage->saisons_disponibles_formatees }}
-                            </div>
-                            @endif
                         </div>
                         
-                        <!-- Inclusions -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            @if($voyage->repas_inclus)
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                        <!-- Services inclus (très compact) -->
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            @if($voyage->repas_inclus ?? false)
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-green-100 text-green-700">
                                     <i class="fas fa-utensils mr-1"></i>Repas
                                 </span>
                             @endif
-                            @if($voyage->guide_inclus)
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                            @if($voyage->guide_inclus ?? false)
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-700">
                                     <i class="fas fa-user-tie mr-1"></i>Guide
                                 </span>
                             @endif
                             @if($voyage->transports_inclus)
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 border border-purple-200">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-purple-100 text-purple-700">
                                     <i class="fas fa-car mr-1"></i>Transport
                                 </span>
                             @endif
                         </div>
                         
                         <!-- Actions -->
-                        <div class="flex gap-3 mt-auto">
+                        <div class="flex gap-2 mt-auto">
                             <a href="{{ route('voyages.detail', $voyage->id) }}" 
-                               class="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg font-semibold text-center transition duration-300 transform hover:scale-105">
+                               class="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-2 px-3 rounded-lg font-medium text-center text-sm transition duration-200 transform hover:scale-[1.02]">
                                 Voir détails
                             </a>
                             <a href="{{ route('voyages.programme', $voyage->id) }}" 
-                               class="flex-1 bg-white border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white py-3 px-4 rounded-lg font-semibold text-center transition duration-300">
+                               class="flex-1 bg-white border border-orange-500 text-orange-500 hover:bg-orange-50 py-2 px-3 rounded-lg font-medium text-center text-sm transition duration-200">
                                 Programme
                             </a>
                         </div>
@@ -271,6 +248,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.3;
 }
 
 .line-clamp-3 {
@@ -278,6 +256,37 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.4;
+}
+
+/* Éliminer complètement l'espace entre image et contenu */
+.circuit-card .content-section {
+    margin-top: 0;
+    padding-top: 0.75rem;
+}
+
+.circuit-card {
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* S'assurer qu'il n'y a pas d'espace dans le container */
+.circuit-card .relative {
+    flex-shrink: 0;
+}
+
+/* Améliorer l'affichage des informations */
+.circuit-card .content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Améliorer les transitions */
+.circuit-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Custom pagination styles for Tailwind */
