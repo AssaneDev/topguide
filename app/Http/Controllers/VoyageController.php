@@ -476,6 +476,9 @@ class VoyageController extends Controller
 
     // Affichage public des voyages avec filtres
     public function PublicVoyages(Request $request) {
+        // Test ultra-simple d'abord - bypass database
+        return response('<h1>TESTE SIMPLE - Contrôleur fonctionne!</h1>');
+        
         $query = Voyage::where('statut', 'publie')
                       ->with(['etapes', 'activites', 'galerieGenerale']);
 
@@ -528,7 +531,28 @@ class VoyageController extends Controller
                         ->distinct()
                         ->get();
         
-        return view('frontend.voyages.index', compact('voyages', 'typesVoyage', 'regions'));
+        // Test avec vue simplifiée pour debug
+        if (request()->has('debug')) {
+            return view('frontend.voyages.index-simple', compact('voyages', 'typesVoyage', 'regions'));
+        }
+        
+        // Test avec vue ultra-simple
+        if (request()->has('test')) {
+            return view('frontend.voyages.index-test', compact('voyages', 'typesVoyage', 'regions'));
+        }
+        
+        // Test direct sans vue pour vérifier si le contrôleur fonctionne
+        if (request()->has('raw')) {
+            return response('<h1>Test Raw - Controller fonctionne!</h1><p>Nombre voyages: ' . $voyages->count() . '</p>');
+        }
+        
+        // Test avec page standalone (sans layout)
+        if (request()->has('standalone')) {
+            return view('frontend.voyages.standalone', compact('voyages', 'typesVoyage', 'regions'));
+        }
+        
+        // Temporaire: utiliser la version backup pour tester
+        return view('frontend.voyages.index-backup', compact('voyages', 'typesVoyage', 'regions'));
     }
 
     // Détail d'un voyage avec consultation progressive

@@ -108,12 +108,12 @@
                     
                     <!-- Price Badge -->
                     <div class="price-badge">
-                        {{ $voyage->prix_base_eur_formate ?? $voyage->prix_base_formate }}
+                        {{ number_format($voyage->prix_base, 0, ',', ' ') }} FCFA
                     </div>
                     
                     <!-- Type Badge -->
                     <div class="type-badge">
-                        {{ $voyage->type_voyage_label ?? $voyage->type_voyage }}
+                        {{ ucfirst(str_replace('-', ' ', $voyage->type_voyage)) }}
                     </div>
                 </div>
                 
@@ -134,33 +134,33 @@
                                 📍 {{ $voyage->region }}
                             </div>
                             <div class="info-item">
-                                📅 {{ $voyage->duree_jours ?? $voyage->duree_formatee }} jours
+                                📅 {{ $voyage->duree_jours }} jours
                             </div>
                         </div>
                         
                         <div class="info-row">
                             <div class="info-item">
-                                👥 Max {{ $voyage->participants_max ?? '8' }}
+                                👥 Max {{ $voyage->participants_max }}
                             </div>
                             <div class="info-item">
-                                ⭐ {{ $voyage->difficulte_label ?? $voyage->difficulte ?? 'Modéré' }}
+                                ⭐ {{ ucfirst($voyage->difficulte) }}
                             </div>
                         </div>
                     </div>
                     
                     <!-- Services -->
                     <div class="voyage-services">
-                        @if($voyage->repas_inclus ?? false)
+                        @if($voyage->repas_inclus)
                             <span class="service-tag service-green">
                                 🍽️ Repas
                             </span>
                         @endif
-                        @if($voyage->guide_inclus ?? false)
+                        @if($voyage->guide_inclus)
                             <span class="service-tag service-blue">
                                 👨‍🏫 Guide
                             </span>
                         @endif
-                        @if($voyage->transports_inclus)
+                        @if($voyage->transports_inclus && is_array($voyage->transports_inclus) && count($voyage->transports_inclus) > 0)
                             <span class="service-tag service-purple">
                                 🚗 Transport
                             </span>
