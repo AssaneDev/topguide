@@ -45,9 +45,6 @@
   <!-- Tailwind CSS via Vite -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   
-  <!-- Fallback Tailwind CDN (en cas de problème avec Vite) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
